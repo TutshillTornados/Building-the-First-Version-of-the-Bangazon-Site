@@ -3,15 +3,15 @@ class CustomersController < ApplicationController
         @customer = Customer.new
     end
     
-      def create
+    def create
         @customer = Customer.new(customer_params)
         if @customer.save
-          session[:customer_id] = @customer.id
-          redirect_to edit_customer_path(@customer.id), notice: 'Thank you for signing up!'
+            session[:customer_id] = @customer.id
+            redirect_to edit_customer_path(@customer.id), notice: 'Thank you for signing up!'
         else
-          render :new
+            render :new
         end
-      end
+    end
     
     def index
         @customers = Customer.all
