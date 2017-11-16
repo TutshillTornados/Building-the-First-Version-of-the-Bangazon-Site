@@ -1,14 +1,14 @@
-<h1>Listing articles</h1>
+        <h1>Listing articles</h1>
 
-<table>
- <tr>
-   <th>Title</th>
-   <th>Text</th>
- </tr>
+        <table>
+        <tr>
+          <th>Title</th>
+          <th>Text</th>
+        </tr>
 
- <% @customers.each do |customer| %>
-   <tr>
-     <td><%= customer.email %></td>
-    </tr>
- <% end %>
-</table>
+        <% @customers.each do |customer| %>
+          <tr>
+            <td><%= customer.email %></td>
+            </tr>
+        <% end %>
+        </table>
