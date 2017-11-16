@@ -7,18 +7,18 @@ class ProductsController < ApplicationController
     @product_type = ProductType.all
   end
 
-  def create_Image
+  def create
     @image = Image.new(image_params)
     if @image.save
-      create(@image.id)
+      createProduct(@image.id)
     else
       render :new
     end
   end
 
-  def create(imageId)
-      # GET THE F@CKIN IMAGE ID
-      @product = Product.new(product_params)
+  def createProduct(imageId)
+  
+      @product = Product.new(product_params(imageId))
       if @product.save
         # redirect_to product_path, notice: 'U DID IT KID'
    
@@ -32,9 +32,10 @@ class ProductsController < ApplicationController
   end
   
   private
-    def product_params
+    def product_params(image_id)
+      :image_id = image_id
       # add :product_type to permit()
-      params.require(:product).permit(:product_name, :product_price, :product_desc, :quantity, :local_delivery)
+      params.require(:product).permit(:product_name, :product_price, :product_desc, :quantity, :local_delivery, :image_id)
     end
 
     def image_params
