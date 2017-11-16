@@ -1,0 +1,20 @@
+<%= form_with model: @pay_method, local: true do |f| %>
+    <p>
+        <%= f.label :payment_type %><br>
+        <%= select_tag "payment_type", options_for_select(['Visa', 'MasterCard', 'American Express', 'Bank']), :required => true, :include_blank => "Select Payment Type" %>  
+        <br>
+    </p>
+
+    <p>
+       <%= f.label :account_number %><br>
+       <%= f.text_field :account_number %><br>
+    </p>
+    <p>
+        <%= f.label :expiration_date %><br>
+        <%= select_tag "month", options_for_select((1..12).map {|m| [Date::MONTHNAMES[m], format('%02d', m)]}), :required => true, :include_blank => "Select Month" %>  
+        <%= select_tag "year", options_for_select((Date.today.year..(Date.today.year + 10)).map {|m| [m, m % 100]}), :required => true, :include_blank => "Select Year" %>
+        <br>
+    </p>
+    <div class="actions"><%= f.submit "Add Payment" %></div>
+
+<% end %>
