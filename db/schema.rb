@@ -24,10 +24,6 @@ ActiveRecord::Schema.define(version: 20171116160134) do
     t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "product_file_name"
-    t.string "product_content_type"
-    t.integer "product_file_size"
-    t.datetime "product_updated_at"
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
