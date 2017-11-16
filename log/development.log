@@ -1816,6 +1816,7 @@ Processing by CustomersController#index as HTML
 Completed 200 OK in 27ms (Views: 24.9ms | ActiveRecord: 0.3ms)
 
 
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2017-11-16 10:28:00 -0600
   [1m[35m (15.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
   [1m[35m (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
@@ -1832,5 +1833,563 @@ Processing by CustomersController#new as HTML
   Rendering customers/new.html.erb within layouts/application
   Rendered customers/new.html.erb within layouts/application (17.5ms)
 Completed 200 OK in 285ms (Views: 250.2ms | ActiveRecord: 13.0ms)
+=======
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:16:14 -0600
+  [1m[35m (51.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 1161ms (Views: 1138.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-11-15 16:16:17 -0600
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 140ms (Views: 58.8ms | ActiveRecord: 42.7ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2017-11-15 16:16:24 -0600
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DxndX3Djd+lFX+kAG51XHC1SY/K8E+wU7FMaYPQdi0J25LCq6kiVpmVC3jGKF7hqhvPbvnvH75kYHGM1gWsPGA==", "customer"=>{"email"=>"dan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (42.9ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'dan' LIMIT 1[0m
+  [1m[35m (2.6ms)[0m  [1m[31mROLLBACK[0m
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 221ms (Views: 61.6ms | ActiveRecord: 46.4ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2017-11-15 16:16:29 -0600
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S+uBz9w00OSVD6doOB0QBucM3lgSS7+HU77y5Vtym1+HMLHc4+vaeP5fLO3gqQf93t7VN9tAdlC1o3ojJLnZag==", "customer"=>{"email"=>"dan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'dan' LIMIT 1[0m
+  [1m[35mSQL (16.5ms)[0m  [1m[32mINSERT INTO `customers` (`email`, `password_digest`, `created_at`, `updated_at`) VALUES ('dan', '$2a$10$K6QW51Gp3kQv.5VSHugVfO2Wue6fnXBHWU1agPi3i19fAd/ajyS7y', '2017-11-15 22:16:29', '2017-11-15 22:16:29')[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/customers/1/edit
+Completed 302 Found in 131ms (ActiveRecord: 22.7ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2017-11-15 16:16:29 -0600
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (17.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 91ms (Views: 61.9ms | ActiveRecord: 17.6ms)
+
+
+Started PATCH "/customers/1" for 127.0.0.1 at 2017-11-15 16:16:40 -0600
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qWxgECkBcyowq0i2IuqRYDYFulTdun/MaWrsyTC65H9lt1ADFt55tlv7wzP6XoabD9exOxSxthuPd2QPT3GmSg==", "customer"=>{"first_name"=>"Daniel", "last_name"=>"Greene", "street_address"=>"306 Windsor Street", "city"=>"Silver Spring", "state"=>"MD", "zip"=>"20910", "phone_number"=>"7039660947"}, "commit"=>"Update Customer", "id"=>"1"}
+  [1m[36mCustomer Load (2.1ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (30.4ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'dan' AND (`customers`.`id` != 1) LIMIT 1[0m
+  [1m[35mSQL (6.4ms)[0m  [1m[33mUPDATE `customers` SET `first_name` = 'Daniel', `last_name` = 'Greene', `street_address` = '306 Windsor Street', `city` = 'Silver Spring', `state` = 'MD', `zip` = 20910, `phone_number` = '7039660947', `updated_at` = '2017-11-15 22:16:40' WHERE `customers`.`id` = 1[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/customers
+Completed 302 Found in 55ms (ActiveRecord: 41.2ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2017-11-15 16:16:40 -0600
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT `customers`.* FROM `customers`[0m
+  Rendered customers/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 55ms (Views: 51.0ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (58.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (13.2ms)[0m  [1m[34mSELECT GET_LOCK(1096848878559930510, 0)[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddAttachmentProductToCustomers (20171116160134)
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT RELEASE_LOCK(1096848878559930510)[0m
+  [1m[35m (5.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK(1096848878559930510, 0)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddAttachmentProductToCustomers (20171116160134)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK(1096848878559930510)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (19.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (121.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS `Bangazon_Site_development`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS `Bangazon_Site_test`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE DATABASE `Bangazon_Site_development` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE `Bangazon_Site_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (2.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `customers` CASCADE[0m
+  [1m[35m (33.9ms)[0m  [1m[35mCREATE TABLE `customers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `password_digest` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `street_address` varchar(255), `city` varchar(255), `state` varchar(255), `zip` int, `phone_number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `images` CASCADE[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE `images` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `image_file` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `order_lines` CASCADE[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE `order_lines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_id` bigint, `order_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_order_lines_on_order_id`  (`order_id`),  INDEX `index_order_lines_on_product_id`  (`product_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `orders` CASCADE[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `pay_method_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_orders_on_customer_id`  (`customer_id`),  INDEX `index_orders_on_pay_method_id`  (`pay_method_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `pay_methods` CASCADE[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE `pay_methods` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `payment_type` varchar(255), `account_number` int, `expiration_date` date, `customer_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_pay_methods_on_customer_id`  (`customer_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `product_types` CASCADE[0m
+  [1m[35m (17.3ms)[0m  [1m[35mCREATE TABLE `product_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_type_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `products` CASCADE[0m
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `product_type_id` bigint, `image_id` bigint, `product_name` varchar(255), `product_price` float(24), `product_desc` text, `quantity` int, `product_added` datetime, `local_delivery` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_products_on_customer_id`  (`customer_id`),  INDEX `index_products_on_image_id`  (`image_id`),  INDEX `index_products_on_product_type_id`  (`product_type_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (49.8ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_e6c763ee60`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+[0m
+  [1m[35m (31.3ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_83e960fa54`
+FOREIGN KEY (`product_id`)
+  REFERENCES `products` (`id`)
+[0m
+  [1m[35m (33.3ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_3dad120da9`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (18.9ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_9d6a437740`
+FOREIGN KEY (`pay_method_id`)
+  REFERENCES `pay_methods` (`id`)
+[0m
+  [1m[35m (25.4ms)[0m  [1m[35mALTER TABLE `pay_methods` ADD CONSTRAINT `fk_rails_c8fc227bd8`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (55.5ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_252452a41b`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (56.4ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_0c57d8fc34`
+FOREIGN KEY (`image_id`)
+  REFERENCES `images` (`id`)
+[0m
+  [1m[35m (20.8ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_8464b8e5d7`
+FOREIGN KEY (`product_type_id`)
+  REFERENCES `product_types` (`id`)
+[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (3.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20171114201349)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20171114195736),
+(20171114195934),
+(20171114200052),
+(20171114200524),
+(20171114200852),
+(20171114201311);
+
+[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-11-16 16:07:21', '2017-11-16 16:07:21')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `customers` CASCADE[0m
+  [1m[35m (20.8ms)[0m  [1m[35mCREATE TABLE `customers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `password_digest` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `street_address` varchar(255), `city` varchar(255), `state` varchar(255), `zip` int, `phone_number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `images` CASCADE[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE `images` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `image_file` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `order_lines` CASCADE[0m
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE `order_lines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_id` bigint, `order_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_order_lines_on_order_id`  (`order_id`),  INDEX `index_order_lines_on_product_id`  (`product_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `orders` CASCADE[0m
+  [1m[35m (22.7ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `pay_method_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_orders_on_customer_id`  (`customer_id`),  INDEX `index_orders_on_pay_method_id`  (`pay_method_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS `pay_methods` CASCADE[0m
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE `pay_methods` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `payment_type` varchar(255), `account_number` int, `expiration_date` date, `customer_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_pay_methods_on_customer_id`  (`customer_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `product_types` CASCADE[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE `product_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_type_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `products` CASCADE[0m
+  [1m[35m (17.7ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `product_type_id` bigint, `image_id` bigint, `product_name` varchar(255), `product_price` float(24), `product_desc` text, `quantity` int, `product_added` datetime, `local_delivery` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_products_on_customer_id`  (`customer_id`),  INDEX `index_products_on_image_id`  (`image_id`),  INDEX `index_products_on_product_type_id`  (`product_type_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (24.1ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_e6c763ee60`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+[0m
+  [1m[35m (30.4ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_83e960fa54`
+FOREIGN KEY (`product_id`)
+  REFERENCES `products` (`id`)
+[0m
+  [1m[35m (19.9ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_3dad120da9`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (30.5ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_9d6a437740`
+FOREIGN KEY (`pay_method_id`)
+  REFERENCES `pay_methods` (`id`)
+[0m
+  [1m[35m (19.2ms)[0m  [1m[35mALTER TABLE `pay_methods` ADD CONSTRAINT `fk_rails_c8fc227bd8`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (21.5ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_252452a41b`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (20.4ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_0c57d8fc34`
+FOREIGN KEY (`image_id`)
+  REFERENCES `images` (`id`)
+[0m
+  [1m[35m (19.1ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_8464b8e5d7`
+FOREIGN KEY (`product_type_id`)
+  REFERENCES `product_types` (`id`)
+[0m
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20171114201349)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20171114195736),
+(20171114195934),
+(20171114200052),
+(20171114200524),
+(20171114200852),
+(20171114201311);
+
+[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-11-16 16:07:21', '2017-11-16 16:07:21')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (6.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT GET_LOCK(1096848878559930510, 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddAttachmentProductToCustomers (20171116160134)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK(1096848878559930510)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK(1096848878559930510, 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddAttachmentProductToCustomers (20171116160134)
+  [1m[35m (45.0ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_file_name` varchar(255)[0m
+  [1m[35m (14.7ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_content_type` varchar(255)[0m
+  [1m[35m (17.8ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_file_size` int[0m
+  [1m[35m (14.3ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_updated_at` datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171116160134')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK(1096848878559930510)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-11-16 10:10:22 -0600
+  [1m[35m (10.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 400ms (Views: 387.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-16 10:16:54 -0600
+  [1m[35m (1.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 358ms (Views: 344.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-11-16 10:16:58 -0600
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 154ms (Views: 74.9ms | ActiveRecord: 30.1ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2017-11-16 10:17:05 -0600
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SqICfPifoIiIQRUqBvtIAKMs38ckp2EO9dkoXwlgB+iQi3TaJqimbKAdeUSr0GPNm8kp1jTOLWP/d6mWux0d2g==", "customer"=>{"email"=>"dgdgdgdgd", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (17.8ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'dgdgdgdgd' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `customers` (`email`, `password_digest`, `created_at`, `updated_at`) VALUES ('dgdgdgdgd', '$2a$10$cOrEs8dN66znGwjOGN1XxuiX2y2bs0HscAqKbjKVU1Kk9ig9DXq/2', '2017-11-16 16:17:05', '2017-11-16 16:17:05')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/customers/1/edit
+Completed 302 Found in 135ms (ActiveRecord: 19.8ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2017-11-16 10:17:05 -0600
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 75ms (Views: 63.7ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/customers/1" for 127.0.0.1 at 2017-11-16 10:17:10 -0600
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kwNLiaWdcmqvgsHMQ488EOFVqYeJEIH29fUit1fSjeKgrR3AF/wCBd6fOFRGejJOJcpVEPZTFNJbD/tQmtqfMA==", "customer"=>{"first_name"=>"Daniel", "last_name"=>"Greene", "street_address"=>"306 Windsor Street", "city"=>"Silver Spring", "state"=>"MD", "zip"=>"20910", "phone_number"=>"7039660947"}, "commit"=>"Update Customer", "id"=>"1"}
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (8.5ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'dgdgdgdgd' AND (`customers`.`id` != 1) LIMIT 1[0m
+  [1m[35mSQL (29.0ms)[0m  [1m[33mUPDATE `customers` SET `first_name` = 'Daniel', `last_name` = 'Greene', `street_address` = '306 Windsor Street', `city` = 'Silver Spring', `state` = 'MD', `zip` = 20910, `phone_number` = '7039660947', `updated_at` = '2017-11-16 16:17:10' WHERE `customers`.`id` = 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/customers
+Completed 302 Found in 49ms (ActiveRecord: 39.3ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2017-11-16 10:17:10 -0600
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT `customers`.* FROM `customers`[0m
+  Rendered customers/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 64ms (Views: 59.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-16 10:17:20 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 56ms (Views: 53.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:17:33 -0600
+Processing by ProductsController#new as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (You need to supply at least one validation):
+  
+app/models/product.rb:5:in `<class:Product>'
+app/models/product.rb:1:in `<top (required)>'
+app/controllers/products_controller.rb:4:in `new'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:18:42 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 14.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"customers"}, missing required keys: [:id]):
+    1: <%= form_for @customer, url: customer_path, html: { multipart: true } do |form| %>
+    2:   <%= form.file_field :product %>
+    3: <% end %>
+  
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb__3652831380124955861_70242969978080'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:19:28 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"products"}, missing required keys: [:id]):
+    1: <%= form_for @product, url: product_path, html: { multipart: true } do |form| %>
+    2:   <%= form.file_field :product %>
+    3: <% end %>
+  
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb__3652831380124955861_70242929218500'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:20:57 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 21.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"products"}, missing required keys: [:id]):
+    1: <%= form_for @product, url: product_path, html: { multipart: true } do |form| %>
+    2:   <%= form.file_field :product %>
+    3: <% end %>
+  
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb__3652831380124955861_70242946921260'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:21:31 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 59ms (Views: 56.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:21:41 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"products"}, missing required keys: [:id]):
+    1: <%= form_for @product, url: product_path, html: { multipart: true } do |form| %>
+    2:   <%= form.file_field :product %>
+    3: <% end %>
+  
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb__3652831380124955861_70242952295540'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:21:57 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (286.9ms)
+Completed 500 Internal Server Error in 295ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x00007fc56bcc5078>:0x00007fc569535698>
+Did you mean?  fork):
+    1: <%# <%= form_for @product, url: product_path, html: { multipart: true } do |form| %> 
+    2:   <%= form.file_field :product %>
+    3: <%# <% end %> 
+  
+app/views/products/new.html.erb:2:in `_app_views_products_new_html_erb__3652831380124955861_70242926178360'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:23:02 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @post, html: { multipart: true } do |form| %>
+    2:   <%= form.file_field :product %>
+    3: <% end %>
+  
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb__3652831380124955861_70242947981480'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:26:20 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @post, html: { multipart: true } do |f| %>
+    2:   <div class ="field">
+    3:     <$= f.label :image %><br>
+    4:     <$= f.file_field :image %><br>
+  
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb__3652831380124955861_70242950007380'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:27:44 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/new.html.erb:1: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+ppend=  form_for @product html: { multipart: true } do |f| @
+                              ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/new.html.erb:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+t html: { multipart: true } do |f| @output_buffer.safe_appen
+                              ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/new.html.erb:8: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/products/new.html.erb:1: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/views/products/new.html.erb:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+app/views/products/new.html.erb:8: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:30:48 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/new.html.erb:1: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+ppend=  form_for @product html: { multipart: true } do |f| @
+                              ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/new.html.erb:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+t html: { multipart: true } do |f| @output_buffer.safe_appen
+                              ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/new.html.erb:8: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/products/new.html.erb:1: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/views/products/new.html.erb:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+app/views/products/new.html.erb:8: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:31:54 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (12.4ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"customers"}, missing required keys: [:id]):
+    1: <%= form_for @customer, url: customer_path, html: { multipart: true } do |form| %>
+    2:   <%= form.file_field :product %>
+    3: <% end %>
+  
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb__3652831380124955861_70242924731580'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:32:26 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"products"}, missing required keys: [:id]):
+    1: <%= form_for @product, url: product_path, html: { multipart: true } do |form| %>
+    2:   <%= form.file_field :product %>
+    3: <% end %>
+  
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb__3652831380124955861_70242947606460'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:33:23 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 62ms (Views: 60.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:35:30 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 58ms (Views: 55.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:35:43 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 50ms (Views: 47.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:36:29 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 64ms (Views: 60.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:38:22 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 115ms (Views: 60.3ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:39:58 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 134ms (Views: 116.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-16 10:40:25 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 75ms (Views: 72.4ms | ActiveRecord: 0.0ms)
+>>>>>>> 041bb484299255697fd799db75719bdc3990262a
 
 
