@@ -10,9 +10,10 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.customer_id = session[:user_id]
-    @product.product_added = DateTime.now()   
+    @product.product_added = DateTime.now()
+    # @product.product_type_id = @product_type
     if @product.save
-      # redirect_to product_path, notice: 'U DID IT KID'
+      redirect_to product_path(@product)
     else
       @product_type = ProductType.all
       render :new
@@ -27,6 +28,11 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def index
+    @products = Product.all
+  end
+
+  
  # THIS WILL BE THE FINAL METHODS
   # def create
   #   @image = Image.new(image_params)
