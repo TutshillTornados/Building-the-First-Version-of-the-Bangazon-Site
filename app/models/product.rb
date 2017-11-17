@@ -6,8 +6,12 @@ class Product < ApplicationRecord
     validates :local_delivery, inclusion: { in: [true, false]}
 
     # validates price is no greater than 10 stacks
-    validates :product_price, presence: true, format: { with: /\A\d+(?:\.\d{2})?\z/ }, numericality: { greater_than: 0, less_than: 10000 }
-    
+    validates :product_price, presence: true, format: { with: /\A\d+\.\d\d(?!\d)\z/ }, numericality: { greater_than: 0, less_than: 10000 }
+
+    # \d+\.\d\d(?!\d)
+
+    # /\A\d+(?:\.\d{2})?\z/
+
     # validates curse words
     validates_exclusion_of :product_desc, :product_name, :in => :check_bad_words, :message => "This is not an acceptable word. Please try again"
 
