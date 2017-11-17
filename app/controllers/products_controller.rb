@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.customer_id = session[:user_id]
+    @product.product_added = DateTime.now()   
     if @product.save
       # redirect_to product_path, notice: 'U DID IT KID'
     else

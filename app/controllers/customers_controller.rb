@@ -6,7 +6,7 @@ class CustomersController < ApplicationController
     def create
         @customer = Customer.new(customer_params)
         if @customer.save
-            session[:customer_id] = @customer.id
+            session[:user_id] = @customer.id
             redirect_to edit_customer_path(@customer.id), notice: 'Thank you for signing up!'
         else
             render :new
@@ -20,7 +20,7 @@ class CustomersController < ApplicationController
     def show
         @customer = Customer.find(params[:id])
     end
-    
+
     def edit
         @customer = Customer.find(params[:id])
     end

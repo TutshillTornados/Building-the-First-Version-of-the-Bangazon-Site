@@ -8,7 +8,7 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.float :product_price
       t.text :product_desc
       t.integer :quantity
-      t.datetime :product_added
+      t.datetime :product_added 
       t.boolean :local_delivery
       
       t.timestamps
