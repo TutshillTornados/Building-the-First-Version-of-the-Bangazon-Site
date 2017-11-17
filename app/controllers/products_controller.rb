@@ -2,33 +2,30 @@ class ProductsController < ApplicationController
 
   def new
     # session[:customer_id] ???
-
-    @product = Product.new()
+    @product = Product.new
+    @image = Image.new
     @product_type = ProductType.all
   end
 
-  def create_Image
+  def create
     @image = Image.new(image_params)
     if @image.save
-      create(@image.id)
+      # :image_id = @image.id
+      createProduct(@image.id)
     else
       render :new
     end
   end
 
-  def create(imageId)
-      # GET THE F@CKIN IMAGE ID
-      @product = Product.new(product_params)
+  def createProduct(imageID)
+    @product = Product.new(product_params)
+    @product.image_id = imageID
       if @product.save
         # redirect_to product_path, notice: 'U DID IT KID'
    
       else
         render :new
       end
-    else
-      render :new
-    end
-
   end
   
   private
