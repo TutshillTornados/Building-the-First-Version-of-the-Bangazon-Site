@@ -7,12 +7,5 @@ class Product < ApplicationRecord
     validates_presence_of :product_name, :product_price, :product_desc, :quantity, :local_delivery
 
     #validates curse words
-    #validates $10,000 or less
-
-    #validates image type and size of image 
-    has_attached_file :product, styles: { medium: "300x300>", thumb: "100x100#" }, default_url: "/images/default.jpg"
-    validates_attachment_content_type :product, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
-    validates_with AttachmentSizeValidator, attributes: :product, less_than: 5.megabytes
- 
-    
+    #validates $10,000 or less 
 end

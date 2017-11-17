@@ -4409,3 +4409,69 @@ Did you mean?  product_type):
   
 app/controllers/products_controller.rb:24:in `createProduct'
 app/controllers/products_controller.rb:14:in `create'
+Started POST "/products" for 127.0.0.1 at 2017-11-17 10:12:33 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4c6DBGlPMwdfRICkBu3GfDWPF6VRj5xazKTYQvPnwva+EToHFuptSV7owmrsM83/BO50J38yuFqIdguWLTI8wA==", "product"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f9689f21d50 @tempfile=#<Tempfile:/var/folders/bs/jv3vqljn1sn_v4cjssjj6gk80000gn/T/RackMultipart20171117-95433-x8z123.jpg>, @original_filename="holy-hound-dog-costume-12507.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[image]\"; filename=\"holy-hound-dog-costume-12507.jpg\"\r\nContent-Type: image/jpeg\r\n">, "product_name"=>"Dog", "product_price"=>"3.99", "product_desc"=>"Its a doggy", "quantity"=>"1", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+Unpermitted parameters: :image, :product_name, :product_price, :product_desc, :quantity, :local_delivery
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `images` (`created_at`, `updated_at`) VALUES ('2017-11-17 16:12:33', '2017-11-17 16:12:33')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Unpermitted parameter: :image
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 9.9ms)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x00007f968a63b2a8>
+Did you mean?  try):
+  
+app/controllers/products_controller.rb:24:in `createProduct'
+app/controllers/products_controller.rb:14:in `create'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 10:14:00 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (4.3ms)
+  Rendered products/new.html.erb within layouts/application (6.3ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 98ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-17 10:14:29 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uEOGBqFcg4nf9dyK7FcnlSld1A/dtV8OJwSKaMn+UI7nnD8F3vndx95ZnkQGiSwWGDy3jfMIew5j1lm8FyuuuA==", "product"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f968ed2c950 @tempfile=#<Tempfile:/var/folders/bs/jv3vqljn1sn_v4cjssjj6gk80000gn/T/RackMultipart20171117-95433-1u1j3ko.png>, @original_filename="Screen Shot 2017-11-16 at 9.22.35 AM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"product[image]\"; filename=\"Screen Shot 2017-11-16 at 9.22.35 AM.png\"\r\nContent-Type: image/png\r\n">, "product_name"=>"test2", "product_price"=>"3.66", "product_desc"=>"iptheic", "quantity"=>"2", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+Unpermitted parameters: :image, :product_name, :product_price, :product_desc, :quantity, :local_delivery
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `product_content_type' for #<Image:0x00007f96904811a0>):
+  
+app/controllers/products_controller.rb:12:in `create'
+Started POST "/products" for 127.0.0.1 at 2017-11-17 10:16:02 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uEOGBqFcg4nf9dyK7FcnlSld1A/dtV8OJwSKaMn+UI7nnD8F3vndx95ZnkQGiSwWGDy3jfMIew5j1lm8FyuuuA==", "product"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f968d073408 @tempfile=#<Tempfile:/var/folders/bs/jv3vqljn1sn_v4cjssjj6gk80000gn/T/RackMultipart20171117-95433-1oas8nb.png>, @original_filename="Screen Shot 2017-11-16 at 9.22.35 AM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"product[image]\"; filename=\"Screen Shot 2017-11-16 at 9.22.35 AM.png\"\r\nContent-Type: image/png\r\n">, "product_name"=>"test2", "product_price"=>"3.66", "product_desc"=>"iptheic", "quantity"=>"2", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.9ms)
+
+
+  
+NoMethodError (undefined method `before_image_post_process' for #<Class:0x00007f968d029fb0>
+Did you mean?  before_post_process
+               before_product_post_process):
+  
+app/models/image.rb:5:in `<class:Image>'
+app/models/image.rb:1:in `<top (required)>'
+app/controllers/products_controller.rb:11:in `create'
+Started POST "/products" for 127.0.0.1 at 2017-11-17 10:16:57 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uEOGBqFcg4nf9dyK7FcnlSld1A/dtV8OJwSKaMn+UI7nnD8F3vndx95ZnkQGiSwWGDy3jfMIew5j1lm8FyuuuA==", "product"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f9690023220 @tempfile=#<Tempfile:/var/folders/bs/jv3vqljn1sn_v4cjssjj6gk80000gn/T/RackMultipart20171117-95433-pzgzi0.png>, @original_filename="Screen Shot 2017-11-16 at 9.22.35 AM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"product[image]\"; filename=\"Screen Shot 2017-11-16 at 9.22.35 AM.png\"\r\nContent-Type: image/png\r\n">, "product_name"=>"test2", "product_price"=>"3.66", "product_desc"=>"iptheic", "quantity"=>"2", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+Unpermitted parameters: :image, :product_name, :product_price, :product_desc, :quantity, :local_delivery
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `image_content_type' for #<Image:0x00007f968ea26878>):
+  
+app/controllers/products_controller.rb:12:in `create'
