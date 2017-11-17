@@ -6,6 +6,11 @@ class Product < ApplicationRecord
     # add :product_type to validates_presence_of >
     validates_presence_of :product_name, :product_price, :product_desc, :quantity, :local_delivery
 
+    validates :product_price, presence: true, format: { with: /\A\d+(?:\.\d{2})?\z/ }, numericality: { greater_than: 0, less_than: 10000 }
+
+    validates :check_bad_words
+    
+
     #validates curse words
     #validates $10,000 or less
 

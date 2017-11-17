@@ -19,6 +19,7 @@ class ProductsController < ApplicationController
 
   def createProduct(imageID)
     @product = Product.new(product_params)
+    @product.customer_id = session[:user_id]
     @product.image_id = imageID
       if @product.save
         # redirect_to product_path, notice: 'U DID IT KID'
@@ -26,6 +27,11 @@ class ProductsController < ApplicationController
       else
         render :new
       end
+  end
+
+  def check_bad_words
+    @bad_words ||= File.read('../assets/badwords.txt').split
+    errors.add_to_base("#{path} is not an acceptable word. Please try again") if @bad_words.incude? path
   end
   
   private

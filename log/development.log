@@ -4368,6 +4368,7 @@ Did you mean?  product_type):
   
 app/controllers/products_controller.rb:23:in `createProduct'
 app/controllers/products_controller.rb:14:in `create'
+<<<<<<< HEAD
 Started GET "/products/new" for 127.0.0.1 at 2017-11-17 09:25:30 -0600
   [1m[35m (32.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
@@ -4415,3 +4416,172 @@ Processing by ProductsController#new as HTML
 Completed 200 OK in 39ms (Views: 36.3ms | ActiveRecord: 0.0ms)
 
 
+=======
+Started GET "/" for 127.0.0.1 at 2017-11-17 09:39:18 -0600
+  [1m[35m (14.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (26.0ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 261ms (Views: 244.5ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 09:39:26 -0600
+Processing by ProductsController#new as HTML
+  [1m[35m (1.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (17.0ms)
+  Rendered products/new.html.erb within layouts/application (19.5ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+Completed 200 OK in 95ms (Views: 46.4ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-17 09:54:59 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWXB3IhxDjngH/pm8cepEMsVIybZfPp8G9/mJdlu6ecE0UPzli93oeU1fND8sfrHn1TYK9pgFx5knLPanRYBSw==", "product"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f9690452c38 @tempfile=#<Tempfile:/var/folders/bs/jv3vqljn1sn_v4cjssjj6gk80000gn/T/RackMultipart20171117-95433-gcus6u.jpg>, @original_filename="holy-hound-dog-costume-12507.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[image]\"; filename=\"holy-hound-dog-costume-12507.jpg\"\r\nContent-Type: image/jpeg\r\n">, "product_name"=>"Dog", "product_price"=>"3.99", "product_desc"=>"Its a doggy", "quantity"=>"1", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+Unpermitted parameters: :image, :product_name, :product_price, :product_desc, :quantity, :local_delivery
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.4ms)[0m  [1m[32mINSERT INTO `images` (`created_at`, `updated_at`) VALUES ('2017-11-17 15:54:59', '2017-11-17 15:54:59')[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Unpermitted parameter: :image
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT  `images`.* FROM `images` WHERE `images`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 14.2ms)
+
+
+  
+NoMethodError (undefined method `product_content_type' for #<Product:0x00007f968962cc40>
+Did you mean?  product_type):
+  
+app/controllers/products_controller.rb:24:in `createProduct'
+app/controllers/products_controller.rb:14:in `create'
+>>>>>>> 9805b321f25a21ae735729c39539f991a53e6872
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 09:57:23 -0600
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (11.4ms)
+  Rendered products/new.html.erb within layouts/application (13.2ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 250ms (Views: 210.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 09:57:25 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (2.9ms)
+  Rendered products/new.html.erb within layouts/application (4.6ms)
+  Rendered partials/_navbar.html.erb (1.0ms)
+Completed 200 OK in 41ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 09:57:27 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (5.3ms)
+  Rendered products/new.html.erb within layouts/application (7.0ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 67ms (Views: 65.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-17 09:57:29 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (35.1ms)
+  Rendered partials/_navbar.html.erb (0.8ms)
+Completed 200 OK in 78ms (Views: 73.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2017-11-17 09:57:31 -0600
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-17 09:57:31 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-17 09:57:32 -0600
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2017-11-17 09:57:37 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"usga6/Jac4D5j1HY9ROeodLeSPikUboB6eJ3ngKtbL29OccKNmO8jW2WKXaazj4vpJnnBG/iQ9qVbMOQLEqDIQ==", "email"=>"mattguy@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`email` = 'mattguy@gmail.com' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 68ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-17 09:57:37 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 09:57:39 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (3.3ms)
+  Rendered products/new.html.erb within layouts/application (4.9ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 37ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-17 09:57:52 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OMXcKJ5mWLPFkcvssRigbGmHpZp9mMBMzQ3j64SnuXwoFbo4ZZF1jxTwBonhgISUasx3S1l9u0fjp84IOoJK0g==", "product"=>{"product_name"=>"Stuff", "product_price"=>"9.99", "product_desc"=>"stuff", "quantity"=>"1", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+Unpermitted parameters: :product_name, :product_price, :product_desc, :quantity, :local_delivery
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (12.8ms)[0m  [1m[32mINSERT INTO `images` (`created_at`, `updated_at`) VALUES ('2017-11-17 15:57:52', '2017-11-17 15:57:52')[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  `images`.* FROM `images` WHERE `images`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 20.6ms)
+
+
+  
+NoMethodError (undefined method `product_content_type' for #<Product:0x00007ff1a9337af0>
+Did you mean?  product_type):
+  
+app/controllers/products_controller.rb:24:in `createProduct'
+app/controllers/products_controller.rb:14:in `create'
+Started POST "/__web_console/repl_sessions/d0e03ae5644f3c07e51a8376b972df8a/trace" for 127.0.0.1 at 2017-11-17 09:58:20 -0600
+Started POST "/products" for 127.0.0.1 at 2017-11-17 10:25:42 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OMXcKJ5mWLPFkcvssRigbGmHpZp9mMBMzQ3j64SnuXwoFbo4ZZF1jxTwBonhgISUasx3S1l9u0fjp84IOoJK0g==", "product"=>{"product_name"=>"Stuff", "product_price"=>"9.99", "product_desc"=>"stuff", "quantity"=>"1", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+Unpermitted parameters: :product_name, :product_price, :product_desc, :quantity, :local_delivery
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `images` (`created_at`, `updated_at`) VALUES ('2017-11-17 16:25:42', '2017-11-17 16:25:42')[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  `images`.* FROM `images` WHERE `images`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 6.1ms)
+
+
+  
+NoMethodError (undefined method `product_content_type' for #<Product:0x00007ff1a929fcc8>
+Did you mean?  product_type):
+  
+app/controllers/products_controller.rb:24:in `createProduct'
+app/controllers/products_controller.rb:14:in `create'
