@@ -19,6 +19,7 @@ class ProductsController < ApplicationController
 
   def createProduct(imageID)
     @product = Product.new(product_params)
+    @product.customer_id = session[:user_id]
     @product.image_id = imageID
       if @product.save
         # redirect_to product_path, notice: 'U DID IT KID'
