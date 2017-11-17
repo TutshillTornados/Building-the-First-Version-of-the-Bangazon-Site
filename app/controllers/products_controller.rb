@@ -8,25 +8,18 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @image = Image.new(image_params)
-    if @image.save
-      # :image_id = @image.id
-      createProduct(@image.id)
+    @product = Product.new(product_params)
+    @product.customer_id = session[:user_id]
+    @product.product_added = DateTime.now()   
+    if @product.save
+      # redirect_to product_path, notice: 'U DID IT KID'
     else
       render :new
     end
   end
 
-  def createProduct(imageID)
-    @product = Product.new(product_params)
-    @product.customer_id = session[:user_id]
-    @product.image_id = imageID
-      if @product.save
-        # redirect_to product_path, notice: 'U DID IT KID'
-   
-      else
-        render :new
-      end
+  def show
+    @product= Product.find(params[:id])
   end
 
   def check_bad_words
@@ -34,10 +27,33 @@ class ProductsController < ApplicationController
     errors.add_to_base("#{path} is not an acceptable word. Please try again") if @bad_words.incude? path
   end
   
+ # THIS WILL BE THE FINAL METHODS
+  # def create
+  #   @image = Image.new(image_params)
+  #   if @image.save
+  #     # :image_id = @image.id
+  #     createProduct(@image.id)
+  #   else
+  #     render :new
+  #   end
+  # end
+
+  # def createProduct(imageID)
+  #   @product = Product.new(product_params)
+  #   @product.customer_id = session[:user_id]
+  #   @product.image_id = imageID
+  #   # binding.pry
+  #     if @product.save
+  #       # redirect_to product_path, notice: 'U DID IT KID'
+  #     else
+  #       render :new
+  #     end
+  # end
+  # ^^ FINAL METHODS
+
   private
     def product_params
-      # add :product_type to permit()
-      params.require(:product).permit(:product_name, :product_price, :product_desc, :quantity, :local_delivery)
+      params.require(:product).permit(:product_name, :product_price, :product_desc, :quantity, :local_delivery, :product_type_id)
     end
 
     def image_params

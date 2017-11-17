@@ -64,3 +64,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # PAPERCLIP
 gem "paperclip", "~> 5.0.0"
+
+# PRY - Debugger
+gem "pry-rails"

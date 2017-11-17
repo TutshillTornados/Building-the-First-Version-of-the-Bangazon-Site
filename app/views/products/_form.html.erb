@@ -40,6 +40,11 @@
     </p>
 
     <p>
+      <%= form.label "Product Category" %><br>
+      <%= form.collection_select(:product_type_id, @product_type, :id, :product_type_name) %>
+    </p>
+
+    <p>
       <%= form.label :local_delivery %><br>
       <%= form.check_box :local_delivery %>
     </p>
