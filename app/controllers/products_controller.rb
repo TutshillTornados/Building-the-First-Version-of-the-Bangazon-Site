@@ -14,12 +14,17 @@ class ProductsController < ApplicationController
     if @product.save
       # redirect_to product_path, notice: 'U DID IT KID'
     else
+      @product_type = ProductType.all
       render :new
     end
   end
 
   def show
-    @product= Product.find(params[:id])
+    @product = Product.find(params[:id])
+  end
+
+  def index
+    @products = Product.all
   end
 
  # THIS WILL BE THE FINAL METHODS

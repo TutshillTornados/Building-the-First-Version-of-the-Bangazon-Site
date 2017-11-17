@@ -5488,3 +5488,653 @@ No template found for ProductsController#create, rendering head :no_content
 Completed 204 No Content in 73ms (ActiveRecord: 3.0ms)
 
 
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 13:21:52 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (1.0ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (29.2ms)
+  Rendered products/new.html.erb within layouts/application (34.1ms)
+  Rendered partials/_navbar.html.erb (3.3ms)
+Completed 200 OK in 138ms (Views: 126.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-17 13:21:57 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+  Rendered partials/_navbar.html.erb (1.0ms)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-17 13:22:03 -0600
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+Completed 200 OK in 44ms (Views: 39.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 13:22:05 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.7ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (8.7ms)
+  Rendered products/new.html.erb within layouts/application (11.0ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 54ms (Views: 49.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 13:22:09 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (1.9ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (10.0ms)
+  Rendered products/new.html.erb within layouts/application (11.9ms)
+  Rendered partials/_navbar.html.erb (0.7ms)
+Completed 200 OK in 54ms (Views: 50.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-17 13:22:13 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+  Rendered partials/_navbar.html.erb (0.8ms)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-11-17 13:22:15 -0600
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (6.2ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 46ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2017-11-17 13:22:30 -0600
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3hmEGIygxxqkuNIlSPfF0+tiE+hp8FSmoFVSpBsildPESrhI7byGI2kXg44POyMGCvSfBu5WFoV5Aff/0OcjSw==", "customer"=>{"email"=>"jack@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'jack@email.com' LIMIT 1[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO `customers` (`email`, `password_digest`, `created_at`, `updated_at`) VALUES ('jack@email.com', '$2a$10$Ua9r57IQ8Z3KxMcfzgBENeWAehzYO.iNenal4ilL4PpZr5fHAcN9i', '2017-11-17 19:22:30', '2017-11-17 19:22:30')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/customers/3/edit
+Completed 302 Found in 73ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/customers/3/edit" for 127.0.0.1 at 2017-11-17 13:22:30 -0600
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (3.1ms)
+  Rendered partials/_navbar.html.erb (0.8ms)
+Completed 200 OK in 44ms (Views: 40.3ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/customers/3" for 127.0.0.1 at 2017-11-17 13:23:15 -0600
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SylUOefX4U6e6I9S+sYj6xGEn1Lk74d/nb1LvSTcl8gU9u06mHK/AJ9EzZwQGChoIOX80MpSo3/Zb5hp+glp/g==", "customer"=>{"first_name"=>"Jack", "last_name"=>"Test Last", "street_address"=>"123 Street Ave", "city"=>"Nashville", "state"=>"Tennessee", "zip"=>"37214", "phone_number"=>"7454228321"}, "commit"=>"Update Customer", "id"=>"3"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'jack@email.com' AND (`customers`.`id` != 3) LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE `customers` SET `first_name` = 'Jack', `last_name` = 'Test Last', `street_address` = '123 Street Ave', `city` = 'Nashville', `state` = 'Tennessee', `zip` = 37214, `phone_number` = '7454228321', `updated_at` = '2017-11-17 19:23:15' WHERE `customers`.`id` = 3[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/customers
+Completed 302 Found in 10ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2017-11-17 13:23:15 -0600
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT `customers`.* FROM `customers`[0m
+  Rendered customers/index.html.erb within layouts/application (1.7ms)
+  Rendered partials/_navbar.html.erb (1.0ms)
+Completed 200 OK in 41ms (Views: 38.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 13:23:19 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.7ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (7.9ms)
+  Rendered products/new.html.erb within layouts/application (10.9ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 96ms (Views: 92.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-17 13:23:41 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"keKrRBKV7q28kWxZx+sL3YtKKUatnUSz+c7W+VF5IrGIVilrDMuXNbm76u/KnVgK3wvSS66BqdGGjYMGFQHKHQ==", "product"=>{"product_name"=>"Jack toy", "product_price"=>"2.99", "product_desc"=>"a toy built by jack", "quantity"=>"3", "product_type_id"=>"4", "local_delivery"=>"0"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`) VALUES (3, 4, 'Jack toy', 2.99, 'a toy built by jack', 3, '2017-11-17 19:23:41', 0, '2017-11-17 19:23:41', '2017-11-17 19:23:41')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+No template found for ProductsController#create, rendering head :no_content
+Completed 204 No Content in 64ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 13:35:45 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (9.4ms)
+  Rendered products/new.html.erb within layouts/application (11.7ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 85ms (Views: 53.0ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-17 13:36:09 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FFVu4XVYodV32xxn35Ty8wGmJyXZooZmp1EUZ0f96zEN4ezOawbYTXLxmtHS4qEkVefcKNq+awTYEkGYA4UDnQ==", "product"=>{"product_name"=>"Testy garden", "product_price"=>"49.22", "product_desc"=>"garden prod", "quantity"=>"49", "product_type_id"=>"3", "local_delivery"=>"0"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`) VALUES (3, 3, 'Testy garden', 49.22, 'garden prod', 49, '2017-11-17 19:36:09', 0, '2017-11-17 19:36:09', '2017-11-17 19:36:09')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+No template found for ProductsController#create, rendering head :no_content
+Completed 204 No Content in 63ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 13:38:48 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (9.9ms)
+  Rendered products/new.html.erb within layouts/application (13.0ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 115ms (Views: 55.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 13:38:50 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (4.0ms)
+  Rendered products/new.html.erb within layouts/application (5.5ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-17 13:39:15 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vOTSmYt1PxowEi97ilZ9DnwMibZw4U+6xE/KDXJOWHnjO2ua9NBhVDG+bbVgiHaNTW3qNF5ca7qAnRnZrJumTw==", "product"=>{"product_name"=>"thest2oe", "product_price"=>"644.22", "product_desc"=>"test desc 20", "quantity"=>"39", "product_type_id"=>"5", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`) VALUES (3, 5, 'thest2oe', 644.22, 'test desc 20', 39, '2017-11-17 19:39:15', 1, '2017-11-17 19:39:15', '2017-11-17 19:39:15')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+No template found for ProductsController#create, rendering head :no_content
+Completed 204 No Content in 84ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 13:58:23 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (1.2ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (14.0ms)
+  Rendered products/new.html.erb within layouts/application (17.1ms)
+  Rendered partials/_navbar.html.erb (1.7ms)
+Completed 200 OK in 116ms (Views: 74.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 13:58:25 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (1.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (10.3ms)
+  Rendered products/new.html.erb within layouts/application (12.6ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 81ms (Views: 76.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-17 13:58:56 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+30vCf4dT8NRkNJwFn7A/JSnDMlgLkL1lYnl+ZAko+niya0m4EM2W1S6VMYbCJMrwOb3xGMyr5fqyrAG1FxLRQ==", "product"=>{"product_name"=>"Paul Wall's Grill", "product_price"=>"20000.00", "product_desc"=>"icey", "quantity"=>"1", "product_type_id"=>"4", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (6.5ms)
+  Rendered products/new.html.erb within layouts/application (8.3ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.collection_select(:product_type_id, @product_type, :id, :product_type_name) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb___1560993442583188250_70323313902640'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb___1560993442583188250_70323313902640'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___1123760759217132747_70323366283960'
+app/controllers/products_controller.rb:17:in `create'
+Started GET "/" for 127.0.0.1 at 2017-11-17 13:59:29 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+  Rendered partials/_navbar.html.erb (2.2ms)
+Completed 200 OK in 53ms (Views: 50.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-11-17 13:59:33 -0600
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (2.5ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 59ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2017-11-17 14:00:02 -0600
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Zx00SJ9NOeuraYdC5Q0GLFkFro3Q2kN5F3AEKtF6Vvrz0iBQ2F13mMC97ZMWNLNUPKaVLDlKy49CWVLYIBfww==", "customer"=>{"email"=>"Nicholas@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'Nicholas@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO `customers` (`email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Nicholas@gmail.com', '$2a$10$2ZlUXvuQeUgeSimQzIbTN.M3G917TTOVfEbm/fR5KRRvunBTbT.km', '2017-11-17 20:00:02', '2017-11-17 20:00:02')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/customers/4/edit
+Completed 302 Found in 89ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/customers/4/edit" for 127.0.0.1 at 2017-11-17 14:00:02 -0600
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 4 LIMIT 1[0m
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (3.0ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/customers/4" for 127.0.0.1 at 2017-11-17 14:01:05 -0600
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"URPAAZo/w5k/5uFNRMvUA8/PadD+xZu1rzGPf85+o08OzHkC5Zqd1z5Ko4OuFd+A/q4KUtB4v7Xr41yrEKtdeQ==", "customer"=>{"first_name"=>"Nicholas", "last_name"=>"Christ", "street_address"=>"1 South Pole Ln", "city"=>"North Pole", "state"=>"USA", "zip"=>"30144", "phone_number"=>"0983433343"}, "commit"=>"Update Customer", "id"=>"4"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'Nicholas@gmail.com' AND (`customers`.`id` != 4) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE `customers` SET `first_name` = 'Nicholas', `last_name` = 'Christ', `street_address` = '1 South Pole Ln', `city` = 'North Pole', `state` = 'USA', `zip` = 30144, `phone_number` = '0983433343', `updated_at` = '2017-11-17 20:01:05' WHERE `customers`.`id` = 4[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/customers
+Completed 302 Found in 9ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2017-11-17 14:01:05 -0600
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT `customers`.* FROM `customers`[0m
+  Rendered customers/index.html.erb within layouts/application (1.5ms)
+  Rendered partials/_navbar.html.erb (2.5ms)
+Completed 200 OK in 55ms (Views: 53.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 14:01:09 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (7.6ms)
+  Rendered products/new.html.erb within layouts/application (9.2ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+Completed 200 OK in 65ms (Views: 36.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-17 14:01:42 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4HYwrWFDc6zQVK56yfEK6c6VHw7ffr+DZJa5KroTZxj5wrKCfx0KNNV+KMzEh1k+mtTkA9xiUuEb1ezV/muPtA==", "product"=>{"product_name"=>"Coal", "product_price"=>"4.33", "product_desc"=>"black, sticky, dusty", "quantity"=>"300", "product_type_id"=>"4", "local_delivery"=>"0"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 4 LIMIT 1[0m
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 4 LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`) VALUES (4, 4, 'Coal', 4.33, 'black, sticky, dusty', 300, '2017-11-17 20:01:42', 0, '2017-11-17 20:01:43', '2017-11-17 20:01:43')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+No template found for ProductsController#create, rendering head :no_content
+Completed 204 No Content in 63ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 14:04:52 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.9ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (8.6ms)
+  Rendered products/new.html.erb within layouts/application (11.0ms)
+  Rendered partials/_navbar.html.erb (1.0ms)
+Completed 200 OK in 67ms (Views: 62.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-17 14:05:18 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nT4ods/iAKz1ceEuNQwUbbbmm7s4eC/v9sWgMgTV+fSEiqpZ0bx5NPBbZ5g4eke64qdgtjtkwo2JhvXNQK0RWA==", "product"=>{"product_name"=>"Too Expensive", "product_price"=>"100000.00", "product_desc"=>"real expensive", "quantity"=>"20", "product_type_id"=>"1", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 4 LIMIT 1[0m
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (4.2ms)
+  Rendered products/new.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.collection_select(:product_type_id, @product_type, :id, :product_type_name) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb___1560993442583188250_70323359730000'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb___1560993442583188250_70323359730000'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___1123760759217132747_70323359751740'
+app/controllers/products_controller.rb:17:in `create'
+Started POST "/products" for 127.0.0.1 at 2017-11-17 14:15:00 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gsTiwCGHDsvlmQfME7OvNg7Q38exjjJdw9IAmaQuuXPdG1vDXiJQheQ1RQL5baS1P7G8RZ8zFl2HANNNevtHRQ==", "product"=>{"product_name"=>"Too Expensive", "product_price"=>"100000.00", "product_desc"=>"real expensive", "quantity"=>"20", "product_type_id"=>"1", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 4 LIMIT 1[0m
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.2ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (5.5ms)
+  Rendered products/new.html.erb within layouts/application (7.4ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 110ms (Views: 57.5ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 14:59:50 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (5.5ms)
+  Rendered partials/_navbar.html.erb (4.4ms)
+Completed 200 OK in 98ms (Views: 92.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 14:59:53 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 82ms (Views: 78.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 14:59:54 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.5ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 51ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 14:59:59 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.5ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 49ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:00:00 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.6ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 49ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:02:09 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.5ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 59ms (Views: 56.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:02:11 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+  Rendered partials/_navbar.html.erb (1.0ms)
+Completed 200 OK in 74ms (Views: 71.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:02:13 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.5ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:02:25 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.5ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:02:27 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.4ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 35ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 15:02:29 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (9.8ms)
+  Rendered products/new.html.erb within layouts/application (12.2ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 68ms (Views: 40.1ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:02:30 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.5ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:05:29 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.6ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 48ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:08:57 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.3ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:08:58 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.5ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+Completed 200 OK in 52ms (Views: 50.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:08:59 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.4ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 38ms (Views: 35.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:08:59 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.4ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 15:09:00 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (5.6ms)
+  Rendered products/new.html.erb within layouts/application (8.5ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 58ms (Views: 54.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:09:01 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.5ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:09:02 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.5ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 44ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:16:41 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     6:     <th>Text</th>
+     7:   </tr>
+     8: 
+     9:   <% @products.each do |product| %>
+    10:     <tr>
+    11:       <td><%= product.product_name %></td>
+    12:     </tr>
+  
+app/views/products/index.html.erb:9:in `_app_views_products_index_html_erb___4527714147061826162_70323357982080'
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:17:21 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (14.5ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 76ms (Views: 67.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:20:57 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (3.5ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 53ms (Views: 50.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:21:13 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (3.7ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 54ms (Views: 51.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:21:23 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (3.3ms)
+  Rendered partials/_navbar.html.erb (1.0ms)
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:21:25 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (3.0ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 48ms (Views: 45.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:28:18 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (3.3ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 56ms (Views: 53.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-11-17 15:28:21 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+Completed 200 OK in 94ms (Views: 89.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:28:24 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (4.5ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 54ms (Views: 49.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/5" for 127.0.0.1 at 2017-11-17 15:28:25 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 5 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.3ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 56ms (Views: 53.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:28:29 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (5.5ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 63ms (Views: 59.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/11" for 127.0.0.1 at 2017-11-17 15:28:31 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 11 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.9ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+Completed 200 OK in 42ms (Views: 39.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-17 15:28:35 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (6.4ms)
+  Rendered partials/_navbar.html.erb (0.8ms)
+Completed 200 OK in 50ms (Views: 47.5ms | ActiveRecord: 0.4ms)
+
+
