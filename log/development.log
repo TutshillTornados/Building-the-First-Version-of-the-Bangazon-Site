@@ -5002,3 +5002,489 @@ No template found for ProductsController#create, rendering head :no_content
 Completed 204 No Content in 67ms (ActiveRecord: 1.5ms)
 
 
+  [1m[35m (1.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Electronics', '2017-11-17 17:26:51', '2017-11-17 17:26:51')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Clothing', '2017-11-17 17:26:51', '2017-11-17 17:26:51')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Garden & Outdoors', '2017-11-17 17:26:51', '2017-11-17 17:26:51')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Toys & Games', '2017-11-17 17:26:51', '2017-11-17 17:26:51')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Home & Kitchen', '2017-11-17 17:26:51', '2017-11-17 17:26:51')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:32:27 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (19.5ms)
+  Rendered products/new.html.erb within layouts/application (23.2ms)
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 6.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.select(:product_type) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb__172211895293068685_70142307406160'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb__172211895293068685_70142307406160'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___3774413499760718244_70142318874880'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:32:44 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (5.1ms)
+  Rendered products/new.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.select(Product.all) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb__172211895293068685_70142307898560'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb__172211895293068685_70142307898560'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___3774413499760718244_70142319469660'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:33:15 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (8.0ms)
+  Rendered products/new.html.erb within layouts/application (10.5ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.select(ProductType.all) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb__172211895293068685_70142308186260'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb__172211895293068685_70142308186260'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___3774413499760718244_70142308264900'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:34:02 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (5.2ms)
+  Rendered products/new.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.select(@product_type) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb__172211895293068685_70142320187100'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb__172211895293068685_70142320187100'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___3774413499760718244_70142320235160'
+Started GET "/products" for 127.0.0.1 at 2017-11-17 11:34:11 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.3ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:34:13 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (7.8ms)
+  Rendered products/new.html.erb within layouts/application (9.5ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.select(@product_type) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb__172211895293068685_70142319177960'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb__172211895293068685_70142319177960'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___3774413499760718244_70142279647840'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:34:54 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (1.8ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` LIMIT 11[0m
+  Rendered products/_form.html.erb (34.4ms)
+  Rendered products/new.html.erb within layouts/application (38.2ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_model' for #<ProductType::ActiveRecord_Relation:0x00007f9690147278>
+Did you mean?  to_xml):
+    1: <%= form_with(model: @product, model: @product_type, local: true, html: {multipart: true }) do |form| %>
+    2:     
+    3:     <% if @product.errors.any? %>
+    4:       <div id="error_explanation">
+  
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb__172211895293068685_70142319506640'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___3774413499760718244_70142319537020'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:38:35 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (34.8ms)
+  Rendered products/new.html.erb within layouts/application (40.5ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.select(@product_type) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb__172211895293068685_70142308199200'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb__172211895293068685_70142308199200'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___3774413499760718244_70142308282260'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:39:12 -0600
+  [1m[35m (2.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (22.9ms)
+  Rendered products/new.html.erb within layouts/application (25.4ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.select(@product_type) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb___1560993442583188250_70323297159260'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb___1560993442583188250_70323297159260'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___1123760759217132747_70323337332800'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:40:09 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (7.8ms)
+  Rendered products/new.html.erb within layouts/application (18.6ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 4..6)):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.collection_select(@product_type) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb___1560993442583188250_70323327622400'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb___1560993442583188250_70323327622400'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___1123760759217132747_70323327643680'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:41:42 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mProductType Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `product_types` LIMIT 1[0m
+  [1m[36mProductType Load (0.2ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` ORDER BY `product_types`.`id` ASC LIMIT 1[0m
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (37.2ms)
+  Rendered products/new.html.erb within layouts/application (39.1ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 302ms (Views: 295.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:42:17 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` LIMIT 11[0m
+  Rendered products/_form.html.erb (9.4ms)
+  Rendered products/new.html.erb within layouts/application (10.8ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `product_type_name' for #<ProductType::ActiveRecord_Relation:0x00007fead8331920>):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.select(@product_type.product_type_name, @product_type) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb___1560993442583188250_70323352718740'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb___1560993442583188250_70323352718740'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___1123760759217132747_70323313148840'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:46:09 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` LIMIT 11[0m
+  Rendered products/_form.html.erb (16.5ms)
+  Rendered products/new.html.erb within layouts/application (18.9ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `product_type_name' for #<ProductType::ActiveRecord_Relation:0x00007feadb72d9b8>):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.collection_select(@product_type.product_type_name, @product_type) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb___1560993442583188250_70323340469200'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb___1560993442583188250_70323340469200'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___1123760759217132747_70323340403700'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:46:29 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` LIMIT 11[0m
+  Rendered products/_form.html.erb (10.2ms)
+  Rendered products/new.html.erb within layouts/application (12.4ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `product_type_name' for #<ProductType::ActiveRecord_Relation:0x00007fead9d7ac50>):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.collection_select(:product_type_name, @product_type.product_type_name, @product_type) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb___1560993442583188250_70323326563700'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb___1560993442583188250_70323326563700'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___1123760759217132747_70323326912740'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:46:37 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (4.2ms)
+  Rendered products/new.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 4..6)):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.collection_select(:product_type_name, @product_type.all, @product_type) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb___1560993442583188250_70323358063780'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb___1560993442583188250_70323358063780'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___1123760759217132747_70323305115860'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:48:07 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (6.6ms)
+  Rendered products/new.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for :product_type_name:Symbol
+Did you mean?  tap):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.collection_select(:product, :product_type_name, @product_type, :id) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb___1560993442583188250_70323352977920'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb___1560993442583188250_70323352977920'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___1123760759217132747_70323353001600'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:48:29 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (5.7ms)
+  Rendered products/new.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for :product_type_name:Symbol
+Did you mean?  tap):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.collection_select(:product, :product_type_name, @product_type.all, :id) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb___1560993442583188250_70323352488680'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb___1560993442583188250_70323352488680'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___1123760759217132747_70323352504540'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:48:52 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (4.3ms)
+  Rendered products/new.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for :product_type_name:Symbol
+Did you mean?  tap):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.collection_select(:nil, :product_type_name, @product_type, :id) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb___1560993442583188250_70323351981140'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb___1560993442583188250_70323351981140'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___1123760759217132747_70323352013700'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:49:11 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (4.2ms)
+  Rendered products/new.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 4..6)):
+    41: 
+    42:     <p>
+    43:       <%= form.label "Product Category" %><br>
+    44:       <%= form.collection_select(:product_type_name, @product_type, :id) %>
+    45:     </p>
+    46: 
+    47:     <p>
+  
+app/views/products/_form.html.erb:44:in `block in _app_views_products__form_html_erb___1560993442583188250_70323339698780'
+app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb___1560993442583188250_70323339698780'
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___1123760759217132747_70323339769400'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:50:10 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (1.3ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (7.4ms)
+  Rendered products/new.html.erb within layouts/application (9.0ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 61ms (Views: 57.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-17 11:51:13 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4NcFMFGeDl+lJCVq6k1W4HYl1IhMXY9GjWibUqR5vna/CLwzLjtQEaSIZ6QAk11jR0S3CmLgq0bJukiGeqxAQA==", "product"=>{"product_name"=>"test 15", "product_price"=>"5.88", "product_desc"=>"test desc 14", "quantity"=>"3", "product_type_name"=>"3", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+Unpermitted parameter: :product_type_name
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (1.7ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`) VALUES (2, 'test 15', 5.88, 'test desc 14', 3, '2017-11-17 17:51:13', 1, '2017-11-17 17:51:13', '2017-11-17 17:51:13')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+No template found for ProductsController#create, rendering head :no_content
+Completed 204 No Content in 102ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:52:13 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.2ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (42.5ms)
+  Rendered products/new.html.erb within layouts/application (47.7ms)
+  Rendered partials/_navbar.html.erb (0.8ms)
+Completed 200 OK in 102ms (Views: 98.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:52:15 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (1.7ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (8.3ms)
+  Rendered products/new.html.erb within layouts/application (10.6ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 73ms (Views: 68.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-17 11:52:35 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jAuyirbbysyzDxn3Eo4naZRunSNPfP8qRqXSenpzOFKVvzClqIWzVLYln0Ef+HS+wC9mLkxgEkg55oeFPgvQ/g==", "product"=>{"product_name"=>"test 16", "product_price"=>"4.99", "product_desc"=>"test desc 15", "quantity"=>"3", "product_type_id"=>"4", "local_delivery"=>"0"}, "commit"=>"Create Product"}
+Unpermitted parameter: :product_type_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (1.7ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`) VALUES (2, 'test 16', 4.99, 'test desc 15', 3, '2017-11-17 17:52:35', 0, '2017-11-17 17:52:35', '2017-11-17 17:52:35')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+No template found for ProductsController#create, rendering head :no_content
+Completed 204 No Content in 59ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:53:22 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (10.6ms)
+  Rendered products/new.html.erb within layouts/application (12.7ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 86ms (Views: 56.3ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-17 11:53:24 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (8.4ms)
+  Rendered products/new.html.erb within layouts/application (9.9ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 50ms (Views: 47.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-17 11:53:41 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jO/ZuYJyO3EQsuLfig2lUA7DcfxV/5GmQw80ZbpdICaVW1uWnCxC6RWYZGmHe/aHWoKK8VbjfMQ8TGGa/iXIig==", "product"=>{"product_name"=>"test 16", "product_price"=>"5.78", "product_desc"=>"test desc 16", "quantity"=>"3", "product_type_id"=>"2", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`) VALUES (2, 2, 'test 16', 5.78, 'test desc 16', 3, '2017-11-17 17:53:41', 1, '2017-11-17 17:53:41', '2017-11-17 17:53:41')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+No template found for ProductsController#create, rendering head :no_content
+Completed 204 No Content in 73ms (ActiveRecord: 3.0ms)
+
+

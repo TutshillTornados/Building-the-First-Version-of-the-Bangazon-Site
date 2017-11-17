@@ -48,8 +48,7 @@ class ProductsController < ApplicationController
 
   private
     def product_params
-      # add :product_type to permit()
-      params.require(:product).permit(:product_name, :product_price, :product_desc, :quantity, :local_delivery)
+      params.require(:product).permit(:product_name, :product_price, :product_desc, :quantity, :local_delivery, :product_type_id)
     end
 
     def image_params
