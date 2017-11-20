@@ -77,11 +77,7 @@ class ProductsController < ApplicationController
   
   private
     def product_params
-<<<<<<< HEAD
-      params.require(:product).permit(:product_name, :product_price, :product_desc, :quantity, :local_delivery, :active, :product_type_id)
-=======
-      params.require(:product).permit(:search, :product_name, :product_price, :product_desc, :quantity, :local_delivery, :product_type_id)
->>>>>>> master
+      params.require(:product).permit(:search, :product_name, :product_price, :product_desc, :quantity, :local_delivery, :active, :product_type_id)
     end
     def image_params
       params.require(:product).permit(:image_file)
