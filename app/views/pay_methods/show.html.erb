@@ -1,0 +1,8 @@
+<h1>Show Me Payments</h1>
+<table>
+    <% @pay_method.each do |payment| %>
+    <tr>
+        <td><%= payment.payment_type %></td>
+    </tr>
+    <% end %>
+</table>
