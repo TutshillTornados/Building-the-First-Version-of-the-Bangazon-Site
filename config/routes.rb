@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :customers
   resources :sessions
   resources :products
-  resources :payment_types
   resources :orders
+  resources :pay_methods
 
   get 'signup', to: 'customers#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'

@@ -2,7 +2,7 @@ class CreatePayMethods < ActiveRecord::Migration[5.1]
   def change
     create_table :pay_methods do |t|
       t.string :payment_type
-      t.integer :account_number
+      t.integer :account_number, null: false, limit: 8, unique: true
       t.date :expiration_date
       t.references :customer, foreign_key: true
       t.timestamps

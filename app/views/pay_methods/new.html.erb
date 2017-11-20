@@ -1,0 +1,19 @@
+<%= form_with model: @pay_method, local: true do |f| %>
+    <p>
+        <%= f.label :payment_type %><br>
+        <%= f.select :payment_type, options_for_select(['Visa', 'MasterCard', 'American Express', 'Bank']), :required => true, :include_blank => "Select Payment Type" %>  
+        <br>
+    </p>
+
+    <p>
+       <%= f.label :account_number %><br>
+       <%= f.text_field :account_number %><br>
+    </p>
+    <p>
+        <%= f.label :expiration_date %><br>
+        <%= f.date_select :expiration_date,  { :discard_day => true} %>
+        <br>
+    </p>
+    <div class="actions"><%= f.submit "Add Payment" %></div>
+
+<% end %>
