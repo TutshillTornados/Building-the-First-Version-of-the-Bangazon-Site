@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.customer_id = session[:user_id]
     @product.product_added = DateTime.now()
+    @product.active = 1 
     # @product.product_type_id = @product_type
     if @product.save
       redirect_to product_path(@product)
@@ -21,13 +22,33 @@ class ProductsController < ApplicationController
     end
   end
 
-  def show
+  def destroy
     @product = Product.find(params[:id])
+    @product.active = 0
+    if @product.save
+      redirect_to 'sellerproduct'
+    else 
+      redirect_to 'sellerproduct'
+    end
   end
+
+  def show
+      @product = Product.find(params[:id]) 
+  end
+
+  def showSellerProduct
+      @products = Product.where(:customer_id => session[:user_id], active: true)
+      render 'sellerproducts'
+  end
+
+  # def index
+  #   @products = Product.where(active: true)
+  # end
 
   def index
     @products = Product.search(product_params[:search])
   end
+
 
   
  # THIS WILL BE THE FINAL METHODS
@@ -56,7 +77,7 @@ class ProductsController < ApplicationController
   
   private
     def product_params
-      params.require(:product).permit(:search, :product_name, :product_price, :product_desc, :quantity, :local_delivery, :product_type_id)
+      params.require(:product).permit(:search, :product_name, :product_price, :product_desc, :quantity, :local_delivery, :active, :product_type_id)
     end
     def image_params
       params.require(:product).permit(:image_file)
