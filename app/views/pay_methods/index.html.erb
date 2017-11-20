@@ -1,1 +1,15 @@
 <h1>Payments</h1>
+<table>
+    <% @pay_methods.each do |paymethod| %>
+        <tr>
+            <td><%=paymethod.id%></td>
+            <td><%=paymethod.payment_type%></td>
+            <td><%=paymethod.expiration_date%></td>
+            <td><%= link_to 'Delete Payment', pay_methods_path(paymethod),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %></td>
+        </tr>
+    <% end %>
+</table>
+
+<button><%= link_to "Add Payment", new_pay_method_path %></button>
