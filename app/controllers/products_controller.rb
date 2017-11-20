@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
     @product_type = ProductType.all
   end
 
+
   def create
     @product = Product.new(product_params)
     @product.customer_id = session[:user_id]
@@ -25,11 +26,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
-  end
-
-  def index
-    @products = Product.all
+    @products = Product.search(product_params[:search])
   end
 
   
@@ -56,12 +53,11 @@ class ProductsController < ApplicationController
   #     end
   # end
   # ^^ FINAL METHODS
-
+  
   private
     def product_params
-      params.require(:product).permit(:product_name, :product_price, :product_desc, :quantity, :local_delivery, :product_type_id)
+      params.require(:product).permit(:search, :product_name, :product_price, :product_desc, :quantity, :local_delivery, :product_type_id)
     end
-
     def image_params
       params.require(:product).permit(:image_file)
     end
