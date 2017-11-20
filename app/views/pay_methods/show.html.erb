@@ -1,8 +1,23 @@
-<h1>Show Me Payments</h1>
-<table>
-    <% @pay_method.each do |payment| %>
-    <tr>
-        <td><%= payment.payment_type %></td>
-    </tr>
-    <% end %>
-</table>
+<h1>Pay Method Deets</h1>
+
+<p>
+  <strong>
+    Type:
+  </strong>
+  <%= @pay_method.payment_type %>
+</p>
+<p>
+  <strong>
+    Account Number:
+  </strong>
+  <%= @pay_method.account_number %>
+</p>
+<p>
+  <strong>
+    Expiration Date:
+  </strong>
+  <%= @pay_method.expiration_date %>
+</p>
+<%= link_to 'Edit', edit_pay_method_path(@pay_method) %> |
+<%= link_to 'Back', pay_methods_path %> |
+<%= link_to 'Delete', pay_method_path %>
