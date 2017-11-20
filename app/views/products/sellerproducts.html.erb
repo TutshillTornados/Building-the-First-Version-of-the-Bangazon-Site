@@ -1,0 +1,19 @@
+<h1>Listing products</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.product_name %></td>
+      <td><%= product.product_desc %></td>
+      <td><%= product.product_price %></td>
+      <td><%= product.quantity %></td>
+      <td><%= product.local_delivery %></td>
+      <td><%= link_to 'Delete product', product_path(product), method: :delete %></td>
+    </tr>
+  <% end %>
+</table>
