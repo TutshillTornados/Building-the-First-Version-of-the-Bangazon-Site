@@ -7,3 +7,8 @@
 <!-- CHANGE HOW SUBMIT BUTTON WORKS -->
 
 form.submit >> image goes to Image.new
+
+
+<%= button_to 'Purchase', {:controller => "transactions", :action => "create", :seller_id => comic.user_id, :buyer_id=> current_user.id, :comic_id => comic.id} , {:method=>:post} %>
+
+, :customer_id => session[:user_id], :product_id => product.id}

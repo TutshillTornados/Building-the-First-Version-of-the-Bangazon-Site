@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   get 'signup', to: 'customers#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
-  # get 'customerForm', to: 'customers#show', as: 'customerForm'
+
+  post 'products/add_to_cart', to: 'products#add_to_cart', as: 'add_to_cart'
+  
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

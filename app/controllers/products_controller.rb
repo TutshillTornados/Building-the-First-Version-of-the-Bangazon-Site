@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
     # session[:customer_id] ???
     @product = Product.new
     @image = Image.new
+
     @product_type = ProductType.all
   end
 
@@ -28,10 +29,12 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
-  def index
-    @products = Product.all
+  def add_to_cart
+    @order = Order.find_or_create_by(customer_id: session[:user_id], pay_method_id: nil)
+    @orderline = OrderLine.new(purchase_params)
+    @orderline.order_id = @order.id
+    puts @order.errors.full_messages
   end
-
   
  # THIS WILL BE THE FINAL METHODS
   # def create
@@ -64,5 +67,9 @@ class ProductsController < ApplicationController
 
     def image_params
       params.require(:product).permit(:image_file)
+    end
+
+    def purchase_params
+      params.require(:product).permit(:product_id)
     end
 end

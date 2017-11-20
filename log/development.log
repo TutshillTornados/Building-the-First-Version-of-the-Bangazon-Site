@@ -14515,3 +14515,1539 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 72ms (Views: 66.2ms | ActiveRecord: 4.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-11-20 10:28:19 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 5 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 44ms (Views: 40.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pay_methods/new" for 127.0.0.1 at 2017-11-20 10:28:29 -0600
+Processing by PayMethodsController#new as HTML
+  Rendering pay_methods/new.html.erb within layouts/application
+  Rendered pay_methods/new.html.erb within layouts/application (4.1ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 61ms (Views: 46.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/pay_methods" for 127.0.0.1 at 2017-11-20 10:29:02 -0600
+Processing by PayMethodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ocI6ZVQEbXkTVJnOLAZ849YjZnYv15Pl65IydotM/JJbZ1OZTjr5fPW9glREfmE37/g2WW9j16JCuQgkm7ophA==", "pay_method"=>{"payment_type"=>"American Express", "account_number"=>"1234256789342334", "expiration_date(1i)"=>"2020", "expiration_date(2i)"=>"7", "expiration_date(3i)"=>"1"}, "commit"=>"Add Payment"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `pay_methods` (`payment_type`, `account_number`, `expiration_date`, `customer_id`, `created_at`, `updated_at`) VALUES ('American Express', '1234256789342334', '2020-07-01', 5, '2017-11-20 16:29:02', '2017-11-20 16:29:02')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pay_methods
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-20 10:29:02 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.2ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods`[0m
+  Rendered pay_methods/index.html.erb within layouts/application (1.6ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 10:46:15 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (26.6ms)
+  Rendered partials/_navbar.html.erb (3.4ms)
+Completed 200 OK in 111ms (Views: 95.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 11:10:45 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (35.3ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `add_product_to_active_order' for OrdersController:Class):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= link_to 'Buy', OrdersController.add_product_to_active_order %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb___2714511591577463591_70364727690500'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb___2714511591577463591_70364727690500'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 11:19:17 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (29.4ms)
+  Rendered partials/_navbar.html.erb (3.1ms)
+Completed 200 OK in 115ms (Views: 100.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 11:19:19 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (8.8ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 67ms (Views: 64.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 11:35:02 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (254.0ms)
+Completed 500 Internal Server Error in 271ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `button' for #<#<Class:0x00007ffe211c69a8>:0x00007ffe203b2d80>
+Did you mean?  button_to):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button 'Buy', add_product_to_active_order %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb___2714511591577463591_70364719586300'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb___2714511591577463591_70364719586300'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 11:35:23 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/index.html.erb:20: syntax error, unexpected ',', expecting ')'
+buffer.append=( button ('Buy', add_product_to_active_order )
+                              ^
+/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/index.html.erb:25: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/products/index.html.erb:20: syntax error, unexpected ',', expecting ')'
+app/views/products/index.html.erb:25: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/products" for 127.0.0.1 at 2017-11-20 11:40:44 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (3.8ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (27.0ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 3.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"add_product_to_active_order", :controller=>"OrdersController", :id=>5}):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:controller => "OrdersController", :action => "add_product_to_active_order", :id => session[:user_id]} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb___2714511591577463591_70364719648600'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb___2714511591577463591_70364719648600'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 11:42:22 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (12.8ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"add_product_to_active_order", :controller=>"OrdersController", :id=>5}):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:controller => "OrdersController", :action => "add_product_to_active_order", :id => session[:user_id]} , {:method=>:add_the_thing} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb___2714511591577463591_70364681924740'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb___2714511591577463591_70364681924740'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 11:42:26 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"add_product_to_active_order", :controller=>"OrdersController", :id=>5}):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:controller => "OrdersController", :action => "add_product_to_active_order", :id => session[:user_id]} , {:method=>:add_the_thing} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb___2714511591577463591_70364680603520'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb___2714511591577463591_70364680603520'
+Started GET "/" for 127.0.0.1 at 2017-11-20 11:42:31 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 5 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (16.3ms)
+  Rendered partials/_navbar.html.erb (2.0ms)
+Completed 200 OK in 70ms (Views: 66.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 11:42:35 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"add_product_to_active_order", :controller=>"OrdersController", :id=>5}):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:controller => "OrdersController", :action => "add_product_to_active_order", :id => session[:user_id]} , {:method=>:add_the_thing} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb___2714511591577463591_70364708240240'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb___2714511591577463591_70364708240240'
+  [1m[35m (3.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT GET_LOCK(1096848878559930510, 0)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK(1096848878559930510)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/products" for 127.0.0.1 at 2017-11-20 11:51:24 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (47.3ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"add_product_to_active_order", :controller=>"OrdersController", :id=>5}):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:controller => "OrdersController", :action => "add_product_to_active_order", :id => session[:user_id]} , {:method=>:post} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb___2714511591577463591_70364705102760'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb___2714511591577463591_70364705102760'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 11:53:25 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"add_product_to_active_order", :controller=>"OrdersController", :id=>5}):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:controller => "OrdersController", :action => :add_product_to_active_order, :id => session[:user_id]} , {:method=>:post} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb___2714511591577463591_70364705185480'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb___2714511591577463591_70364705185480'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 11:53:40 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"add_product_to_active_order", :controller=>"OrdersController", :id=>5}):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:controller => "OrdersController", :action => :add_product_to_active_order, :id => session[:user_id]} , {:method=>:post} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb___2714511591577463591_70364706922740'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb___2714511591577463591_70364706922740'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 11:53:54 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (283.4ms)
+Completed 500 Internal Server Error in 291ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `add_product_to_active_order' for #<#<Class:0x00007ffe1e8104b0>:0x00007ffe1ed5e868>):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:controller => "OrdersController", :action => add_product_to_active_order, :id => session[:user_id]} , {:method=>:post} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb___2714511591577463591_70364707889640'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb___2714511591577463591_70364707889640'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 11:54:40 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (249.0ms)
+Completed 500 Internal Server Error in 269ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `add_product_to_active_order' for #<#<Class:0x00007ffe1e8104b0>:0x00007ffe1c4412a0>):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:controller => OrdersController, :action => add_product_to_active_order, :id => session[:user_id]} , {:method=>:post} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb___2714511591577463591_70364686323680'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb___2714511591577463591_70364686323680'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 11:54:58 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (11.8ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `add_product_to_active_order' for OrdersController:Class):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:controller => OrdersController, :action => OrdersController.add_product_to_active_order, :id => session[:user_id]} , {:method=>:post} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb___2714511591577463591_70364686307220'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb___2714511591577463591_70364686307220'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 12:01:11 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/index.html.erb:20: syntax error, unexpected tSTRING_BEG, expecting ')'
+button_to 'Purchase',:action "" );@output_buffer.safe_append
+                              ^):
+  
+app/views/products/index.html.erb:20: syntax error, unexpected tSTRING_BEG, expecting ')'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 12:01:31 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/index.html.erb:20: syntax error, unexpected tSTRING_BEG, expecting ')'
+button_to 'Purchase',:action "tempMethod" );@output_buffer.s
+                              ^):
+  
+app/views/products/index.html.erb:20: syntax error, unexpected tSTRING_BEG, expecting ')'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 12:01:45 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (27.3ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 5.9ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"tempMethod", :controller=>"products"}):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase',:action => "tempMethod" %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb___2714511591577463591_70364705099980'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb___2714511591577463591_70364705099980'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 12:08:45 -0600
+Processing by ProductsController#index as HTML
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (14.7ms)
+  Rendered partials/_navbar.html.erb (2.0ms)
+Completed 200 OK in 87ms (Views: 65.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 12:08:48 -0600
+Processing by ProductsController#index as HTML
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (6.1ms)
+  Rendered partials/_navbar.html.erb (1.0ms)
+Completed 200 OK in 55ms (Views: 49.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 12:09:01 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 5 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (18.1ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 67ms (Views: 62.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 12:09:03 -0600
+Processing by ProductsController#index as HTML
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (5.9ms)
+  Rendered partials/_navbar.html.erb (2.5ms)
+Completed 200 OK in 107ms (Views: 100.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 12:09:05 -0600
+Processing by ProductsController#index as HTML
+  [1m[36mOrder Load (2.6ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` LIMIT 1[0m
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[31mROLLBACK[0m
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (12.0ms)
+  Rendered partials/_navbar.html.erb (1.0ms)
+Completed 200 OK in 118ms (Views: 103.9ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 12:09:06 -0600
+Processing by ProductsController#index as HTML
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (4.9ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+Completed 200 OK in 46ms (Views: 41.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 12:09:06 -0600
+Processing by ProductsController#index as HTML
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[31mROLLBACK[0m
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (7.8ms)
+  Rendered partials/_navbar.html.erb (3.5ms)
+Completed 200 OK in 52ms (Views: 42.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 12:10:21 -0600
+  [1m[35m (1.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#index as HTML
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (16.7ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+Completed 200 OK in 346ms (Views: 311.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 12:14:27 -0600
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Started GET "/products" for 127.0.0.1 at 2017-11-20 12:14:37 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (32.0ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"tempMethod", :controller=>"products"}):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', :action => "tempMethod" %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb__1355179618663200500_70321931932460'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb__1355179618663200500_70321931932460'
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (11.5ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"tempMethod", :controller=>"products"}):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', :action => "tempMethod" %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb__1355179618663200500_70321931932460'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb__1355179618663200500_70321931932460'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 12:16:36 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (10.9ms)
+  Rendered partials/_navbar.html.erb (2.2ms)
+Completed 200 OK in 60ms (Views: 53.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 14:34:44 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (30.5ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::ProductController):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:controller => ProductController, :action => add_to_cart, :customer_id => session[:user_id], :product_id => product.id} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb__1355179618663200500_70321944580040'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb__1355179618663200500_70321944580040'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 14:35:18 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (3.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (261.6ms)
+Completed 500 Internal Server Error in 268ms (ActiveRecord: 3.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `add_to_cart' for #<#<Class:0x00007fea350d81b8>:0x00007fea350993c8>
+Did you mean?  add_to_cart_url):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:action => add_to_cart, :customer_id => session[:user_id], :product_id => product.id} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb__1355179618663200500_70321944450840'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb__1355179618663200500_70321944450840'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 14:36:23 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"/add_to_cart", :controller=>"products", :customer_id=>5, :product_id=>1}):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:action => add_to_cart_path, :customer_id => session[:user_id], :product_id => product.id} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb__1355179618663200500_70321908023820'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb__1355179618663200500_70321908023820'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 14:37:58 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (16.2ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"add_to_cart_path", :controller=>"products", :customer_id=>5, :product_id=>1}):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:action => 'add_to_cart_path', :customer_id => session[:user_id], :product_id => product.id} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb__1355179618663200500_70321895296100'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb__1355179618663200500_70321895296100'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 14:38:42 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/index.html.erb:20: syntax error, unexpected ')', expecting '}'
+action => 'add_to_cart_path' );@output_buffer.safe_append='<
+                              ^
+/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/index.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+               ^
+/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/index.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/index.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/products/index.html.erb:20: syntax error, unexpected ')', expecting '}'
+app/views/products/index.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+app/views/products/index.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/products/index.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 14:38:54 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"add_to_cart_path", :controller=>"products"}):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:action => 'add_to_cart_path'} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb__1355179618663200500_70321932335960'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb__1355179618663200500_70321932335960'
+Started GET "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 14:39:47 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"add_to_cart"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 16ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=add_to_cart):
+  
+app/controllers/products_controller.rb:25:in `show'
+Started GET "/add_to_cart" for 127.0.0.1 at 2017-11-20 14:40:02 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/add_to_cart"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/add_to_cart" for 127.0.0.1 at 2017-11-20 14:40:58 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/add_to_cart"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/add_to_cart" for 127.0.0.1 at 2017-11-20 14:41:03 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/add_to_cart"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 14:41:43 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"add_to_cart_path", :controller=>"products"}):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:action => 'add_to_cart_path'}, {:method => :post} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb__1355179618663200500_70321945579560'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb__1355179618663200500_70321945579560'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 14:42:21 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"/add_to_cart", :controller=>"products"}):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:action => '/add_to_cart'}, {:method => :post} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb__1355179618663200500_70321899622980'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb__1355179618663200500_70321899622980'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 14:42:58 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"/add_to_cart", :controller=>"products"}):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:action => '/add_to_cart'}, {:method => :post} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb__1355179618663200500_70321933587340'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb__1355179618663200500_70321933587340'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 14:43:24 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"products/add_to_cart", :controller=>"products"}):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', {:action => 'products/add_to_cart'}, {:method => :post} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb__1355179618663200500_70321946404740'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb__1355179618663200500_70321946404740'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 14:44:43 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (9.4ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 61ms (Views: 58.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 14:44:48 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"mB7xqsHtxEna+VXqNrSpyWQwWd5ThPDdwMs7gaGjTZPHwUipvkiaB9tVFyTcaqJKVVE6XH051N2EGehVf3azpQ=="}
+  [1m[36mOrder Load (2.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 6.1ms)
+
+
+  
+ActionView::MissingTemplate (Missing partial products/_product with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/views"
+):
+  
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started GET "/products/" for 127.0.0.1 at 2017-11-20 14:45:24 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (14.8ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 62ms (Views: 55.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 14:45:26 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"XQEpeqgExwxY3cz8ALRhRnpj09QvycTk4rI5QcjnNrUC3pB516GZQllxjjLqamrFSwKwVgF04OSmYOqVFjLIgw=="}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:     <th>Local Delivery</th>
+    10:   </tr>
+    11: 
+    12:   <% @products.each do |product| %>
+    13:     <tr>
+    14:       <td><%= product.product_name %></td>
+    15:       <td><%= product.product_desc %></td>
+  
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb__1355179618663200500_70321951392420'
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 14:46:55 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"XQEpeqgExwxY3cz8ALRhRnpj09QvycTk4rI5QcjnNrUC3pB516GZQllxjjLqamrFSwKwVgF04OSmYOqVFjLIgw=="}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+No template found for ProductsController#add_to_cart, rendering head :no_content
+Completed 204 No Content in 59ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2017-11-20 14:49:21 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (26.4ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 4, expected 0..3)):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.local_delivery %></td>
+    19:       <td><%= link_to 'Deets', product_path(product) %> | </td>
+    20:       <td><%= button_to 'Purchase', add_to_cart_path,{:customer_id => session[:user_id], :product_id => product.id},{:method => :post} %></td>
+    21:     </tr>
+    22:   <% end %>
+    23: </table>
+  
+app/views/products/index.html.erb:20:in `block in _app_views_products_index_html_erb__1355179618663200500_70321909828080'
+app/views/products/index.html.erb:12:in `_app_views_products_index_html_erb__1355179618663200500_70321909828080'
+Started GET "/products/" for 127.0.0.1 at 2017-11-20 14:49:33 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/index.html.erb:20: syntax error, unexpected ',', expecting =>
+'Purchase', {add_to_cart_path, :customer_id => session[:user
+                              ^
+/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/index.html.erb:20: syntax error, unexpected =>, expecting &. or :: or '[' or '.'
+sion[:user_id], :product_id => product.id},{:method => :post
+                              ^
+/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/index.html.erb:20: syntax error, unexpected '}', expecting ')'
+d], :product_id => product.id},{:method => :post} );@output_
+                              ^):
+  
+app/views/products/index.html.erb:20: syntax error, unexpected ',', expecting =>
+app/views/products/index.html.erb:20: syntax error, unexpected =>, expecting &. or :: or '[' or '.'
+app/views/products/index.html.erb:20: syntax error, unexpected '}', expecting ')'
+Started GET "/products/" for 127.0.0.1 at 2017-11-20 14:49:54 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (7.7ms)
+  Rendered partials/_navbar.html.erb (2.9ms)
+Completed 200 OK in 59ms (Views: 56.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2017-11-20 14:50:09 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (7.4ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 57ms (Views: 55.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 14:50:12 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"166vD2sahBkp8MzM18xDIlb3qmVTBod+29SVqW/CYUaIcRYMFL/aVyhcjgI9EkihZ5bJ5327o36fBkZ9sRefcA=="}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+No template found for ProductsController#add_to_cart, rendering head :no_content
+Completed 204 No Content in 64ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2017-11-20 14:51:11 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (18.2ms)
+  Rendered partials/_navbar.html.erb (2.0ms)
+Completed 200 OK in 75ms (Views: 65.8ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 14:51:12 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"kq0TNNU3tSHQb5K2gPbN1JraoVcczMiTncwc8ZT01krNcqo3qpLrb9HD0HhqKMZXq7vC1TJx7JPZHs8lSiEofA=="}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+No template found for ProductsController#add_to_cart, rendering head :no_content
+Completed 204 No Content in 56ms (ActiveRecord: 0.5ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 14:51:26 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"kq0TNNU3tSHQb5K2gPbN1JraoVcczMiTncwc8ZT01krNcqo3qpLrb9HD0HhqKMZXq7vC1TJx7JPZHs8lSiEofA=="}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+No template found for ProductsController#add_to_cart, rendering head :no_content
+Completed 204 No Content in 48ms (ActiveRecord: 0.5ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 14:51:43 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"kq0TNNU3tSHQb5K2gPbN1JraoVcczMiTncwc8ZT01krNcqo3qpLrb9HD0HhqKMZXq7vC1TJx7JPZHs8lSiEofA=="}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+No template found for ProductsController#add_to_cart, rendering head :no_content
+Completed 204 No Content in 50ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2017-11-20 14:52:21 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (20.5ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+Completed 200 OK in 63ms (Views: 53.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 14:52:23 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"P/EDwLrSSDS20kHw+Rl5bXb9ZhmVFe+dn7lcDtsRijxgLrrDxXcWerd+Az4Tx3LuR5wFm7uoy53ba4/aBcR0Cg=="}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+No template found for ProductsController#add_to_cart, rendering head :no_content
+Completed 204 No Content in 57ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2017-11-20 14:52:52 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (24.9ms)
+  Rendered partials/_navbar.html.erb (2.4ms)
+Completed 200 OK in 98ms (Views: 88.3ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 14:52:54 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"6ucCYtw1jcdQCR/pCzzSAC+tVzg6sdDOMsTzm3UuLte1OLtho5DTiVGlXSfh4tmDHsw0uhQM9M52FiBPq/vQ4Q=="}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+No template found for ProductsController#add_to_cart, rendering head :no_content
+Completed 204 No Content in 74ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 14:53:18 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 5 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (27.9ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 66ms (Views: 58.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 14:53:26 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (12.4ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 61ms (Views: 57.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 14:53:30 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"6iMdalGpnARvqAcX1C8K8nQ7CruZyRIu4bV4sYjLzPpIFLwb+fxfIJv2YD/s5YxFWi3vaGYjQQAmpqcMXVLtMw=="}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+No template found for ProductsController#add_to_cart, rendering head :no_content
+Completed 204 No Content in 49ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 14:56:09 -0600
+  
+SyntaxError (/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:33: syntax error, unexpected ':', expecting ')'
+ind_or_create_by(:customer_id: session[:user_id], :pay_metho
+                              ^
+/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:33: syntax error, unexpected ':', expecting &. or :: or '[' or '.'
+ion[:user_id], :pay_method_id: null)
+                              ^):
+  
+app/controllers/products_controller.rb:33: syntax error, unexpected ':', expecting ')'
+app/controllers/products_controller.rb:33: syntax error, unexpected ':', expecting &. or :: or '[' or '.'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 14:56:27 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (17.9ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 74ms (Views: 65.9ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 14:56:29 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"N6n670o9NRxobAc7f2REU4ptQJ07SivZj9GJYzV4Kj1odkPsNZhrUmnARfWVuk/QuwwjHxX3D9nLA1q3663UCw=="}
+Completed 500 Internal Server Error in 191ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `null' for #<ProductsController:0x00007fea30d349e8>):
+  
+app/controllers/products_controller.rb:33:in `add_to_cart'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 14:56:48 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (16.3ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 77ms (Views: 68.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 14:56:50 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (8.5ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 55ms (Views: 53.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 14:56:53 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"5zMXolR/nzgW9fOhEs/WVkNUzJVHJ2czZlImFGa4wli47K6hK9rBdhdZsW/4Ed3VcjWvF2maQzMigPXAuG08bg=="}
+  [1m[36mOrder Load (3.7ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO `orders` (`customer_id`, `created_at`, `updated_at`) VALUES (5, '2017-11-20 20:56:53', '2017-11-20 20:56:53')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+No template found for ProductsController#add_to_cart, rendering head :no_content
+Completed 204 No Content in 80ms (ActiveRecord: 8.2ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 14:57:30 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"5zMXolR/nzgW9fOhEs/WVkNUzJVHJ2czZlImFGa4wli47K6hK9rBdhdZsW/4Ed3VcjWvF2maQzMigPXAuG08bg=="}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+No template found for ProductsController#add_to_cart, rendering head :no_content
+Completed 204 No Content in 46ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 15:01:51 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/index.html.erb:20: syntax error, unexpected ',', expecting =>
+Purchase', { add_to_cart_path, product_id: => product.id } )
+                              ^
+/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/index.html.erb:20: syntax error, unexpected '}', expecting ')'
+h, product_id: => product.id } );@output_buffer.safe_append=
+                              ^
+/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/index.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+               ^
+/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/index.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/ericpalmieri/workspace/bangazon-t-tornados/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/index.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/products/index.html.erb:20: syntax error, unexpected ',', expecting =>
+app/views/products/index.html.erb:20: syntax error, unexpected '}', expecting ')'
+app/views/products/index.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+app/views/products/index.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/products/index.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 15:07:31 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (44.3ms)
+  Rendered partials/_navbar.html.erb (3.4ms)
+Completed 200 OK in 197ms (Views: 187.0ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:07:35 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"3L3Iuo60xEjcCCImuQKSUKBnkTAkpUJoPieCaXd32LCDYnG58RGaBt2kYOhT3JnTkQbysgoYZmh69VG9qaImhg==", "product_id"=>"3"}
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+No template found for ProductsController#add_to_cart, rendering head :no_content
+Completed 204 No Content in 64ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 15:11:45 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (28.0ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 99ms (Views: 87.8ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:11:47 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"QGH08zQB6gbnpt1zML1XCO1amc8QmJwuUQmUYpFN+W4fvk3wS6S0SOYKn73aY1yL3Dv6TT4luC4V20e2T5gHWA==", "product_id"=>"7"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Unpermitted parameter: :authenticity_token
+No template found for ProductsController#add_to_cart, rendering head :no_content
+Completed 204 No Content in 84ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 15:13:04 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (18.3ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 76ms (Views: 67.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:13:07 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"hOBV1J+ajQJup55Ks8NeBS7iA9IEcXFcXwVCM5G1z+3bP+zX4D/TTG8L3IRZHVWGH4NgUCrMVVwb15HnT2Ax2w==", "product_id"=>"14"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Unpermitted parameter: :authenticity_token
+No template found for ProductsController#add_to_cart, rendering head :no_content
+Completed 204 No Content in 68ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 15:14:15 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (25.1ms)
+  Rendered partials/_navbar.html.erb (2.1ms)
+Completed 200 OK in 91ms (Views: 80.2ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:14:17 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"q23G9ChUc3i2MXF7pekaB5wnXucgdZWG9MxbuobPCML0sn/3V/EtNredM7VPNxGErUY9ZQ7IsYawHohuWBr29A==", "product_id"=>"3"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 15:14:51 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (36.2ms)
+  Rendered partials/_navbar.html.erb (1.7ms)
+Completed 200 OK in 88ms (Views: 78.4ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:14:54 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"jy3KmOgN0Ydj2f2b720FYX54dUvKqrQ8IWxUDHjmX9nQ8nObl6iPyWJ1v1UFsw7iTxkWyeQXkDxlvofYpjOh7w==", "product_id"=>"10"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 186ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (undefined local variable or method `product_id' for #<ProductsController:0x00007fea3715b610>
+Did you mean?  product_url):
+  
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:29:35 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"jy3KmOgN0Ydj2f2b720FYX54dUvKqrQ8IWxUDHjmX9nQ8nObl6iPyWJ1v1UFsw7iTxkWyeQXkDxlvofYpjOh7w==", "product_id"=>"10"}
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 247ms (ActiveRecord: 5.8ms)
+
+
+  
+NameError (undefined local variable or method `product' for #<ProductsController:0x00007fea35aaa6f0>
+Did you mean?  product_id):
+  
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 15:32:15 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (21.2ms)
+  Rendered partials/_navbar.html.erb (2.2ms)
+Completed 200 OK in 97ms (Views: 87.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:32:17 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"1Iz1IRMQ4ZVWaiH9DuvyGy2FTtlf64tf8riECcncMoCLU0wibLW/21fGYzPkNfmYHOQtW3FWr1+2alfdFwnMtg==", "product_id"=>"2"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Unpermitted parameter: :authenticity_token
+No template found for ProductsController#add_to_cart, rendering head :no_content
+Completed 204 No Content in 85ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 15:33:07 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (19.3ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 71ms (Views: 61.7ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:33:09 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"ZCUVGan7CdvdiJ6GvakxVz8anBFPcgygUZyJZMeNotg7+qwa1l5Xldwk3EhXdzrUDnv/k2HPKKAVTlqwGVhc7g==", "product_id"=>"3"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'authenticity_token' for OrderLine.):
+  
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:38:49 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"ZCUVGan7CdvdiJ6GvakxVz8anBFPcgygUZyJZMeNotg7+qwa1l5Xldwk3EhXdzrUDnv/k2HPKKAVTlqwGVhc7g==", "product_id"=>"3"}
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 7.3ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/products_controller.rb:73:in `purchase_params'
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:39:11 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"ZCUVGan7CdvdiJ6GvakxVz8anBFPcgygUZyJZMeNotg7+qwa1l5Xldwk3EhXdzrUDnv/k2HPKKAVTlqwGVhc7g==", "product_id"=>"3"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/products_controller.rb:73:in `purchase_params'
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:39:26 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"ZCUVGan7CdvdiJ6GvakxVz8anBFPcgygUZyJZMeNotg7+qwa1l5Xldwk3EhXdzrUDnv/k2HPKKAVTlqwGVhc7g==", "product_id"=>"3"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/products_controller.rb:73:in `purchase_params'
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:41:11 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"ZCUVGan7CdvdiJ6GvakxVz8anBFPcgygUZyJZMeNotg7+qwa1l5Xldwk3EhXdzrUDnv/k2HPKKAVTlqwGVhc7g==", "product_id"=>"3"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/products_controller.rb:73:in `purchase_params'
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:41:24 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"ZCUVGan7CdvdiJ6GvakxVz8anBFPcgygUZyJZMeNotg7+qwa1l5Xldwk3EhXdzrUDnv/k2HPKKAVTlqwGVhc7g==", "product_id"=>"3"}
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.8ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/products_controller.rb:73:in `purchase_params'
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started GET "/products/" for 127.0.0.1 at 2017-11-20 15:41:27 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (18.0ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 74ms (Views: 67.1ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:41:28 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"ml3OaUCcBzg2vLIWB2FyK8AdTN4bNQHiUhDy4oL5ynXFgndqPzlZdjcQ8Njtv3mo8XwvXDWIJeIWwiE2XCw0Qw==", "product_id"=>"7"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/products_controller.rb:73:in `purchase_params'
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:41:56 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"ml3OaUCcBzg2vLIWB2FyK8AdTN4bNQHiUhDy4oL5ynXFgndqPzlZdjcQ8Njtv3mo8XwvXDWIJeIWwiE2XCw0Qw==", "product_id"=>"7"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/products_controller.rb:73:in `purchase_params'
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 15:42:03 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (15.3ms)
+  Rendered partials/_navbar.html.erb (2.6ms)
+Completed 200 OK in 68ms (Views: 61.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:42:04 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"CkpD1InrOFLMm3jsK6W2Kcl+Hf/6Xtq+rlze2/oe9blVlfrX9k5mHM03OiLBe72q+B9+fdTj/r7qjg0PJMsLjw==", "product_id"=>"1"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/products_controller.rb:73:in `purchase_params'
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:42:33 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"CkpD1InrOFLMm3jsK6W2Kcl+Hf/6Xtq+rlze2/oe9blVlfrX9k5mHM03OiLBe72q+B9+fdTj/r7qjg0PJMsLjw==", "product_id"=>"1"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 400 Bad Request in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: orderline):
+  
+app/controllers/products_controller.rb:73:in `purchase_params'
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 15:42:44 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (18.4ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+Completed 200 OK in 73ms (Views: 65.8ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:42:45 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"QWHVSzS6eiK97kYboAt4ay96VKmMMH+oMj5zDzq/XWsevmxISx8kbLxCBNVK1XPoHhs3K6KNW6h27KDb5GqjXQ==", "product_id"=>"2"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: orderline):
+  
+app/controllers/products_controller.rb:73:in `purchase_params'
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:42:54 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"QWHVSzS6eiK97kYboAt4ay96VKmMMH+oMj5zDzq/XWsevmxISx8kbLxCBNVK1XPoHhs3K6KNW6h27KDb5GqjXQ==", "product_id"=>"2"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 400 Bad Request in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: order_line):
+  
+app/controllers/products_controller.rb:73:in `purchase_params'
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:43:04 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"QWHVSzS6eiK97kYboAt4ay96VKmMMH+oMj5zDzq/XWsevmxISx8kbLxCBNVK1XPoHhs3K6KNW6h27KDb5GqjXQ==", "product_id"=>"2"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 400 Bad Request in 16ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: order_lines):
+  
+app/controllers/products_controller.rb:73:in `purchase_params'
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:43:15 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"QWHVSzS6eiK97kYboAt4ay96VKmMMH+oMj5zDzq/XWsevmxISx8kbLxCBNVK1XPoHhs3K6KNW6h27KDb5GqjXQ==", "product_id"=>"2"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 400 Bad Request in 16ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: OrderLine):
+  
+app/controllers/products_controller.rb:73:in `purchase_params'
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:43:35 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"QWHVSzS6eiK97kYboAt4ay96VKmMMH+oMj5zDzq/XWsevmxISx8kbLxCBNVK1XPoHhs3K6KNW6h27KDb5GqjXQ==", "product_id"=>"2"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 400 Bad Request in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: product):
+  
+app/controllers/products_controller.rb:73:in `purchase_params'
+app/controllers/products_controller.rb:34:in `add_to_cart'
+Started GET "/products" for 127.0.0.1 at 2017-11-20 15:43:40 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (17.5ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 73ms (Views: 66.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-20 15:43:42 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"/jVSC0Z5cYVFlwLC7Ns/ytbY9kRanlYZu7UR/T/lAyKh6usIOdwvy0Q7QAwGBTRJ57mVxnQjchn/Z8Ip4TD9FA==", "product_id"=>"8"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 5 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: product):
+  
+app/controllers/products_controller.rb:73:in `purchase_params'
+app/controllers/products_controller.rb:34:in `add_to_cart'
