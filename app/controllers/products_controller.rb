@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
     @product_type = ProductType.all
   end
 
+
   def create
     @product = Product.new(product_params)
     @product.customer_id = session[:user_id]
@@ -25,11 +26,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
-  end
-
-  def index
-    @products = Product.all
+    @products = Product.search(params[:search])
   end
 
   
