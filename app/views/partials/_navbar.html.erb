@@ -25,6 +25,12 @@
       </li>
     </ul>
   </div>
-</nav>
-
+    
 <% end %>
+      <%= form_tag products_path, method: :get do %>
+      <%= text_field :product, :search, placeholder: "Search", class: "form-control" %>
+      <%= submit_tag 'Search', name: nil %>
+      <% end %>
+  
+    
+</nav>
