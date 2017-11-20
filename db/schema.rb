@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114201349) do
+ActiveRecord::Schema.define(version: 20171117174232) do
 
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20171114201349) do
 
   create_table "pay_methods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "payment_type"
-    t.integer "account_number"
+    t.string "account_number"
     t.date "expiration_date"
     t.bigint "customer_id"
     t.datetime "created_at", null: false

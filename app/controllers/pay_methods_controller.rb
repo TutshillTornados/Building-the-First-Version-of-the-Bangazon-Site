@@ -9,13 +9,15 @@ class PayMethodsController < ApplicationController
 
     def create
         @pay_method = PayMethod.new(pay_method_params)
+        @pay_method.customer_id = session[:user_id]
         if @pay_method.save
             redirect_to @pay_method
         else
             render 'new'
         end
     end
-
+    def show
+    end
     def destroy
         @pay_method = PayMethod.find(params[:id])
         @pay_method.destroy
