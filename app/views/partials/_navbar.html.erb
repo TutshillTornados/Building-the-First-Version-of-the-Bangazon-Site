@@ -1,6 +1,6 @@
 <%= form_with model: @customer, local: true do |form| %>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">M.A.D.E Industries</a>
+  <a class="navbar-brand" href="#"><%= link_to 'M.A.D.E Industries', products_path %></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -18,9 +18,9 @@
           User Options
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Add a Payment</a>
-          <a class="dropdown-item" href="#">Show my Order</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#"><%= link_to 'Add Pay Method', new_pay_method_path %></a>
+          <a class="dropdown-item" href="#"><%= link_to 'View Cart', orders_path %></a>
+          <a class="dropdown-item" href="#"><%= link_to 'My Pay Methods', pay_methods_path %></a>
         </div>
       </li>
     </ul>
