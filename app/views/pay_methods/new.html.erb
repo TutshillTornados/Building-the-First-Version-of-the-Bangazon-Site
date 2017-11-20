@@ -1,4 +1,17 @@
 <%= form_with model: @pay_method, local: true do |f| %>
+    <% if @pay_method.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@pay_method.errors.count, "error") %> prohibited
+                this payment from being saved:
+            </h2>
+            <ul>
+                <% @pay_method.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
     <p>
         <%= f.label :payment_type %><br>
         <%= f.select :payment_type, options_for_select(['Visa', 'MasterCard', 'American Express', 'Bank']), :required => true, :include_blank => "Select Payment Type" %>  

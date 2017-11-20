@@ -28,7 +28,7 @@ class CustomersController < ApplicationController
     def update
         @customer = Customer.find(params[:id])
         if @customer.update(customer_info_params)
-            redirect_to customers_path
+            redirect_to products_path
             # flash.now.alert = 'You did it kid'
         else
             render 'edit'

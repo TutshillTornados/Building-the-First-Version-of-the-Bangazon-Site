@@ -14,4 +14,12 @@ class Product < ApplicationRecord
     def check_bad_words
         @bad_words = File.read('app/assets/textfiles/badwords.txt').split 
     end
+
+    def self.search(search)
+        if search
+            self.where("product_name like ?", "%#{search}%")
+          else
+            self.all
+          end
+      end
 end
