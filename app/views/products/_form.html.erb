@@ -1,0 +1,56 @@
+<%= form_with(model: @product, local: true, html: {multipart: true }) do |form| %>
+    
+    <% if @product.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@product.errors.count, "error") %> prohibited
+          this article from being saved:
+        </h2>
+        <ul>
+          <% @product.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <p>
+    <%= form.label :image %><br>
+    <%= form.file_field :image %>
+    </p>
+
+    <p>
+      <%= form.label :product_name %><br>
+      <%= form.text_field :product_name %>
+    </p>
+
+    <p>
+      <%= form.label :product_price %><br>
+      <%= form.text_field :product_price %>
+    </p>
+
+    <p>
+      <%= form.label :product_desc %><br>
+      <%= form.text_field :product_desc %>
+    </p>
+
+    <p>
+      <%= form.label :quantity %><br>
+      <%= form.text_field :quantity %>
+    </p>
+
+    <p>
+      <%= form.label "Product Category" %><br>
+      <%= form.collection_select(:product_type_id, @product_type, :id, :product_type_name) %>
+    </p>
+
+    <p>
+      <%= form.label :local_delivery %><br>
+      <%= form.check_box :local_delivery %>
+    </p>
+
+    <p>
+      <%= form.submit %>
+    </p>
+    
+<% end %> 

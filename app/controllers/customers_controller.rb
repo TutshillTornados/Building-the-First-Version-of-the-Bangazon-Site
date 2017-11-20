@@ -3,15 +3,15 @@ class CustomersController < ApplicationController
         @customer = Customer.new
     end
     
-      def create
+    def create
         @customer = Customer.new(customer_params)
         if @customer.save
-          session[:user_id] = @customer.id
-          redirect_to edit_customer_path(@customer.id), notice: 'Thank you for signing up!'
+            session[:user_id] = @customer.id
+            redirect_to edit_customer_path(@customer.id), notice: 'Thank you for signing up!'
         else
-          render :new
+            render :new
         end
-      end
+    end
     
     def index
         @customers = Customer.all
@@ -20,6 +20,7 @@ class CustomersController < ApplicationController
     def show
         @customer = Customer.find(params[:id])
     end
+
     def edit
         @customer = Customer.find(params[:id])
     end
@@ -43,4 +44,6 @@ class CustomersController < ApplicationController
       def customer_info_params
         params.require(:customer).permit(:first_name, :last_name, :street_address, :city, :state, :zip, :phone_number)
       end
+
+      
 end

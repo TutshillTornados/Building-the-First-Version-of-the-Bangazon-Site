@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :customers
   resources :sessions
+  resources :products
+  resources :orders
   resources :pay_methods
 
   get 'signup', to: 'customers#new', as: 'signup'

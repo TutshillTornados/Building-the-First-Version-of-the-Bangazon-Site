@@ -10,7 +10,14 @@ Things you may want to cover:
 * System dependencies
 
 * Configuration
-
+### Setup MySql
+1. download mysql instructuction
+1. set up mysql acct
+1. set up database
+### Install PaperClip Support
+1. `brew install imagemagick`
+### Install Gems
+1. `bundle install`
 * Database creation
 
 * Database initialization
