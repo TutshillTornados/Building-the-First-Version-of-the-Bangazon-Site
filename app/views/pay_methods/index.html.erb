@@ -1,15 +1,17 @@
-<h1>Payments</h1>
+<h1>Pay Methods</h1>
 <table>
-    <% @pay_methods.each do |paymethod| %>
-        <tr>
-            <td><%=paymethod.id%></td>
-            <td><%=paymethod.payment_type%></td>
-            <td><%=paymethod.expiration_date%></td>
-            <td><%= link_to 'Delete Payment', pay_methods_path(paymethod),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %></td>
-        </tr>
-    <% end %>
-</table>
+  <tr>
+    <th>Type</th>
+    <th>Account No.</th>
+    <th>Expiration Date</th>
+  </tr>
 
-<button><%= link_to "Add Payment", new_pay_method_path %></button>
+  <% @pay_methods.each do |payment| %>
+    <tr>
+      <td><%= payment.payment_type %></td>
+      <td><%= payment.account_number %></td>
+      <td><%= payment.expiration_date %></td>
+      <td><%= link_to 'Deets', pay_method_path(payment) %></td>
+    </tr>
+  <% end %>
+</table>

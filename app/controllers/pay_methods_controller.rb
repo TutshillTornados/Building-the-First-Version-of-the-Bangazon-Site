@@ -17,6 +17,10 @@ class PayMethodsController < ApplicationController
         end
     end
 
+    def show
+        @pay_method = PayMethod.find(params[:id])
+    end
+
     def destroy
         @pay_method = PayMethods.find(params[:id])
         @pay_method.destroy

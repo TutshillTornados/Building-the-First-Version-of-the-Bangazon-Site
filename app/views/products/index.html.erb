@@ -4,6 +4,9 @@
   <tr>
     <th>Title</th>
     <th>Text</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Local Delivery</th>
   </tr>
 
   <% @products.each do |product| %>
@@ -13,7 +16,8 @@
       <td><%= product.product_price %></td>
       <td><%= product.quantity %></td>
       <td><%= product.local_delivery %></td>
-      <td><%= link_to 'Deets', product_path(product) %></td>
+      <td><%= link_to 'Deets', product_path(product) %> | </td>
+      <td><%= link_to 'Buy', product_path(product) %></td>
     </tr>
   <% end %>
 </table>
