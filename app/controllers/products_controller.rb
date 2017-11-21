@@ -4,7 +4,6 @@ class ProductsController < ApplicationController
     @product = Product.new
     @photo = Photo.new
     @product_type = ProductType.all
-
   end
 
   #Creates a product to save to database based on params in private, adding the user_id, time it was added, and an active status, it adds an image then redirects user to product view.
@@ -26,6 +25,18 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    if @product.update(product_params)
+        redirect_to product_path(@product)
+    else
+        render 'edit'
+    end
+  end
+
   #sets active column in product table to 0, making it unviewable to the user, redirects to the myproduct view. 
   def destroy
     @product = Product.find(params[:id])
@@ -39,7 +50,7 @@ class ProductsController < ApplicationController
 
   #shows specific product based on the id
   def show
-      @product = Product.find(params[:id]) 
+      @product = Product.find(params[:id])
   end
 
   #shows the users products in view based on matching customer_id and user_id and if the product is active.
@@ -49,9 +60,9 @@ class ProductsController < ApplicationController
   end
 
   #Creates the search option that fires on the product parameters. 
-  def index
-    @products = if params[:product]
-      Product.where("product_name like ?", "%#{params[:product]}%")
+  def index 
+    if params[:product]
+    @products = Product.where("product_name like ? AND active = true", "%#{params[:product]}%")
     else 
       @products = Product.all
     end
