@@ -13,8 +13,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.customer_id = session[:user_id]
     @product.product_added = DateTime.now()
-    # @product.active = 1 
-    # @product.product_type_id = @product_type
+    @product.active = 1 
     if @product.save
       if params[:images]
         params[:images].each { |image|
@@ -52,7 +51,11 @@ class ProductsController < ApplicationController
   # end
 
   def index
-    @products = Product.all
+    @products = if params[:product]
+      Product.where("product_name like ?", "%#{params[:product]}%")
+    else 
+      @products = Product.all
+    end
   end
 
   def categories
