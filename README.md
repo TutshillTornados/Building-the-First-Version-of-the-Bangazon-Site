@@ -102,7 +102,7 @@ exit
 run commands in console
 ``` 
 bundle install
-rails generate simple_form:install
+rails g simple_form:install --bootstrap
 rails db:migrate
 rails db:seed
 rails s
