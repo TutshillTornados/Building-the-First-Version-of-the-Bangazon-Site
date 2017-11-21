@@ -1,17 +1,17 @@
 <h1>Pay Methods</h1>
 <table>
   <tr>
+    <th>Number</th> 
     <th>Type</th>
-    <th>Account No.</th>
     <th>Expiration Date</th>
   </tr>
 
   <% @pay_methods.each do |payment| %>
     <tr>
+      <td><%= payment.id %></td>
       <td><%= payment.payment_type %></td>
-      <td><%= payment.account_number %></td>
       <td><%= payment.expiration_date %></td>
-      <td><%= link_to 'Deets', pay_method_path(payment) %></td>
-    </tr>
+      <td><%= link_to 'Delete Payment', pay_method_path(payment), method: :delete %>
+      </tr>
   <% end %>
 </table>

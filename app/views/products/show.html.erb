@@ -1,8 +1,14 @@
+
 <p>
   <strong>
     Product:
   </strong>
   <%= @product.product_name %>
+</p>
+<p>
+<% @product.photos.each do |photo| %>
+<%= link_to image_tag(photo.image.url(:medium)), photo.image.url, data: { gallery: ''} %>
+<% end %>
 </p>
 <p>
   <strong>
@@ -28,7 +34,10 @@
   </strong>
   <%= @product.local_delivery %>
 </p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %> |
+<% if @product.customer_id = session[:user_id] %>
+  <%= link_to 'Edit', edit_product_path(@product) %>
+<% end %>
+<%= link_to 'Back', products_path %>
+<% if logged_in? %>
 <%= link_to 'Buy', products_path %>
+<% end %>

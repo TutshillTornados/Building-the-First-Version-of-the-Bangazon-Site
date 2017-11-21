@@ -1,6 +1,7 @@
-<%= form_with(model: @product, local: true, html: {multipart: true }) do |form| %>
+<%= simple_form_for(@product, local: true, html: {multipart: true }) do |form| %>
     
     <% if @product.errors.any? %>
+    
       <div id="error_explanation">
         <h2>
           <%= pluralize(@product.errors.count, "error") %> prohibited
@@ -15,8 +16,9 @@
     <% end %>
     
     <p>
-    <%= form.label :image %><br>
-    <%= form.file_field :image %>
+      <%= form.input "Choose photos" do %>
+      <%= file_field_tag "images[]", type: :file, multiple: true %>
+    <% end %>
     </p>
 
     <p>

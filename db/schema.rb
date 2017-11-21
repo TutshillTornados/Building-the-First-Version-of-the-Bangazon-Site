@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171117174232) do
+ActiveRecord::Schema.define(version: 20171121115015) do
 
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email"
@@ -24,12 +24,10 @@ ActiveRecord::Schema.define(version: 20171117174232) do
     t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "image_file"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "product_file_name"
+    t.string "product_content_type"
+    t.integer "product_file_size"
+    t.datetime "product_updated_at"
   end
 
   create_table "order_lines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -57,7 +55,21 @@ ActiveRecord::Schema.define(version: 20171117174232) do
     t.bigint "customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "active_record"
     t.index ["customer_id"], name: "index_pay_methods_on_customer_id"
+  end
+
+  create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "image_file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "imageable_type"
+    t.bigint "imageable_id"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["imageable_type", "imageable_id"], name: "index_photos_on_imageable_type_and_imageable_id"
   end
 
   create_table "product_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -78,6 +90,7 @@ ActiveRecord::Schema.define(version: 20171117174232) do
     t.boolean "local_delivery"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "active"
     t.index ["customer_id"], name: "index_products_on_customer_id"
     t.index ["image_id"], name: "index_products_on_image_id"
     t.index ["product_type_id"], name: "index_products_on_product_type_id"
@@ -89,6 +102,6 @@ ActiveRecord::Schema.define(version: 20171117174232) do
   add_foreign_key "orders", "pay_methods"
   add_foreign_key "pay_methods", "customers"
   add_foreign_key "products", "customers"
-  add_foreign_key "products", "images"
+  add_foreign_key "products", "photos", column: "image_id"
   add_foreign_key "products", "product_types"
 end
