@@ -27,7 +27,8 @@ config/database.yml
 .powenv
 .powrc
 /public/system/photos
-
+config/initializers/*
+config/locales/*
 #----------------------------------------------------------------------------
 # MISC
 #----------------------------------------------------------------------------
