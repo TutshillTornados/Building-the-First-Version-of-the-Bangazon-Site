@@ -7,7 +7,6 @@ class ProductsController < ApplicationController
 
   end
 
-
   def create
     @product = Product.new(product_params)
     @product.customer_id = session[:user_id]
@@ -49,7 +48,8 @@ class ProductsController < ApplicationController
     @order = Order.find_or_create_by(customer_id: session[:user_id], pay_method_id: nil)
     @orderline = OrderLine.new(purchase_params)
     @orderline.order_id = @order.id
-    puts @order.errors.full_messages
+    @orderline.save
+    puts @orderline.errors.full_messages
   end
   
   # def index
@@ -100,9 +100,8 @@ class ProductsController < ApplicationController
     def image_params
       params.require(:product).permit(:image_file)
     end
-
     def purchase_params
-      params.require(:product).permit(:product_id)
+      params.permit(:product_id)
     end
     def product_params
       params.require(:product).permit(:search, :product_name, :product_price, :product_desc, :quantity, :local_delivery, :active, :product_type_id)

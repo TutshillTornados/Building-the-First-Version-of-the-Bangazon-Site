@@ -18,7 +18,7 @@
       <td><%= product.local_delivery %></td>
       <td><%= link_to 'Details', product_path(product) %></td>
       <% if logged_in? %>
-      <td><%= button_to 'Purchase', add_to_cart_path, params: {'product_id' => product.id}  %></td>
+        <td><%= button_to 'Purchase', add_to_cart_path, params: {'product_id' => product.id}  %></td>
       <% end %>
     </tr>
   <% end %>

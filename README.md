@@ -47,10 +47,6 @@ You will be prompted to answer a series of questions (recommended answers: n, y,
 Error: Can’t connect to local MySQL server through socket ‘/tmp/mysql.sock’ (2)
 ```
 Stop the mySQL Sever and restart it using the following commands:
-STOP
-```
-mysqld stop
-```
 START
 ```
 mysql.server start
@@ -58,7 +54,7 @@ mysql.server start
 ## Setup Database
 In consle, run the following code to setup the database
 ```
-mysql -uroot -p
+mysql -u root -p
 ```
 Enter the password you created when you setup mysql
 
