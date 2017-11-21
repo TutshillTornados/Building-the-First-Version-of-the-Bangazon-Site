@@ -3509,8 +3509,156 @@ Completed 200 OK in 51ms (Views: 44.3ms | ActiveRecord: 1.9ms)
 
 
 <<<<<<< HEAD
+>>>>>>> 7ac2cea14addb055084cc60450430b8e2d94b2b9
+<<<<<<< HEAD
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK(1096848878559930510, 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddActiveToProductsTable (20171121090554)
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE `products` ADD `active` tinyint(1)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK(1096848878559930510)[0m
+Started GET "/home/index" for 127.0.0.1 at 2017-11-21 09:56:14 -0600
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.4) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+=======
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK(1096848878559930510, 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateCustomers (20171114195736)
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE `customers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `password_digest` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `street_address` varchar(255), `city` varchar(255), `state` varchar(255), `zip` int, `phone_number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114195736')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateImages (20171114195934)
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE `images` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `image_file` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114195934')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProductTypes (20171114200052)
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE `product_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_type_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114200052')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePayMethods (20171114200524)
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE `pay_methods` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `payment_type` varchar(255), `account_number` bigint NOT NULL, `expiration_date` date, `customer_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_pay_methods_on_customer_id`  (`customer_id`), CONSTRAINT `fk_rails_c8fc227bd8`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114200524')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProducts (20171114200852)
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `product_type_id` bigint, `image_id` bigint, `product_name` varchar(255), `product_price` float, `product_desc` text, `quantity` int, `product_added` datetime, `local_delivery` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_products_on_customer_id`  (`customer_id`),  INDEX `index_products_on_product_type_id`  (`product_type_id`),  INDEX `index_products_on_image_id`  (`image_id`), CONSTRAINT `fk_rails_252452a41b`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+, CONSTRAINT `fk_rails_8464b8e5d7`
+FOREIGN KEY (`product_type_id`)
+  REFERENCES `product_types` (`id`)
+, CONSTRAINT `fk_rails_0c57d8fc34`
+FOREIGN KEY (`image_id`)
+  REFERENCES `images` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114200852')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrders (20171114201311)
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `pay_method_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_orders_on_customer_id`  (`customer_id`),  INDEX `index_orders_on_pay_method_id`  (`pay_method_id`), CONSTRAINT `fk_rails_3dad120da9`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+, CONSTRAINT `fk_rails_9d6a437740`
+FOREIGN KEY (`pay_method_id`)
+  REFERENCES `pay_methods` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114201311')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrderLines (20171114201349)
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE `order_lines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_id` bigint, `order_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_order_lines_on_product_id`  (`product_id`),  INDEX `index_order_lines_on_order_id`  (`order_id`), CONSTRAINT `fk_rails_83e960fa54`
+FOREIGN KEY (`product_id`)
+  REFERENCES `products` (`id`)
+, CONSTRAINT `fk_rails_e6c763ee60`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114201349')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttachmentProductToCustomers (20171116160134)
+  [1m[35m (15.3ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_file_name` varchar(255)[0m
+  [1m[35m (12.5ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_content_type` varchar(255)[0m
+  [1m[35m (16.7ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_file_size` int[0m
+  [1m[35m (12.8ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_updated_at` datetime[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171116160134')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeAccountNumber (20171117174232)
+  [1m[35m (19.9ms)[0m  [1m[35mALTER TABLE `pay_methods` CHANGE `account_number` `account_number` varchar(255) NOT NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171117174232')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to PayMethods (20171120174332)
+  [1m[35m (14.6ms)[0m  [1m[35mALTER TABLE `pay_methods` ADD `active_record` tinyint(1)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171120174332')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddActiveToProductsTable (20171121090554)
+  [1m[35m (16.5ms)[0m  [1m[35mALTER TABLE `products` ADD `active` tinyint(1)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171121090554')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddToImageTable (20171121100736)
+  [1m[35m (13.4ms)[0m  [1m[35mALTER TABLE `images` ADD `imageable_type` varchar(255)[0m
+  [1m[35m (13.9ms)[0m  [1m[35mALTER TABLE `images` ADD `imageable_id` bigint[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE  INDEX `index_images_on_imageable_type_and_imageable_id`  ON `images` (`imageable_type`, `imageable_id`) [0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171121100736')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToImage (20171121113841)
+  [1m[35m (14.5ms)[0m  [1m[35mALTER TABLE `images` ADD `image_file_name` varchar(255)[0m
+  [1m[35m (16.3ms)[0m  [1m[35mALTER TABLE `images` ADD `image_content_type` varchar(255)[0m
+  [1m[35m (14.4ms)[0m  [1m[35mALTER TABLE `images` ADD `image_file_size` int[0m
+  [1m[35m (12.8ms)[0m  [1m[35mALTER TABLE `images` ADD `image_updated_at` datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171121113841')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameImagesTableToPhotos (20171121115015)
+  [1m[35m (2.5ms)[0m  [1m[35mRENAME TABLE `images` TO `photos`[0m
+  [1m[35m (9.6ms)[0m  [1m[35mALTER TABLE `photos` RENAME INDEX `index_images_on_imageable_type_and_imageable_id` TO `index_photos_on_imageable_type_and_imageable_id`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171121115015')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-11-21 16:28:30', '2017-11-21 16:28:30')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK(1096848878559930510)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-11-21 10:28:44 -0600
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2017-11-20 10:28:19 -0600
+>>>>>>> 759c9d4b15d7edba4fccb8021307841993519cc2
 Processing by HomeController#index as HTML
   Rendering home/index.html.erb within layouts/application
   [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 5 LIMIT 1[0m
@@ -3629,6 +3777,113 @@ buffer.append=( button ('Buy', add_product_to_active_order )
           ensure
                 ^):
   
+<<<<<<< HEAD
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+>>>>>>> 0bfd34e1c043a792fe5e2fa28a44b2f1e8dcedbe
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/" for 127.0.0.1 at 2017-11-21 09:56:20 -0600
+  [1m[35m (6.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.4) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+<<<<<<< HEAD
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK(1096848878559930510, 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateCustomers (20171114195736)
+  [1m[35m (25.5ms)[0m  [1m[35mCREATE TABLE `customers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `password_digest` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `street_address` varchar(255), `city` varchar(255), `state` varchar(255), `zip` int, `phone_number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114195736')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateImages (20171114195934)
+  [1m[35m (29.2ms)[0m  [1m[35mCREATE TABLE `images` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `image_file` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114195934')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProductTypes (20171114200052)
+  [1m[35m (30.6ms)[0m  [1m[35mCREATE TABLE `product_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_type_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114200052')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePayMethods (20171114200524)
+  [1m[35m (30.3ms)[0m  [1m[35mCREATE TABLE `pay_methods` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `payment_type` varchar(255), `account_number` bigint NOT NULL, `expiration_date` date, `customer_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_pay_methods_on_customer_id`  (`customer_id`), CONSTRAINT `fk_rails_c8fc227bd8`
+=======
+=======
+Started GET "/home/index" for 127.0.0.1 at 2017-11-21 10:31:47 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 29 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+=======
 app/views/products/index.html.erb:20: syntax error, unexpected ',', expecting ')'
 app/views/products/index.html.erb:25: syntax error, unexpected keyword_ensure, expecting end-of-input
 Started GET "/products" for 127.0.0.1 at 2017-11-20 11:40:44 -0600
@@ -3637,6 +3892,7 @@ Processing by ProductsController#index as HTML
   [1m[36mProduct Load (3.8ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
   Rendered products/index.html.erb within layouts/application (27.0ms)
 Completed 500 Internal Server Error in 46ms (ActiveRecord: 3.8ms)
+>>>>>>> 759c9d4b15d7edba4fccb8021307841993519cc2
 
 
   
@@ -9240,3 +9496,248 @@ Completed 200 OK in 71ms (Views: 64.3ms | ActiveRecord: 2.2ms)
 >>>>>>> 5b075d9427e8c6108d95497e682691e3f5fca380
 
 
+>>>>>>> 0bfd34e1c043a792fe5e2fa28a44b2f1e8dcedbe
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (21.8ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK(1096848878559930510, 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateCustomers (20171114195736)
+  [1m[35m (24.4ms)[0m  [1m[35mCREATE TABLE `customers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `password_digest` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `street_address` varchar(255), `city` varchar(255), `state` varchar(255), `zip` int, `phone_number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114195736')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateImages (20171114195934)
+  [1m[35m (18.3ms)[0m  [1m[35mCREATE TABLE `images` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `image_file` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114195934')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProductTypes (20171114200052)
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE TABLE `product_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_type_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114200052')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePayMethods (20171114200524)
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE `pay_methods` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `payment_type` varchar(255), `account_number` bigint NOT NULL, `expiration_date` date, `customer_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_pay_methods_on_customer_id`  (`customer_id`), CONSTRAINT `fk_rails_c8fc227bd8`
+>>>>>>> master
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114200524')[0m
+<<<<<<< HEAD
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProducts (20171114200852)
+  [1m[35m (28.9ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `product_type_id` bigint, `image_id` bigint, `product_name` varchar(255), `product_price` float, `product_desc` text, `quantity` int, `product_added` datetime, `local_delivery` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_products_on_customer_id`  (`customer_id`),  INDEX `index_products_on_product_type_id`  (`product_type_id`),  INDEX `index_products_on_image_id`  (`image_id`), CONSTRAINT `fk_rails_252452a41b`
+=======
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProducts (20171114200852)
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `product_type_id` bigint, `image_id` bigint, `product_name` varchar(255), `product_price` float, `product_desc` text, `quantity` int, `product_added` datetime, `local_delivery` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_products_on_customer_id`  (`customer_id`),  INDEX `index_products_on_product_type_id`  (`product_type_id`),  INDEX `index_products_on_image_id`  (`image_id`), CONSTRAINT `fk_rails_252452a41b`
+>>>>>>> master
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+, CONSTRAINT `fk_rails_8464b8e5d7`
+FOREIGN KEY (`product_type_id`)
+  REFERENCES `product_types` (`id`)
+, CONSTRAINT `fk_rails_0c57d8fc34`
+FOREIGN KEY (`image_id`)
+  REFERENCES `images` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114200852')[0m
+<<<<<<< HEAD
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrders (20171114201311)
+  [1m[35m (26.7ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `pay_method_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_orders_on_customer_id`  (`customer_id`),  INDEX `index_orders_on_pay_method_id`  (`pay_method_id`), CONSTRAINT `fk_rails_3dad120da9`
+=======
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrders (20171114201311)
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `pay_method_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_orders_on_customer_id`  (`customer_id`),  INDEX `index_orders_on_pay_method_id`  (`pay_method_id`), CONSTRAINT `fk_rails_3dad120da9`
+>>>>>>> master
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+, CONSTRAINT `fk_rails_9d6a437740`
+FOREIGN KEY (`pay_method_id`)
+  REFERENCES `pay_methods` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114201311')[0m
+<<<<<<< HEAD
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrderLines (20171114201349)
+  [1m[35m (32.9ms)[0m  [1m[35mCREATE TABLE `order_lines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_id` bigint, `order_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_order_lines_on_product_id`  (`product_id`),  INDEX `index_order_lines_on_order_id`  (`order_id`), CONSTRAINT `fk_rails_83e960fa54`
+=======
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrderLines (20171114201349)
+  [1m[35m (14.7ms)[0m  [1m[35mCREATE TABLE `order_lines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_id` bigint, `order_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_order_lines_on_product_id`  (`product_id`),  INDEX `index_order_lines_on_order_id`  (`order_id`), CONSTRAINT `fk_rails_83e960fa54`
+>>>>>>> master
+FOREIGN KEY (`product_id`)
+  REFERENCES `products` (`id`)
+, CONSTRAINT `fk_rails_e6c763ee60`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+<<<<<<< HEAD
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114201349')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttachmentProductToCustomers (20171116160134)
+  [1m[35m (32.2ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_file_name` varchar(255)[0m
+  [1m[35m (17.9ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_content_type` varchar(255)[0m
+  [1m[35m (15.6ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_file_size` int[0m
+  [1m[35m (20.8ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_updated_at` datetime[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171116160134')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeAccountNumber (20171117174232)
+  [1m[35m (28.6ms)[0m  [1m[35mALTER TABLE `pay_methods` CHANGE `account_number` `account_number` varchar(255) NOT NULL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171117174232')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to PayMethods (20171120174332)
+  [1m[35m (33.9ms)[0m  [1m[35mALTER TABLE `pay_methods` ADD `active_record` tinyint(1)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171120174332')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddActiveToProductsTable (20171121090554)
+  [1m[35m (19.9ms)[0m  [1m[35mALTER TABLE `products` ADD `active` tinyint(1)[0m
+=======
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114201349')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttachmentProductToCustomers (20171116160134)
+  [1m[35m (16.3ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_file_name` varchar(255)[0m
+  [1m[35m (19.1ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_content_type` varchar(255)[0m
+  [1m[35m (19.2ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_file_size` int[0m
+  [1m[35m (16.3ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_updated_at` datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171116160134')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeAccountNumber (20171117174232)
+  [1m[35m (17.7ms)[0m  [1m[35mALTER TABLE `pay_methods` CHANGE `account_number` `account_number` varchar(255) NOT NULL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171117174232')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to PayMethods (20171120174332)
+  [1m[35m (17.1ms)[0m  [1m[35mALTER TABLE `pay_methods` ADD `active_record` tinyint(1)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171120174332')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddActiveToProductsTable (20171121090554)
+  [1m[35m (16.2ms)[0m  [1m[35mALTER TABLE `products` ADD `active` tinyint(1)[0m
+>>>>>>> master
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171121090554')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddToImageTable (20171121100736)
+<<<<<<< HEAD
+  [1m[35m (13.4ms)[0m  [1m[35mALTER TABLE `images` ADD `imageable_type` varchar(255)[0m
+  [1m[35m (17.1ms)[0m  [1m[35mALTER TABLE `images` ADD `imageable_id` bigint[0m
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE  INDEX `index_images_on_imageable_type_and_imageable_id`  ON `images` (`imageable_type`, `imageable_id`) [0m
+=======
+  [1m[35m (14.4ms)[0m  [1m[35mALTER TABLE `images` ADD `imageable_type` varchar(255)[0m
+  [1m[35m (12.6ms)[0m  [1m[35mALTER TABLE `images` ADD `imageable_id` bigint[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE  INDEX `index_images_on_imageable_type_and_imageable_id`  ON `images` (`imageable_type`, `imageable_id`) [0m
+>>>>>>> master
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171121100736')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToImage (20171121113841)
+<<<<<<< HEAD
+  [1m[35m (21.7ms)[0m  [1m[35mALTER TABLE `images` ADD `image_file_name` varchar(255)[0m
+  [1m[35m (13.6ms)[0m  [1m[35mALTER TABLE `images` ADD `image_content_type` varchar(255)[0m
+  [1m[35m (13.5ms)[0m  [1m[35mALTER TABLE `images` ADD `image_file_size` int[0m
+  [1m[35m (16.5ms)[0m  [1m[35mALTER TABLE `images` ADD `image_updated_at` datetime[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171121113841')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameImagesTableToPhotos (20171121115015)
+  [1m[35m (2.0ms)[0m  [1m[35mRENAME TABLE `images` TO `photos`[0m
+  [1m[35m (10.3ms)[0m  [1m[35mALTER TABLE `photos` RENAME INDEX `index_images_on_imageable_type_and_imageable_id` TO `index_photos_on_imageable_type_and_imageable_id`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171121115015')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePhotos (20171121115624)
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE `photos` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK(1096848878559930510)[0m
+Started GET "/" for 127.0.0.1 at 2017-11-21 10:00:38 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.4) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+=======
+  [1m[35m (16.1ms)[0m  [1m[35mALTER TABLE `images` ADD `image_file_name` varchar(255)[0m
+  [1m[35m (14.9ms)[0m  [1m[35mALTER TABLE `images` ADD `image_content_type` varchar(255)[0m
+  [1m[35m (17.3ms)[0m  [1m[35mALTER TABLE `images` ADD `image_file_size` int[0m
+  [1m[35m (18.6ms)[0m  [1m[35mALTER TABLE `images` ADD `image_updated_at` datetime[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171121113841')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameImagesTableToPhotos (20171121115015)
+  [1m[35m (1.1ms)[0m  [1m[35mRENAME TABLE `images` TO `photos`[0m
+  [1m[35m (13.5ms)[0m  [1m[35mALTER TABLE `photos` RENAME INDEX `index_images_on_imageable_type_and_imageable_id` TO `index_photos_on_imageable_type_and_imageable_id`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171121115015')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-11-21 16:45:21', '2017-11-21 16:45:21')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK(1096848878559930510)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+>>>>>>> master
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Electronics', '2017-11-21 16:46:16', '2017-11-21 16:46:16')[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Clothing', '2017-11-21 16:46:16', '2017-11-21 16:46:16')[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Garden & Outdoors', '2017-11-21 16:46:16', '2017-11-21 16:46:16')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Toys & Games', '2017-11-21 16:46:16', '2017-11-21 16:46:16')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Home & Kitchen', '2017-11-21 16:46:16', '2017-11-21 16:46:16')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m

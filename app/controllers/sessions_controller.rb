@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
     def new
     end
-  
+    
+    #emails and password params from the database match what is entered, the user is logged in, otherwise it alerts.  
     def create
       customer = Customer.find_by(email: params[:email])
       if customer && customer.authenticate(params[:password])
@@ -12,7 +13,8 @@ class SessionsController < ApplicationController
         render :new
       end
     end
-  
+
+    #When user clicks log out, it returns the current sessions user_id to nil. 
     def destroy
       session[:user_id] = nil
       redirect_to root_url, notice: 'Logged out!'

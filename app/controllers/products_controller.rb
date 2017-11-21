@@ -1,12 +1,13 @@
 class ProductsController < ApplicationController
 
+  #Creates new instance of class Product
   def new
     @product = Product.new
     @photo = Photo.new
     @product_type = ProductType.all
-
   end
 
+  #Creates a product to save to database based on params in private, adding the user_id, time it was added, and an active status, it adds an image then redirects user to product view.
   def create
     @product = Product.new(product_params)
     @product.customer_id = session[:user_id]
@@ -25,6 +26,19 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    if @product.update(product_params)
+        redirect_to product_path(@product)
+    else
+        render 'edit'
+    end
+  end
+
+  #sets active column in product table to 0, making it unviewable to the user, redirects to the myproduct view. 
   def destroy
     @product = Product.find(params[:id])
     @product.active = 0
@@ -35,13 +49,23 @@ class ProductsController < ApplicationController
     end
   end
 
+  #shows specific product based on the id
   def show
-      @product = Product.find(params[:id]) 
+      @product = Product.find(params[:id])
   end
 
+  #shows the users products in view based on matching customer_id and user_id and if the product is active.
   def showSellerProduct
       @products = Product.where(:customer_id => session[:user_id], active: true)
       render 'sellerproducts'
+  end
+
+  #Creates the search option that fires on the product parameters. 
+  def index 
+    if params[:product]
+    @products = Product.where("product_name like ? AND active = true", "%#{params[:product]}%")
+  else 
+    @products = Product.all
   end
 
   def add_to_cart
@@ -52,18 +76,7 @@ class ProductsController < ApplicationController
     puts @orderline.errors.full_messages
   end
   
-  # def index
-  #   @products = Product.where(active: true)
-  # end
-
-  def index
-    @products = if params[:product]
-      Product.where("product_name like ?", "%#{params[:product]}%")
-    else 
-      @products = Product.all
-    end
-  end
-
+  #Allows user to search based on categories.
   def categories
     @categories = ProductType.all
     @product_names = Product.all
@@ -71,44 +84,18 @@ class ProductsController < ApplicationController
     puts @product_info
   end
   
- # THIS WILL BE THE FINAL METHODS
-  # def create
-  #   @image = Image.new(image_params)
-  #   if @image.save
-  #     # :image_id = @image.id
-  #     createProduct(@image.id)
-  #   else
-  #     render :new
-  #   end
-  # end
-
-  # def createProduct(imageID)
-  #   @product = Product.new(product_params)
-  #   @product.customer_id = session[:user_id]
-  #   @product.image_id = imageID
-  #   # binding.pry
-  #     if @product.save
-  #       # redirect_to product_path, notice: 'U DID IT KID'
-  #     else
-  #       render :new
-  #     end
-  # end
-  # ^^ FINAL METHODS
-
+  # params for posting to database.
   private
-    # def product_params
-    #   params.require(:product).permit(:product_name, :product_price, :product_desc, :quantity, :local_delivery, :product_type_id)
-    # end
     def image_params
       params.require(:product).permit(:image_file)
     end
+    
     def purchase_params
       params.permit(:product_id)
     end
+
     def product_params
       params.require(:product).permit(:search, :product_name, :product_price, :product_desc, :quantity, :local_delivery, :active, :product_type_id)
     end
-      # def image_params
-      #   params.require(:image).permit([:image_file_name, :image_file_size, :image_content_type, :image_updated_at])
-      # end
+
 end
