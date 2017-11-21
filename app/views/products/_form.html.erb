@@ -43,7 +43,7 @@
 
     <p>
       <%= form.label "Product Category" %><br>
-      <%= form.collection_select(:product_type_id, @product_type, :id, :product_type_name) %>
+      <%= form.collection_select(:product_type_id, ProductType.all, :id, :product_type_name) %>
     </p>
 
     <p>
