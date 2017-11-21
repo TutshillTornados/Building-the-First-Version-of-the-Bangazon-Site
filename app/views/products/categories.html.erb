@@ -1,14 +1,12 @@
 <h1>Product Types</h1>
 <% @categories.each do |type| %>
     <p>
-        <%= type.product_type_name %>
-        <% @product_info.take(4).each do |prod| %>
-        <% if type.id == prod.product_type_id  %>
-            <%= prod.product_name.count %>
-            <%= prod.product_name.size %>
-            <%= prod.product_name.length %> <br>
-            <%= prod.product_name %>
-        <% end %>
+        <h3> <%= type.product_type_name %> </h3>
+        <%= @product_info[type.id]%><br>
+        <% @product_names.each do |name| %>
+        <% if name.product_type_id == type.id%>
+            <%= name.product_name%><br>
         <%end%>
-    </p>
+        <%end%>
+
 <% end %>
