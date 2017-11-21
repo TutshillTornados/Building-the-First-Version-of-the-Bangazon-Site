@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'myproducts', to: 'products#showSellerProduct', as: 'myproducts'
+  get 'categories', to: 'products#categories', as: 'categories'
   # get 'customerForm', to: 'customers#show', as: 'customerForm'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
     @product = Product.new
     @image = Image.new
     @product_type = ProductType.all
+
   end
 
 
@@ -12,7 +13,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.customer_id = session[:user_id]
     @product.product_added = DateTime.now()
-    @product.active = 1 
+    # @product.active = 1 
     # @product.product_type_id = @product_type
     if @product.save
       redirect_to product_path(@product)
@@ -46,9 +47,13 @@ class ProductsController < ApplicationController
   # end
 
   def index
-    @products = Product.search(product_params[:search])
+    @products = Product.all
   end
 
+def categories
+    @categories = ProductType.all
+    @product_info = Product.all
+  end
 
   
  # THIS WILL BE THE FINAL METHODS
@@ -75,7 +80,6 @@ class ProductsController < ApplicationController
   # end
   # ^^ FINAL METHODS
   
-  private
     def product_params
       params.require(:product).permit(:search, :product_name, :product_price, :product_desc, :quantity, :local_delivery, :active, :product_type_id)
     end
