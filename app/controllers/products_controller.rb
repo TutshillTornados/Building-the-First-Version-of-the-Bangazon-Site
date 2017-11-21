@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
 
   def new
-    # session[:customer_id] ???
     @product = Product.new
     @photo = Photo.new
     @product_type = ProductType.all
@@ -31,9 +30,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.active = 0
     if @product.save
-      redirect_to 'sellerproduct'
+      redirect_to myproducts_url
     else 
-      redirect_to 'sellerproduct'
+      redirect_to myproducts_url
     end
   end
 

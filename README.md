@@ -78,11 +78,11 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 ```
 Create the Development DB
 ```
-CREATE DATABASE Bangazon_development;
+CREATE DATABASE Bangazon_Site_development;
 ```
 Create the Testing DB
 ```
-CREATE DATABASE Bangazon_testing;
+CREATE DATABASE Bangazon_Site_test;
 ```
 Grant privileges to development DB by setting a user and a password. User: tornados_user PW: ruby
 ```
@@ -102,6 +102,7 @@ exit
 run commands in console
 ``` 
 bundle install
+rails g simple_form:install --bootstrap
 rails db:migrate
 rails db:seed
 rails s
