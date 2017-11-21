@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
 
   def new
-    # session[:customer_id] ???
     @product = Product.new
     @photo = Photo.new
     @product_type = ProductType.all
@@ -31,9 +30,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.active = 0
     if @product.save
-      redirect_to 'sellerproduct'
+      redirect_to myproducts_url
     else 
-      redirect_to 'sellerproduct'
+      redirect_to myproducts_url
     end
   end
 
@@ -46,9 +45,6 @@ class ProductsController < ApplicationController
       render 'sellerproducts'
   end
 
-  # def index
-  #   @products = Product.where(active: true)
-  # end
 
   def index
     @products = if params[:product]
@@ -63,34 +59,8 @@ class ProductsController < ApplicationController
     @product_info = Product.all
   end
 
-  
- # THIS WILL BE THE FINAL METHODS
-  # def create
-  #   @image = Image.new(image_params)
-  #   if @image.save
-  #     # :image_id = @image.id
-  #     createProduct(@image.id)
-  #   else
-  #     render :new
-  #   end
-  # end
-
-  # def createProduct(imageID)
-  #   @product = Product.new(product_params)
-  #   @product.customer_id = session[:user_id]
-  #   @product.image_id = imageID
-  #   # binding.pry
-  #     if @product.save
-  #       # redirect_to product_path, notice: 'U DID IT KID'
-  #     else
-  #       render :new
-  #     end
-  # end
-  # ^^ FINAL METHODS
       def product_params
         params.require(:product).permit(:search, :product_name, :product_price, :product_desc, :quantity, :local_delivery, :active, :product_type_id)
       end
-      # def image_params
-      #   params.require(:image).permit([:image_file_name, :image_file_size, :image_content_type, :image_updated_at])
-      # end
+
 end

@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20171121115015) do
     t.integer "quantity"
     t.datetime "product_added"
     t.boolean "local_delivery"
+    t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "active"
