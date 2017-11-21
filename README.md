@@ -18,7 +18,6 @@ cd Building-the-First-Version-of-the-Bangazon-Site
 ```
 ## Install
 
-<<<<<<< Updated upstream
 * Configuration
 ### Setup MySql
 1. download mysql instructuction
@@ -29,7 +28,6 @@ cd Building-the-First-Version-of-the-Bangazon-Site
 ### Install Gems
 1. `bundle install`
 * Database creation
-=======
 * [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/)
 * [Install Rails](https://github.com/tbsvttr/install-ruby-and-rails)
 * [Install MySQL](https://www.mysql.com/downloads/) or install with homebrew
@@ -43,7 +41,6 @@ After mySQL installs, run the following command:
 mysql_secure_installation
 ```
 You will be prompted to answer a series of questions (recommended answers: n, y, y, y, y)
->>>>>>> Stashed changes
 
 **NOTE:** If you recieve the following error...
 ```

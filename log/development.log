@@ -18991,3 +18991,557 @@ Completed 200 OK in 112ms (Views: 105.2ms | ActiveRecord: 0.5ms)
 
 
 >>>>>>> master
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 23:20:10 -0600
+  
+Mysql2::Error (Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)):
+  
+mysql2 (0.4.9) lib/mysql2/client.rb:89:in `connect'
+mysql2 (0.4.9) lib/mysql2/client.rb:89:in `initialize'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql2_adapter.rb:21:in `new'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql2_adapter.rb:21:in `mysql2_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.4) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.4) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.4) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-20 23:21:09 -0600
+  
+Mysql2::Error (Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)):
+  
+mysql2 (0.4.9) lib/mysql2/client.rb:89:in `connect'
+mysql2 (0.4.9) lib/mysql2/client.rb:89:in `initialize'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql2_adapter.rb:21:in `new'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql2_adapter.rb:21:in `mysql2_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.4) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.4) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.4) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-20 23:24:00 -0600
+  [1m[35m (3.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+  Rendered partials/_navbar.html.erb (7.5ms)
+Completed 200 OK in 274ms (Views: 265.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-11-20 23:24:04 -0600
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (11.3ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 86ms (Views: 55.7ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2017-11-20 23:24:17 -0600
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vdsN3KtsnpLcsKqR6af2xVoS6zfyuz4U1rpgklyoJ35M7ufT+fsgPncOxY0P+EpVII2fRrgihHliDhyBM+E/vg==", "customer"=>{"email"=>"test3@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'test3@test.com' LIMIT 1[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO `customers` (`email`, `password_digest`, `created_at`, `updated_at`) VALUES ('test3@test.com', '$2a$10$FlJh0Ol.fLlFC5UTuE1uOOywojZzeLQ/Kxwl5Kyk0S.6yHfDqsXwe', '2017-11-21 05:24:17', '2017-11-21 05:24:17')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/customers/31/edit
+Completed 302 Found in 71ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/customers/31/edit" for 127.0.0.1 at 2017-11-20 23:24:17 -0600
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mCustomer Load (0.9ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 31 LIMIT 1[0m
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (3.2ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 40ms (Views: 33.4ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/customers/31" for 127.0.0.1 at 2017-11-20 23:24:29 -0600
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fILgxpcUu/db5I1SpAXUEdHIaV5pQgKBGzPcA6c9juW/eKgiZTFY95iVsRG06+l9Ns0Ckn2eWYFVUA2yQwhf1A==", "customer"=>{"first_name"=>"qwer", "last_name"=>"qwer", "street_address"=>"qwer", "city"=>"qwer", "state"=>"qwer", "zip"=>"qwer", "phone_number"=>"qwer"}, "commit"=>"Update Customer", "id"=>"31"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 31 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'test3@test.com' AND (`customers`.`id` != 31) LIMIT 1[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[33mUPDATE `customers` SET `first_name` = 'qwer', `last_name` = 'qwer', `street_address` = 'qwer', `city` = 'qwer', `state` = 'qwer', `zip` = 0, `phone_number` = 'qwer', `updated_at` = '2017-11-21 05:24:29' WHERE `customers`.`id` = 31[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products
+Completed 302 Found in 12ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-20 23:24:29 -0600
+Processing by ProductsController#index as HTML
+Completed 400 Bad Request in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: product):
+  
+app/controllers/products_controller.rb:80:in `product_params'
+app/controllers/products_controller.rb:49:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-20 23:25:23 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 31 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 48ms (Views: 45.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 23:25:27 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 31 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+  Rendered partials/_navbar.html.erb (1.7ms)
+Completed 200 OK in 50ms (Views: 46.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-20 23:25:33 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (1.7ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 31 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (3.1ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 48ms (Views: 35.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/pay_methods/new" for 127.0.0.1 at 2017-11-20 23:25:35 -0600
+Processing by PayMethodsController#new as HTML
+  Rendering pay_methods/new.html.erb within layouts/application
+  Rendered pay_methods/new.html.erb within layouts/application (9.2ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 57ms (Views: 45.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/pay_methods" for 127.0.0.1 at 2017-11-20 23:25:42 -0600
+Processing by PayMethodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JgviBvt5wBBft/X7Tp3LAWWLkqErJ3o7SewAGJSWY6o9o4FWmNwCDWyNEU54s15Cb7ApgstR/uGmOpN8CHvjPA==", "pay_method"=>{"payment_type"=>"Visa", "account_number"=>"0987654321123456", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"12", "expiration_date(3i)"=>"1"}, "commit"=>"Add Payment"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 31 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `pay_methods` (`payment_type`, `account_number`, `expiration_date`, `customer_id`, `created_at`, `updated_at`, `active_record`) VALUES ('Visa', '0987654321123456', '2017-12-01', 31, '2017-11-21 05:25:42', '2017-11-21 05:25:42', 1)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pay_methods
+Completed 302 Found in 21ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-20 23:25:42 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.3ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 31 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (1.9ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 32ms (Views: 29.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/pay_methods/21" for 127.0.0.1 at 2017-11-20 23:25:46 -0600
+Processing by PayMethodsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QT9NbwSS5swV694fM1NtY2Mj89ejfYWc3dAfgx1dd8yCxQWL9rcFzNaa4lwjvVAPhCaYG7eh3pyTs84y+Wim/Q==", "id"=>"21"}
+  [1m[36mPayMethod Load (0.3ms)[0m  [1m[34mSELECT  `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`id` = 21 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 31 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE `pay_methods` SET `active_record` = 0, `updated_at` = '2017-11-21 05:25:46' WHERE `pay_methods`.`id` = 21[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pay_methods
+Completed 302 Found in 13ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-20 23:25:46 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.3ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 31 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (1.5ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2017-11-20 23:25:50 -0600
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (0.4ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pay_methods/new" for 127.0.0.1 at 2017-11-20 23:25:52 -0600
+Processing by PayMethodsController#new as HTML
+  Rendering pay_methods/new.html.erb within layouts/application
+  Rendered pay_methods/new.html.erb within layouts/application (4.7ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 53ms (Views: 49.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pay_methods" for 127.0.0.1 at 2017-11-20 23:26:00 -0600
+Processing by PayMethodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UU4boF8LZFYZx0d1PTod3wKnNHdyPGm9GN3Gjj4q6uRK5njwPK6mSyr9o8ALFIicCJyPVJJK7Wf3C1Xqosdqcg==", "pay_method"=>{"payment_type"=>"Bank", "account_number"=>"12345678901333456", "expiration_date(1i)"=>"2019", "expiration_date(2i)"=>"11", "expiration_date(3i)"=>"1"}, "commit"=>"Add Payment"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 31 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `pay_methods` (`payment_type`, `account_number`, `expiration_date`, `customer_id`, `created_at`, `updated_at`, `active_record`) VALUES ('Bank', '12345678901333456', '2019-11-01', 31, '2017-11-21 05:26:00', '2017-11-21 05:26:00', 1)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pay_methods
+Completed 302 Found in 8ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-20 23:26:00 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.4ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 31 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (2.2ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 40ms (Views: 36.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:22:52 -0600
+Processing by PayMethodsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/austinkurtis/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/models/pay_method.rb:6: syntax error, unexpected tCONSTANT, expecting =>
+nt.expiration_date. > DateTime.now => true
+                              ^
+/Users/austinkurtis/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/models/pay_method.rb:6: syntax error, unexpected =>, expecting keyword_end
+ration_date. > DateTime.now => true
+                              ^):
+  
+app/models/pay_method.rb:6: syntax error, unexpected tCONSTANT, expecting =>
+app/models/pay_method.rb:6: syntax error, unexpected =>, expecting keyword_end
+app/controllers/pay_methods_controller.rb:7:in `index'
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:23:42 -0600
+Processing by PayMethodsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/austinkurtis/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/models/pay_method.rb:6: syntax error, unexpected tCONSTANT, expecting =>
+nt.expiration_date. > DateTime.now == true
+                              ^):
+  
+app/models/pay_method.rb:6: syntax error, unexpected tCONSTANT, expecting =>
+app/controllers/pay_methods_controller.rb:7:in `index'
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:30:21 -0600
+Processing by PayMethodsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/austinkurtis/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/models/pay_method.rb:12: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/models/pay_method.rb:12: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/pay_methods_controller.rb:7:in `index'
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:30:36 -0600
+Processing by PayMethodsController#index as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (You need to supply at least one validation):
+  
+app/models/pay_method.rb:5:in `<class:PayMethod>'
+app/models/pay_method.rb:1:in `<top (required)>'
+app/controllers/pay_methods_controller.rb:7:in `index'
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:35:20 -0600
+Processing by PayMethodsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (You need to supply at least one validation):
+  
+app/models/pay_method.rb:5:in `<class:PayMethod>'
+app/models/pay_method.rb:1:in `<top (required)>'
+app/controllers/pay_methods_controller.rb:7:in `index'
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:35:29 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.8ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 31 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (10.9ms)
+  Rendered partials/_navbar.html.erb (2.0ms)
+Completed 200 OK in 70ms (Views: 62.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:35:39 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.4ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 31 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (8.6ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 49ms (Views: 42.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:36:41 -0600
+Processing by PayMethodsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (You need to supply at least one validation):
+  
+app/models/pay_method.rb:5:in `<class:PayMethod>'
+app/models/pay_method.rb:1:in `<top (required)>'
+app/controllers/pay_methods_controller.rb:7:in `index'
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:37:03 -0600
+Processing by PayMethodsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/austinkurtis/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/models/pay_method.rb:5: syntax error, unexpected ':', expecting keyword_end
+iration_date, presence: true :card_expiration
+                              ^):
+  
+app/models/pay_method.rb:5: syntax error, unexpected ':', expecting keyword_end
+app/controllers/pay_methods_controller.rb:7:in `index'
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:37:16 -0600
+Processing by PayMethodsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/austinkurtis/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/models/pay_method.rb:5: syntax error, unexpected '\n', expecting =>):
+  
+app/models/pay_method.rb:5: syntax error, unexpected '\n', expecting =>
+app/controllers/pay_methods_controller.rb:7:in `index'
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:37:24 -0600
+Processing by PayMethodsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/austinkurtis/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/models/pay_method.rb:11: syntax error, unexpected '\n', expecting =>):
+  
+app/models/pay_method.rb:11: syntax error, unexpected '\n', expecting =>
+app/controllers/pay_methods_controller.rb:7:in `index'
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:38:06 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.4ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 31 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (8.7ms)
+  Rendered partials/_navbar.html.erb (2.5ms)
+Completed 200 OK in 49ms (Views: 42.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:41:54 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.4ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 31 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (9.5ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 57ms (Views: 50.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/pay_methods/new" for 127.0.0.1 at 2017-11-21 00:42:01 -0600
+Processing by PayMethodsController#new as HTML
+  Rendering pay_methods/new.html.erb within layouts/application
+  Rendered pay_methods/new.html.erb within layouts/application (4.4ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 49ms (Views: 44.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pay_methods" for 127.0.0.1 at 2017-11-21 00:42:09 -0600
+Processing by PayMethodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"drqwOUlEvmCmgFrXLsC732KIVfidzEXYrc4QQ83W7sptEtNpKuF8fZW6vmIY7i6caLPu2326wQJCGIMnUTtuXA==", "pay_method"=>{"payment_type"=>"Visa", "account_number"=>"0987654321123456", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"10", "expiration_date(3i)"=>"1"}, "commit"=>"Add Payment"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 31 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering pay_methods/new.html.erb within layouts/application
+  Rendered pay_methods/new.html.erb within layouts/application (3.1ms)
+  Rendered partials/_navbar.html.erb (1.7ms)
+Completed 200 OK in 64ms (Views: 37.3ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/pay_methods" for 127.0.0.1 at 2017-11-21 00:42:21 -0600
+Processing by PayMethodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IlU0uoZ2hQU7rtr+xQUYtdLytL4FKAZ/Xs9hJmQZf7vhr3xedFNmBfjf5r3V6yXZNfffchH0XX8QrLCXgCyuig==", "pay_method"=>{"payment_type"=>"Visa", "account_number"=>"0987654321123456", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"11", "expiration_date(3i)"=>"1"}, "commit"=>"Add Payment"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 31 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering pay_methods/new.html.erb within layouts/application
+  Rendered pay_methods/new.html.erb within layouts/application (3.6ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 50ms (Views: 45.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/pay_methods" for 127.0.0.1 at 2017-11-21 00:42:25 -0600
+Processing by PayMethodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xCjcUf23EUZhkYFgxTt0LUGqF5dVCJi9Oo69Xyz8N7wH0pS1D5LyRqLgvSPV1UlBpq98W0HUw7107WzuyMnmjQ==", "pay_method"=>{"payment_type"=>"American Express", "account_number"=>"0987654321123456", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"11", "expiration_date(3i)"=>"1"}, "commit"=>"Add Payment"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 31 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering pay_methods/new.html.erb within layouts/application
+  Rendered pay_methods/new.html.erb within layouts/application (4.9ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 46ms (Views: 42.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/pay_methods" for 127.0.0.1 at 2017-11-21 00:42:31 -0600
+Processing by PayMethodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R+hZbOpnd9vDKymxufzKYLnMg7HVO21WTbxbQLgoruuEEhGIGEKU2wBaFfKpEvcMXsnofcHnNlYD34rxXB1/2g==", "pay_method"=>{"payment_type"=>"Bank", "account_number"=>"0987654321123456", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"12", "expiration_date(3i)"=>"1"}, "commit"=>"Add Payment"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 31 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `pay_methods` (`payment_type`, `account_number`, `expiration_date`, `customer_id`, `created_at`, `updated_at`, `active_record`) VALUES ('Bank', '0987654321123456', '2017-12-01', 31, '2017-11-21 06:42:31', '2017-11-21 06:42:31', 1)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pay_methods
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:42:31 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.5ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 31 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (2.8ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 40ms (Views: 36.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:42:52 -0600
+Processing by PayMethodsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (Unknown key: :presence. Valid keys are: :on, :if, :unless, :prepend. Perhaps you meant to call `validates` instead of `validate`?):
+  
+app/models/pay_method.rb:5:in `<class:PayMethod>'
+app/models/pay_method.rb:1:in `<top (required)>'
+app/controllers/pay_methods_controller.rb:7:in `index'
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:43:16 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.4ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 31 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (8.9ms)
+  Rendered partials/_navbar.html.erb (2.2ms)
+Completed 200 OK in 48ms (Views: 40.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:43:18 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.5ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 31 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (2.5ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 43ms (Views: 39.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pay_methods/new" for 127.0.0.1 at 2017-11-21 00:43:21 -0600
+Processing by PayMethodsController#new as HTML
+  Rendering pay_methods/new.html.erb within layouts/application
+  Rendered pay_methods/new.html.erb within layouts/application (4.1ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 47ms (Views: 44.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pay_methods" for 127.0.0.1 at 2017-11-21 00:43:25 -0600
+Processing by PayMethodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MLBZzUQl0fjklOW1F8+rLfDx0e0VViZBldV/G013bLUrGDqdJ4AT5deuAQAh4T5u+spqzvUgopt6A+x/0ZrsIw==", "pay_method"=>{"payment_type"=>"", "account_number"=>"", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"11", "expiration_date(3i)"=>"1"}, "commit"=>"Add Payment"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 31 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering pay_methods/new.html.erb within layouts/application
+  Rendered pay_methods/new.html.erb within layouts/application (3.5ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 63ms (Views: 36.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 00:44:31 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.4ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 31 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (8.5ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 54ms (Views: 47.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/pay_methods/new" for 127.0.0.1 at 2017-11-21 00:44:35 -0600
+Processing by PayMethodsController#new as HTML
+  Rendering pay_methods/new.html.erb within layouts/application
+  Rendered pay_methods/new.html.erb within layouts/application (4.9ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 48ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pay_methods" for 127.0.0.1 at 2017-11-21 00:44:38 -0600
+Processing by PayMethodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qtSQfTZOmts1mMQdW39J3mW9ZNCoJi7Ys/8lzMG6hzKxfPMtVetYxgaiIKhtUdydb4bf80hQqgJcKbaoXVcHpA==", "pay_method"=>{"payment_type"=>"", "account_number"=>"", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"11", "expiration_date(3i)"=>"1"}, "commit"=>"Add Payment"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 31 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering pay_methods/new.html.erb within layouts/application
+  Rendered pay_methods/new.html.erb within layouts/application (4.5ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 73ms (Views: 45.5ms | ActiveRecord: 1.5ms)
+
+
