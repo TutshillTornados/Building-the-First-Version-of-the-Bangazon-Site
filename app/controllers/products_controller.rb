@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   def new
     # session[:customer_id] ???
     @product = Product.new
-    @image = Image.new
+    @photo = Photo.new
     @product_type = ProductType.all
 
   end
@@ -16,6 +16,11 @@ class ProductsController < ApplicationController
     # @product.active = 1 
     # @product.product_type_id = @product_type
     if @product.save
+      if params[:images]
+        params[:images].each { |image|
+        @product.photos.create(image: image)
+      }
+      end
       redirect_to product_path(@product)
     else
       @product_type = ProductType.all
@@ -50,7 +55,7 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
-def categories
+  def categories
     @categories = ProductType.all
     @product_info = Product.all
   end
@@ -79,11 +84,10 @@ def categories
   #     end
   # end
   # ^^ FINAL METHODS
-  
-    def product_params
-      params.require(:product).permit(:search, :product_name, :product_price, :product_desc, :quantity, :local_delivery, :active, :product_type_id)
-    end
-    def image_params
-      params.require(:product).permit(:image_file)
-    end
+      def product_params
+        params.require(:product).permit(:search, :product_name, :product_price, :product_desc, :quantity, :local_delivery, :active, :product_type_id)
+      end
+      # def image_params
+      #   params.require(:image).permit([:image_file_name, :image_file_size, :image_content_type, :image_updated_at])
+      # end
 end
