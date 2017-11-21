@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.customer_id = session[:user_id]
     @product.product_added = DateTime.now()
-    # @product.active = 1 
+    @product.active = 1 
     # @product.product_type_id = @product_type
     if @product.save
       redirect_to product_path(@product)
@@ -27,9 +27,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.active = 0
     if @product.save
-      redirect_to 'sellerproduct'
+      redirect_to myproducts_url
     else 
-      redirect_to 'sellerproduct'
+      redirect_to myproducts_url
     end
   end
 
