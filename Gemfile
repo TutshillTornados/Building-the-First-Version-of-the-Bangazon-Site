@@ -37,7 +37,7 @@ gem 'jquery-rails'
 #Use bootstrap for styling
 gem 'popper_js'
 gem 'bootstrap'
-
+gem 'simple_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

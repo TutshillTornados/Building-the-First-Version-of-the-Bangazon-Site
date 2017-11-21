@@ -1,9 +1,11 @@
 class Product < ApplicationRecord
     belongs_to :customer, :foreign_key => 'customer_id'
     belongs_to :product_type, :foreign_key => 'product_type_id'
-    # belongs_to :image, :foreign_key => 'image_id'
+    has_many :photos, as: :imageable, dependent: :destroy
     validates_presence_of :product_name, :product_price, :product_desc, :quantity, :product_added, :product_type_id
     validates :local_delivery, inclusion: { in: [true, false]}
+
+    has_many :images, as: :imageable
 
     # validates price is no greater than 10 stacks
     validates :product_price, presence: true, format: { with: /\A?\d+(\.\d{2}?)?\z/ }, numericality: { greater_than: 0, less_than: 10000 }
