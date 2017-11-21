@@ -18991,3 +18991,1688 @@ Completed 200 OK in 112ms (Views: 105.2ms | ActiveRecord: 0.5ms)
 
 
 >>>>>>> master
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 17:57:08 -0600
+  [1m[35m (69.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.8ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (44.5ms)
+  Rendered products/new.html.erb within layouts/application (48.5ms)
+  Rendered partials/_navbar.html.erb (22.0ms)
+Completed 500 Internal Server Error in 7141ms (ActiveRecord: 15.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `search' for #<Product:0x00007fd595dd30e8>):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, :search, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb___4128161113313841125_70277697992960'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb___4128161113313841125_70277697992960'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__2644867022857200090_70277695453440'
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 17:57:24 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (17.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (70.2ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 130ms (Views: 101.5ms | ActiveRecord: 24.8ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 17:57:27 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (17.7ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (51.6ms)
+  Rendered products/new.html.erb within layouts/application (55.9ms)
+  Rendered partials/_navbar.html.erb (14.6ms)
+Completed 500 Internal Server Error in 144ms (ActiveRecord: 17.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `search' for #<Product:0x00007fd597fd72e8>):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, :search, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb___4128161113313841125_70277701077860'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb___4128161113313841125_70277701077860'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__2644867022857200090_70277653397620'
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (11.8ms)[0m  [1m[34mSELECT GET_LOCK(1096848878559930510, 0)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (12.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK(1096848878559930510)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 17:58:24 -0600
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (36.3ms)
+  Rendered products/new.html.erb within layouts/application (41.5ms)
+  Rendered partials/_navbar.html.erb (23.2ms)
+Completed 500 Internal Server Error in 545ms (ActiveRecord: 5.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `search' for #<Product:0x00007fe549e84050>):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, :search, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb__4225431226734551976_70311423930800'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb__4225431226734551976_70311423930800'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311423190060'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:00:24 -0600
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (1.2ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (16.5ms)
+  Rendered products/new.html.erb within layouts/application (19.5ms)
+  Rendered partials/_navbar.html.erb (8.1ms)
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, :search, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/models/product.rb:18:in `search'
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb__4225431226734551976_70311420954360'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb__4225431226734551976_70311420954360'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311423704860'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:01:41 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (13.7ms)
+  Rendered products/new.html.erb within layouts/application (16.6ms)
+  Rendered partials/_navbar.html.erb (7.5ms)
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `search' for :self:Symbol):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, :self.search, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb__4225431226734551976_70311387797260'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb__4225431226734551976_70311387797260'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311442314420'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:01:57 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (14.5ms)
+  Rendered products/new.html.erb within layouts/application (18.0ms)
+  Rendered partials/_navbar.html.erb (7.6ms)
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, :search, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/models/product.rb:18:in `search'
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb__4225431226734551976_70311429942760'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb__4225431226734551976_70311429942760'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311424326960'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:03:19 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (2.2ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (19.7ms)
+  Rendered products/new.html.erb within layouts/application (23.5ms)
+  Rendered partials/_navbar.html.erb (8.2ms)
+Completed 500 Internal Server Error in 152ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, :search, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/models/product.rb:18:in `search'
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb__4225431226734551976_70311424567780'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb__4225431226734551976_70311424567780'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311442134960'
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:03:26 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (101.9ms)
+  Rendered partials/_navbar.html.erb (3.1ms)
+Completed 200 OK in 160ms (Views: 124.3ms | ActiveRecord: 32.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:03:28 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (1.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (13.5ms)
+  Rendered products/new.html.erb within layouts/application (18.8ms)
+  Rendered partials/_navbar.html.erb (3.3ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, :search, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/models/product.rb:18:in `search'
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb__4225431226734551976_70311387721980'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb__4225431226734551976_70311387721980'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311424753360'
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:03:32 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (2.8ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (8.4ms)
+  Rendered partials/_navbar.html.erb (1.7ms)
+Completed 200 OK in 88ms (Views: 80.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:03:34 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (18.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (29.1ms)
+  Rendered partials/_navbar.html.erb (1.7ms)
+Completed 200 OK in 115ms (Views: 92.3ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:03:36 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (2.9ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (38.1ms)
+  Rendered partials/_navbar.html.erb (3.9ms)
+Completed 200 OK in 148ms (Views: 141.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:03:36 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (31.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (34.7ms)
+  Rendered partials/_navbar.html.erb (3.2ms)
+Completed 200 OK in 116ms (Views: 78.9ms | ActiveRecord: 31.3ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:03:36 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (37.6ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 142ms (Views: 135.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:03:37 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (7.3ms)
+  Rendered partials/_navbar.html.erb (3.8ms)
+Completed 200 OK in 101ms (Views: 96.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:03:37 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (3.3ms)
+  Rendered partials/_navbar.html.erb (3.8ms)
+Completed 200 OK in 158ms (Views: 103.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:03:37 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (3.1ms)
+  Rendered partials/_navbar.html.erb (3.3ms)
+Completed 200 OK in 136ms (Views: 120.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:03:38 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (33.1ms)
+  Rendered partials/_navbar.html.erb (3.7ms)
+Completed 200 OK in 142ms (Views: 136.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:03:38 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.8ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (16.5ms)
+  Rendered partials/_navbar.html.erb (3.8ms)
+Completed 200 OK in 128ms (Views: 119.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 18:03:39 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.9ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (26.3ms)
+  Rendered partials/_navbar.html.erb (3.4ms)
+Completed 200 OK in 160ms (Views: 152.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:03:40 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (52.3ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 189ms (Views: 185.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/myproducts" for 127.0.0.1 at 2017-11-20 18:03:46 -0600
+Processing by ProductsController#showSellerProduct as HTML
+  Rendering products/sellerproducts.html.erb within layouts/application
+  [1m[36mProduct Load (21.1ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`customer_id` = 1 AND `products`.`active` = 1[0m
+  Rendered products/sellerproducts.html.erb within layouts/application (43.5ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 21.1ms)
+
+
+  
+ActionView::Template::Error (Mysql2::Error: Unknown column 'products.active' in 'where clause': SELECT `products`.* FROM `products` WHERE `products`.`customer_id` = 1 AND `products`.`active` = 1):
+     6:     <th>Text</th>
+     7:   </tr>
+     8: 
+     9:   <% @products.each do |product| %>
+    10:     <tr>
+    11:       <td><%= product.product_name %></td>
+    12:       <td><%= product.product_desc %></td>
+  
+app/views/products/sellerproducts.html.erb:9:in `_app_views_products_sellerproducts_html_erb__2612986584063629679_70311442772560'
+app/controllers/products_controller.rb:41:in `showSellerProduct'
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:03:50 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (3.9ms)
+  Rendered partials/_navbar.html.erb (2.0ms)
+Completed 200 OK in 72ms (Views: 63.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products?utf8=%E2%9C%93&product%5Bsearch%5D=hg" for 127.0.0.1 at 2017-11-20 18:04:25 -0600
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"search"=>"hg"}}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `search' for #<Class:0x00007fe54fc1b2b8>):
+  
+app/controllers/products_controller.rb:49:in `index'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:05:32 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (18.8ms)
+  Rendered products/new.html.erb within layouts/application (21.8ms)
+  Rendered partials/_navbar.html.erb (16.9ms)
+Completed 500 Internal Server Error in 167ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `search' for #<Product:0x00007fe54b168658>):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, :search, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb__4225431226734551976_70311421092440'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb__4225431226734551976_70311421092440'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311432063140'
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:05:34 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.2ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (90.7ms)
+  Rendered partials/_navbar.html.erb (2.1ms)
+Completed 200 OK in 148ms (Views: 92.2ms | ActiveRecord: 52.3ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:05:36 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (3.5ms)
+  Rendered partials/_navbar.html.erb (1.7ms)
+Completed 200 OK in 60ms (Views: 56.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:05:40 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (5.1ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (18.7ms)
+  Rendered partials/_navbar.html.erb (3.8ms)
+Completed 200 OK in 112ms (Views: 103.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:05:42 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (17.7ms)
+  Rendered products/new.html.erb within layouts/application (48.0ms)
+  Rendered partials/_navbar.html.erb (12.8ms)
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `search' for #<Product:0x00007fe54ef1cad0>):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, :search, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb__4225431226734551976_70311431930800'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb__4225431226734551976_70311431930800'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311441599620'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:12:59 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (2.0ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (21.8ms)
+  Rendered products/new.html.erb within layouts/application (26.0ms)
+  Rendered partials/_navbar.html.erb (14.0ms)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `search' for #<Product:0x00007fe551234ce8>):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, :search, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb__4225431226734551976_70311432788440'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb__4225431226734551976_70311432788440'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311441952120'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:13:52 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (14.3ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (31.9ms)
+  Rendered products/new.html.erb within layouts/application (37.6ms)
+  Rendered partials/_navbar.html.erb (39.3ms)
+Completed 500 Internal Server Error in 205ms (ActiveRecord: 14.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `{:placeholder=>"Search", :class=>"form-control"}' for #<Product:0x00007fe54eedd150>):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb__4225431226734551976_70311392136080'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb__4225431226734551976_70311392136080'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311424336080'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:14:39 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (10.9ms)
+  Rendered products/new.html.erb within layouts/application (13.5ms)
+  Rendered partials/_navbar.html.erb (3.9ms)
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 36.4ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, :search, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/models/product.rb:18:in `search'
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb__4225431226734551976_70311432857400'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb__4225431226734551976_70311432857400'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311431588980'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:17:28 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (1.3ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (21.9ms)
+  Rendered products/new.html.erb within layouts/application (26.6ms)
+  Rendered partials/_navbar.html.erb (10.8ms)
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, :search, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/models/product.rb:18:in `search'
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb__4225431226734551976_70311447232880'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb__4225431226734551976_70311447232880'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311447771240'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:18:02 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (10.8ms)
+  Rendered products/new.html.erb within layouts/application (13.6ms)
+  Rendered partials/_navbar.html.erb (7.6ms)
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, :search, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/models/product.rb:18:in `search'
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb__4225431226734551976_70311448304720'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb__4225431226734551976_70311448304720'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311449026080'
+Started GET "/" for 127.0.0.1 at 2017-11-20 18:18:27 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (47.8ms)
+  Rendered partials/_navbar.html.erb (2.5ms)
+Completed 200 OK in 113ms (Views: 86.4ms | ActiveRecord: 23.1ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:18:30 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (16.0ms)
+  Rendered products/new.html.erb within layouts/application (20.0ms)
+  Rendered partials/_navbar.html.erb (5.1ms)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, :search, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/models/product.rb:18:in `search'
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb__4225431226734551976_70311448894740'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb__4225431226734551976_70311448894740'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311411093520'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:19:51 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (1.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (28.2ms)
+  Rendered products/new.html.erb within layouts/application (33.8ms)
+  Rendered partials/_navbar.html.erb (15.5ms)
+Completed 500 Internal Server Error in 222ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `search' for #<Product:0x00007fe551909a50>):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, :search, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb__4225431226734551976_70311431475080'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb__4225431226734551976_70311431475080'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311424495820'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:20:12 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.7ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (7.4ms)
+  Rendered products/new.html.erb within layouts/application (10.4ms)
+  Rendered partials/_navbar.html.erb (2.1ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/partials/_navbar.html.erb:42: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/partials/_navbar.html.erb:42: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311447668880'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:20:34 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (6.3ms)
+  Rendered products/new.html.erb within layouts/application (8.5ms)
+  Rendered partials/_navbar.html.erb (420.1ms)
+Completed 500 Internal Server Error in 481ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `projects_path' for #<#<Class:0x00007fe54efc47f8>:0x00007fe549f26850>
+Did you mean?  products_path
+               product_path
+               myproducts_path):
+    28:   </div>
+    29:     
+    30: <% end %>
+    31:       <% form_tag projects_path, :method => 'get' do %>
+    32:   <p>
+    33:     <%= text_field_tag :search, params[:search] %>
+    34:     <%= submit_tag "Search", :name => nil %>
+  
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb__4225431226734551976_70311448937500'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311382345580'
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:20:50 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (6.1ms)
+  Rendered products/new.html.erb within layouts/application (9.0ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 66ms (Views: 62.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-20 18:21:01 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LwtRPndKsrjTNz1hkFZGXU0TObd/WpmG8S0mTv4TgehSlZasKz5QX3EQG/fPS9J+slD7XSWMAZgHScLV3q3gNQ==", "product"=>{"product_name"=>"rrrr", "product_price"=>"3.44", "product_desc"=>"sdfvsdfv", "quantity"=>"4", "product_type_id"=>"1", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `active=' for #<Product:0x00007fe54fc52df8>):
+  
+app/controllers/products_controller.rb:16:in `create'
+Started POST "/products" for 127.0.0.1 at 2017-11-20 18:22:11 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LwtRPndKsrjTNz1hkFZGXU0TObd/WpmG8S0mTv4TgehSlZasKz5QX3EQG/fPS9J+slD7XSWMAZgHScLV3q3gNQ==", "product"=>{"product_name"=>"rrrr", "product_price"=>"3.44", "product_desc"=>"sdfvsdfv", "quantity"=>"4", "product_type_id"=>"1", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[36mProductType Load (0.7ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (33.2ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`) VALUES (1, 1, 'rrrr', 3.44, 'sdfvsdfv', 4, '2017-11-21 00:22:12', 1, '2017-11-21 00:22:12', '2017-11-21 00:22:12')[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/3
+Completed 302 Found in 267ms (ActiveRecord: 61.9ms)
+
+
+Started GET "/products/3" for 127.0.0.1 at 2017-11-20 18:22:12 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.5ms)
+  Rendered partials/_navbar.html.erb (5.3ms)
+Completed 200 OK in 138ms (Views: 131.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:22:15 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (13.9ms)
+  Rendered products/new.html.erb within layouts/application (16.8ms)
+  Rendered partials/_navbar.html.erb (6.1ms)
+Completed 200 OK in 140ms (Views: 99.4ms | ActiveRecord: 12.9ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-20 18:22:26 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3yNXzxJgpnEGOZ+wc+2oqtzlyQ3olLlF+y82d/vrfn6OTGDWM2tW9+avbSYdQeelDcN22QatqsjLRHNGb1aJdA==", "product"=>{"product_name"=>"dgfbsacadcafvsdfv", "product_price"=>"44.44", "product_desc"=>"sfvervqfvsefvsfv", "quantity"=>"4444", "product_type_id"=>"1", "local_delivery"=>"0"}, "commit"=>"Create Product"}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (5.3ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`) VALUES (1, 1, 'dgfbsacadcafvsdfv', 44.44, 'sfvervqfvsefvsfv', 4444, '2017-11-21 00:22:26', 0, '2017-11-21 00:22:26', '2017-11-21 00:22:26')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/4
+Completed 302 Found in 24ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-11-20 18:22:26 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.5ms)
+  Rendered partials/_navbar.html.erb (3.8ms)
+Completed 200 OK in 75ms (Views: 68.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:22:28 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (2.2ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (16.2ms)
+  Rendered products/new.html.erb within layouts/application (22.8ms)
+  Rendered partials/_navbar.html.erb (2.0ms)
+Completed 200 OK in 107ms (Views: 99.5ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-20 18:22:41 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RAq6+jWllHJp2Gli6sXlPQHoir04voA3pChOzU29ksIVZY3jFK5k9IlOm/SEaaoy0M41adaHk7qUQwv82QBlyA==", "product"=>{"product_name"=>"vrvervsdvwevwrvrwgv", "product_price"=>"55.55", "product_desc"=>"rtbvrvecrevrgvrgvrgv", "quantity"=>"33333", "product_type_id"=>"1", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`) VALUES (1, 1, 'vrvervsdvwevwrvrwgv', 55.55, 'rtbvrvecrevrgvrgvrgv', 33333, '2017-11-21 00:22:41', 1, '2017-11-21 00:22:41', '2017-11-21 00:22:41')[0m
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/5
+Completed 302 Found in 26ms (ActiveRecord: 15.3ms)
+
+
+Started GET "/products/5" for 127.0.0.1 at 2017-11-20 18:22:41 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 5 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.0ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 50ms (Views: 46.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:22:43 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (17.0ms)
+  Rendered products/new.html.erb within layouts/application (24.3ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+Completed 200 OK in 84ms (Views: 80.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-20 18:22:57 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xmOSRNH4Ltb8Sp+jGf6PkaBhWvh84cgrFxewjZWFFG6XDKVd8PPeUBzcbTV3UsCecUflLJLY26YnfPW8ATjjZA==", "product"=>{"product_name"=>"qwertyuiuop", "product_price"=>"666.66", "product_desc"=>"erfscccddfdedf", "quantity"=>"66666", "product_type_id"=>"1", "local_delivery"=>"0"}, "commit"=>"Create Product"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`) VALUES (1, 1, 'qwertyuiuop', 666.66, 'erfscccddfdedf', 66666, '2017-11-21 00:22:57', 0, '2017-11-21 00:22:57', '2017-11-21 00:22:57')[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/6
+Completed 302 Found in 24ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/products/6" for 127.0.0.1 at 2017-11-20 18:22:57 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 6 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+  Rendered partials/_navbar.html.erb (1.7ms)
+Completed 200 OK in 48ms (Views: 44.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:22:59 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (5.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (15.5ms)
+  Rendered partials/_navbar.html.erb (2.0ms)
+Completed 200 OK in 70ms (Views: 61.6ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:23:06 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (7.9ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1+)):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= prod.product_name.count %> <br>
+    8:             <%= prod.product_name.limit(3) %>
+    9:         <% end %>
+   10:         <%end%>
+  
+app/views/products/categories.html.erb:7:in `count'
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311442589540'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311442589540'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311442589540'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:23:38 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (11.5ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `count' for #<Product:0x00007fe54ff91668>):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= prod.count %> <br>
+    8:             <%= prod.product_name.limit(3) %>
+    9:         <% end %>
+   10:         <%end%>
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311454215320'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311454215320'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311454215320'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:23:55 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (416.8ms)
+Completed 500 Internal Server Error in 425ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `product_name' for #<#<Class:0x00007fe54fcd32c8>:0x00007fe551a299a8>
+Did you mean?  product_path):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= prod.count(product_name) %> <br>
+    8:             <%= prod.product_name.limit(3) %>
+    9:         <% end %>
+   10:         <%end%>
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311446940800'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311446940800'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311446940800'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:24:34 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (3.2ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (71.1ms)
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `count' for #<Product:0x00007fe55135faa0>):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= prod.count(:product_name) %> <br>
+    8:             <%= prod.product_name.limit(3) %>
+    9:         <% end %>
+   10:         <%end%>
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311443297540'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311443297540'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311443297540'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:24:43 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.8ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (12.1ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `limit' for "ahahahahah":String):
+     5:         <% @product_info.each do |prod| %>
+     6:         <% if type.id == prod.product_type_id  %>
+     7:             <%# <%= prod.count(:product_name) %> <br> %>
+     8:             <%= prod.product_name.limit(3) %>
+     9:         <% end %>
+    10:         <%end%>
+    11:     </p>
+  
+app/views/products/categories.html.erb:8:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311442960040'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311442960040'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311442960040'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:27:01 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (2.0ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  Rendered products/categories.html.erb within layouts/application (49.6ms)
+  Rendered partials/_navbar.html.erb (4.6ms)
+Completed 200 OK in 255ms (Views: 235.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:27:14 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.7ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  Rendered products/categories.html.erb within layouts/application (13.4ms)
+  Rendered partials/_navbar.html.erb (3.2ms)
+Completed 200 OK in 115ms (Views: 109.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:27:27 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.8ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  Rendered products/categories.html.erb within layouts/application (15.8ms)
+  Rendered partials/_navbar.html.erb (3.2ms)
+Completed 200 OK in 95ms (Views: 85.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:27:29 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (7.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (11.9ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 84ms (Views: 72.1ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:27:31 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (2.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (17.1ms)
+  Rendered partials/_navbar.html.erb (2.8ms)
+Completed 200 OK in 92ms (Views: 82.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 18:27:32 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (4.5ms)
+  Rendered partials/_navbar.html.erb (3.6ms)
+Completed 200 OK in 86ms (Views: 80.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 18:27:33 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (19.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (23.6ms)
+  Rendered partials/_navbar.html.erb (3.4ms)
+Completed 200 OK in 105ms (Views: 81.9ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 18:27:33 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (14.7ms)
+  Rendered products/new.html.erb within layouts/application (22.4ms)
+  Rendered partials/_navbar.html.erb (3.5ms)
+Completed 200 OK in 104ms (Views: 96.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-20 18:27:44 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rTGZ6vJPnv66lUscBq8bYQBSiSbRSqszzp581GlBr1r8Xq7z00RueFoDuYpoA1Ru0XQ28j9zuL7+9Tnl/fxYUA==", "product"=>{"product_name"=>"qqqqqqq", "product_price"=>"22.22", "product_desc"=>"asdfdsfvasfvca", "quantity"=>"4444444", "product_type_id"=>"1", "local_delivery"=>"0"}, "commit"=>"Create Product"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (6.5ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`) VALUES (1, 1, 'qqqqqqq', 22.22, 'asdfdsfvasfvca', 4444444, '2017-11-21 00:27:44', 0, '2017-11-21 00:27:44', '2017-11-21 00:27:44')[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/7
+Completed 302 Found in 30ms (ActiveRecord: 14.0ms)
+
+
+Started GET "/products/7" for 127.0.0.1 at 2017-11-20 18:27:44 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 7 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.7ms)
+  Rendered partials/_navbar.html.erb (4.0ms)
+Completed 200 OK in 76ms (Views: 71.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:27:52 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 3[0m  [["LIMIT", 3]]
+  Rendered products/categories.html.erb within layouts/application (15.0ms)
+  Rendered partials/_navbar.html.erb (2.7ms)
+Completed 200 OK in 65ms (Views: 60.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:27:59 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (10.3ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 53ms (Views: 49.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:29:38 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  Rendered products/categories.html.erb within layouts/application (11.2ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/categories.html.erb:8: syntax error, unexpected '<'
+            <%= prod.product_name );@output
+             ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/categories.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;         end 
+                     ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/categories.html.erb:12: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/categories.html.erb:14: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/categories.html.erb:16: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/products/categories.html.erb:8: syntax error, unexpected '<'
+app/views/products/categories.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+app/views/products/categories.html.erb:12: syntax error, unexpected keyword_end, expecting ')'
+app/views/products/categories.html.erb:14: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/products/categories.html.erb:16: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:30:06 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.9ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  Rendered products/categories.html.erb within layouts/application (17.5ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1+)):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.take(4).each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= prod.product_name.count %> <br> 
+    8:             <%= prod.product_name %>
+    9:         <% end %>
+   10:         <%end%>
+  
+app/views/products/categories.html.erb:7:in `count'
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311410056740'
+app/views/products/categories.html.erb:5:in `each'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311410056740'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311410056740'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:31:11 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  Rendered products/categories.html.erb within layouts/application (14.7ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `group' for #<Product:0x00007fe54aad98a0>):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.take(4).each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= prod.group(:product_name).count %> <br> 
+    8:             <%= prod.product_name %>
+    9:         <% end %>
+   10:         <%end%>
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311388575340'
+app/views/products/categories.html.erb:5:in `each'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311388575340'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311388575340'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:32:12 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  Rendered products/categories.html.erb within layouts/application (13.3ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `group' for #<Product:0x00007fe54fd68aa8>):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.take(4).each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= prod.group(:id).count %> <br> 
+    8:             <%= prod.product_name %>
+    9:         <% end %>
+   10:         <%end%>
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311423878660'
+app/views/products/categories.html.erb:5:in `each'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311423878660'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311423878660'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:33:47 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  Rendered products/categories.html.erb within layouts/application (13.4ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `group' for #<Product:0x00007fe54b23c390>):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.take(4).each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= prod.group(:product_name) %> <br> 
+    8:             <%= prod.product_name %>
+    9:         <% end %>
+   10:         <%end%>
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311446442580'
+app/views/products/categories.html.erb:5:in `each'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311446442580'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311446442580'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:35:31 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  Rendered products/categories.html.erb within layouts/application (36.9ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (private method `select' called for #<Product:0x00007fe54a9a2180>):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.take(4).each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= prod.select("product_name").group("product_name") %> <br> 
+    8:             <%= prod.product_name %>
+    9:         <% end %>
+   10:         <%end%>
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311387983040'
+app/views/products/categories.html.erb:5:in `each'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311387983040'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311387983040'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:35:42 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.1ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  Rendered products/categories.html.erb within layouts/application (19.7ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 3.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `group' for #<Product:0x00007fe551d8afc0>):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.take(4).each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= prod.group("product_name") %> <br> 
+    8:             <%= prod.product_name %>
+    9:         <% end %>
+   10:         <%end%>
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311445736820'
+app/views/products/categories.html.erb:5:in `each'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311445736820'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311445736820'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:38:07 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  Rendered products/categories.html.erb within layouts/application (58.1ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `calculate' for #<Product:0x00007fe5512ea548>):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.take(4).each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= prod.calculate(:count, :all) %> <br> 
+    8:             <%= prod.product_name %>
+    9:         <% end %>
+   10:         <%end%>
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311442019360'
+app/views/products/categories.html.erb:5:in `each'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311442019360'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311442019360'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:41:35 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  Rendered products/categories.html.erb within layouts/application (26.0ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `items' for #<Product:0x00007fe551eb80f0>):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.take(4).each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= prod.items.group(:product_name).sum(:product_name) %> <br><br>
+    8:              
+    9:             <%= prod.product_name %>
+   10:         <% end %>
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311449385820'
+app/views/products/categories.html.erb:5:in `each'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311449385820'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311449385820'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:41:49 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.0ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  Rendered products/categories.html.erb within layouts/application (14.7ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `group' for #<Product:0x00007fe551aa3b68>):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.take(4).each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= prod.group(:product_name).sum(:product_name) %> <br><br>
+    8:              
+    9:             <%= prod.product_name %>
+   10:         <% end %>
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311447250920'
+app/views/products/categories.html.erb:5:in `each'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311447250920'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311447250920'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:41:59 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  Rendered products/categories.html.erb within layouts/application (16.2ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `sum' for #<Product:0x00007fe54ebc6520>):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.take(4).each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= prod.sum(:product_name) %> <br><br>
+    8:              
+    9:             <%= prod.product_name %>
+   10:         <% end %>
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311422818340'
+app/views/products/categories.html.erb:5:in `each'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311422818340'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311422818340'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:43:44 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (40.9ms)
+  Rendered partials/_navbar.html.erb (6.7ms)
+Completed 200 OK in 145ms (Views: 124.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:45:55 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.9ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 11[0m
+  [1m[36mProduct Load (6.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` GROUP BY `products`.`product_name` LIMIT 11[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 11[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (4.7ms)[0m  [1m[34mSELECT  `products`.* FROM `products` GROUP BY `products`.`product_name` LIMIT 11[0m
+  Rendered products/categories.html.erb within layouts/application (286.6ms)
+Completed 500 Internal Server Error in 337ms (ActiveRecord: 14.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `count' for #<#<Class:0x00007fe551ac1b40>:0x00007fe54ef3aee0>
+Did you mean?  @count):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.take(4).each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= count %> <br><br>
+    8:              
+    9:             <%= prod.product_name %>
+   10:         <% end %>
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311432765860'
+app/views/products/categories.html.erb:5:in `each'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311432765860'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311432765860'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:46:16 -0600
+Processing by ProductsController#categories as HTML
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT `products`.* FROM `products` GROUP BY `products`.`product_name`[0m
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 28.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'bangazon_site_development.products.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by: SELECT `products`.* FROM `products` GROUP BY `products`.`product_name`):
+  
+app/controllers/products_controller.rb:57:in `puts'
+app/controllers/products_controller.rb:57:in `puts'
+app/controllers/products_controller.rb:57:in `categories'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:47:43 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT SUM() AS sum, `products`.`product_name` AS products_product_name FROM `products` GROUP BY `products`.`product_name`[0m
+  Rendered products/categories.html.erb within layouts/application (97.3ms)
+Completed 500 Internal Server Error in 131ms (ActiveRecord: 29.8ms)
+
+
+  
+ActionView::Template::Error (Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AS sum, `products`.`product_name` AS products_product_name FROM `products` GRO' at line 1: SELECT SUM() AS sum, `products`.`product_name` AS products_product_name FROM `products` GROUP BY `products`.`product_name`):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.take(4).each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= @count.sum %> <br><br>
+    8:              
+    9:             <%= prod.product_name %>
+   10:         <% end %>
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311421066400'
+app/views/products/categories.html.erb:5:in `each'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311421066400'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311421066400'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:48:39 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (27.3ms)[0m  [1m[34mSELECT SUM(`products`.`quantity`) AS sum_quantity, `products`.`product_name` AS products_product_name FROM `products` GROUP BY `products`.`product_name`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (45.8ms)
+  Rendered partials/_navbar.html.erb (12.9ms)
+Completed 200 OK in 183ms (Views: 134.3ms | ActiveRecord: 28.6ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:48:59 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM(`products`.`quantity`) AS sum_quantity, `products`.`product_name` AS products_product_name FROM `products` GROUP BY `products`.`product_name`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (15.1ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+Completed 200 OK in 98ms (Views: 91.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:49:25 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM(`products`.`quantity`) AS sum_quantity, `products`.`product_name` AS products_product_name FROM `products` GROUP BY `products`.`product_name`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.9ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  Rendered products/categories.html.erb within layouts/application (14.1ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `group' for #<Hash:0x00007fe551495910>
+Did you mean?  group_by):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.take(4).each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= @count.group(:product_name) %> <br><br>
+    8:              
+    9:             <%= prod.product_name %>
+   10:         <% end %>
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__1697742819879570245_70311443996740'
+app/views/products/categories.html.erb:5:in `each'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__1697742819879570245_70311443996740'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__1697742819879570245_70311443996740'
+Started GET "/categories" for 127.0.0.1 at 2017-11-20 18:50:25 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.9ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (52.2ms)
+  Rendered partials/_navbar.html.erb (3.5ms)
+Completed 200 OK in 143ms (Views: 127.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 19:37:28 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.7ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (42.5ms)
+  Rendered products/new.html.erb within layouts/application (57.7ms)
+  Rendered partials/_navbar.html.erb (7.4ms)
+Completed 200 OK in 460ms (Views: 245.3ms | ActiveRecord: 122.7ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 19:37:30 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (96.7ms)
+  Rendered partials/_navbar.html.erb (3.9ms)
+Completed 200 OK in 258ms (Views: 233.9ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 19:37:32 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (10.8ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (25.3ms)
+  Rendered partials/_navbar.html.erb (2.9ms)
+Completed 200 OK in 149ms (Views: 133.0ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 19:37:33 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (37.7ms)
+  Rendered partials/_navbar.html.erb (3.0ms)
+Completed 200 OK in 182ms (Views: 174.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 19:37:36 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (5.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (43.5ms)
+  Rendered partials/_navbar.html.erb (3.0ms)
+Completed 200 OK in 143ms (Views: 132.7ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 19:37:37 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (7.3ms)
+  Rendered partials/_navbar.html.erb (3.4ms)
+Completed 200 OK in 159ms (Views: 153.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 19:37:38 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (4.7ms)
+  Rendered partials/_navbar.html.erb (3.2ms)
+Completed 200 OK in 123ms (Views: 118.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 19:37:53 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (11.3ms)
+  Rendered partials/_navbar.html.erb (2.1ms)
+Completed 200 OK in 85ms (Views: 81.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 19:38:41 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (5.7ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (32.8ms)
+  Rendered products/new.html.erb within layouts/application (37.4ms)
+  Rendered partials/_navbar.html.erb (2.4ms)
+Completed 200 OK in 154ms (Views: 138.7ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 19:38:42 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (14.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (24.3ms)
+  Rendered partials/_navbar.html.erb (2.1ms)
+Completed 200 OK in 111ms (Views: 92.0ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 19:38:43 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (12.9ms)
+  Rendered partials/_navbar.html.erb (2.8ms)
+Completed 200 OK in 123ms (Views: 115.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/myproducts" for 127.0.0.1 at 2017-11-20 19:38:48 -0600
+Processing by ProductsController#showSellerProduct as HTML
+  Rendering products/sellerproducts.html.erb within layouts/application
+  [1m[36mProduct Load (5.8ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`customer_id` = 1 AND `products`.`active` = 1[0m
+  Rendered products/sellerproducts.html.erb within layouts/application (30.1ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 5.8ms)
+
+
+  
+ActionView::Template::Error (Mysql2::Error: Unknown column 'products.active' in 'where clause': SELECT `products`.* FROM `products` WHERE `products`.`customer_id` = 1 AND `products`.`active` = 1):
+     6:     <th>Text</th>
+     7:   </tr>
+     8: 
+     9:   <% @products.each do |product| %>
+    10:     <tr>
+    11:       <td><%= product.product_name %></td>
+    12:       <td><%= product.product_desc %></td>
+  
+app/views/products/sellerproducts.html.erb:9:in `_app_views_products_sellerproducts_html_erb__2612986584063629679_70311392279220'
+app/controllers/products_controller.rb:42:in `showSellerProduct'
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 19:38:54 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.7ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (4.3ms)
+  Rendered partials/_navbar.html.erb (2.6ms)
+Completed 200 OK in 91ms (Views: 85.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 19:39:13 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 69ms (Views: 65.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-20 19:39:16 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (18.3ms)
+  Rendered products/new.html.erb within layouts/application (26.7ms)
+  Rendered partials/_navbar.html.erb (14.6ms)
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `search' for #<Product:0x00007fe5514170d8>):
+    29:     
+    30: <% end %>
+    31:       <%= form_tag products_path, method: :get do %>
+    32:       <%= text_field :product, :search, placeholder: "Search", class: "form-control" %>
+    33:       <%= submit_tag 'Search', name: nil %>
+    34:       <% end %>
+    35:   
+  
+app/views/partials/_navbar.html.erb:32:in `block in _app_views_partials__navbar_html_erb__4225431226734551976_70311442572800'
+app/views/partials/_navbar.html.erb:31:in `_app_views_partials__navbar_html_erb__4225431226734551976_70311442572800'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1796900936278963690_70311443719760'
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 19:39:17 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.9ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (7.3ms)
+  Rendered partials/_navbar.html.erb (2.9ms)
+Completed 200 OK in 99ms (Views: 93.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-20 19:39:25 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 54ms (Views: 51.4ms | ActiveRecord: 0.5ms)
+
+
