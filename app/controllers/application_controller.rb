@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   
   before_action :initialize_product
   
-    def initialize_product
-      @product = Product.new
-    end
+  def initialize_product
+    @product = Product.new
+  end
+
 end

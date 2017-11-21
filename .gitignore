@@ -27,7 +27,9 @@ config/database.yml
 .powenv
 .powrc
 /public/system/photos
-
+config/initializers/simple_form.rb
+config/initializers/simple_form_bootstrap.rb
+config/locales/simple_form.en.yml
 #----------------------------------------------------------------------------
 # MISC
 #----------------------------------------------------------------------------

@@ -6,7 +6,10 @@ class ProductsController < ApplicationController
     @product_type = ProductType.all
   end
 
+<<<<<<< HEAD
   #Creates a product to save to database based on params in private, adding the user_id, time it was added, and an active status, it adds an image then redirects user to product view.
+=======
+>>>>>>> master
   def create
     @product = Product.new(product_params)
     @product.customer_id = session[:user_id]
@@ -63,21 +66,38 @@ class ProductsController < ApplicationController
   def index 
     if params[:product]
     @products = Product.where("product_name like ? AND active = true", "%#{params[:product]}%")
-    else 
-      @products = Product.all
-    end
+  else 
+    @products = Product.all
   end
 
+  def add_to_cart
+    @order = Order.find_or_create_by(customer_id: session[:user_id], pay_method_id: nil)
+    @orderline = OrderLine.new(purchase_params)
+    @orderline.order_id = @order.id
+    @orderline.save
+    puts @orderline.errors.full_messages
+  end
+  
   #Allows user to search based on categories.
   def categories
     @categories = ProductType.all
-    @product_info = Product.all
+    @product_names = Product.all
+    @product_info = Product.group(:product_type_id).count
+    puts @product_info
   end
-
+  
+  # params for posting to database.
   private
-  #params for posting to database.
-  def product_params
-    params.require(:product).permit(:search, :product_name, :product_price, :product_desc, :quantity, :local_delivery, :active, :product_type_id)
-  end
+    def image_params
+      params.require(:product).permit(:image_file)
+    end
+    
+    def purchase_params
+      params.permit(:product_id)
+    end
+
+    def product_params
+      params.require(:product).permit(:search, :product_name, :product_price, :product_desc, :quantity, :local_delivery, :active, :product_type_id)
+    end
 
 end

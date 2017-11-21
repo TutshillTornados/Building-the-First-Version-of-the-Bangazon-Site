@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20171121115015) do
 
   create_table "pay_methods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "payment_type"
-    t.string "account_number", null: false
+    t.string "account_number"
     t.date "expiration_date"
     t.bigint "customer_id"
     t.datetime "created_at", null: false
