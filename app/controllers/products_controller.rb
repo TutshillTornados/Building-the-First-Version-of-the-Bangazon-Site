@@ -66,7 +66,9 @@ class ProductsController < ApplicationController
 
   def categories
     @categories = ProductType.all
-    @product_info = Product.all
+    @product_names = Product.all
+    @product_info = Product.group(:product_type_id).count
+    puts @product_info
   end
   
  # THIS WILL BE THE FINAL METHODS
