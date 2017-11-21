@@ -57,6 +57,7 @@ class ProductsController < ApplicationController
   def categories
     @categories = ProductType.all
     @product_info = Product.all
+    @totals = Product.product_name.count
   end
 
       def product_params

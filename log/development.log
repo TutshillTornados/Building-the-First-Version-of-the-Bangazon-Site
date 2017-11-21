@@ -3526,3 +3526,351 @@ Completed 200 OK in 51ms (Views: 44.3ms | ActiveRecord: 1.9ms)
 
 
 >>>>>>> 7ac2cea14addb055084cc60450430b8e2d94b2b9
+  [1m[35m (8.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (24.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (1.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (117.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `Bangazon_Site_development`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (58.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS `Bangazon_Site_test`[0m
+  [1m[35m (1.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE DATABASE `Bangazon_Site_development` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE `Bangazon_Site_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (1.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `customers` CASCADE[0m
+  [1m[35m (34.1ms)[0m  [1m[35mCREATE TABLE `customers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `password_digest` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `street_address` varchar(255), `city` varchar(255), `state` varchar(255), `zip` int, `phone_number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `product_file_name` varchar(255), `product_content_type` varchar(255), `product_file_size` int, `product_updated_at` datetime) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `order_lines` CASCADE[0m
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE TABLE `order_lines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_id` bigint, `order_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_order_lines_on_order_id`  (`order_id`),  INDEX `index_order_lines_on_product_id`  (`product_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `orders` CASCADE[0m
+  [1m[35m (24.0ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `pay_method_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_orders_on_customer_id`  (`customer_id`),  INDEX `index_orders_on_pay_method_id`  (`pay_method_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `pay_methods` CASCADE[0m
+  [1m[35m (18.1ms)[0m  [1m[35mCREATE TABLE `pay_methods` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `payment_type` varchar(255), `account_number` varchar(255), `expiration_date` date, `customer_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `active_record` tinyint(1),  INDEX `index_pay_methods_on_customer_id`  (`customer_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `photos` CASCADE[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE `photos` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `image_file` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `imageable_type` varchar(255), `imageable_id` bigint, `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int, `image_updated_at` datetime,  INDEX `index_photos_on_imageable_type_and_imageable_id`  (`imageable_type`, `imageable_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `product_types` CASCADE[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE `product_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_type_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `products` CASCADE[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `product_type_id` bigint, `image_id` bigint, `product_name` varchar(255), `product_price` float(24), `product_desc` text, `quantity` int, `product_added` datetime, `local_delivery` tinyint(1), `active` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_products_on_customer_id`  (`customer_id`),  INDEX `index_products_on_image_id`  (`image_id`),  INDEX `index_products_on_product_type_id`  (`product_type_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (30.0ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_e6c763ee60`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+[0m
+  [1m[35m (19.7ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_83e960fa54`
+FOREIGN KEY (`product_id`)
+  REFERENCES `products` (`id`)
+[0m
+  [1m[35m (19.4ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_3dad120da9`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (21.5ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_9d6a437740`
+FOREIGN KEY (`pay_method_id`)
+  REFERENCES `pay_methods` (`id`)
+[0m
+  [1m[35m (41.2ms)[0m  [1m[35mALTER TABLE `pay_methods` ADD CONSTRAINT `fk_rails_c8fc227bd8`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (34.1ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_252452a41b`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (35.7ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_0c57d8fc34`
+FOREIGN KEY (`image_id`)
+  REFERENCES `photos` (`id`)
+[0m
+  [1m[35m (24.9ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_8464b8e5d7`
+FOREIGN KEY (`product_type_id`)
+  REFERENCES `product_types` (`id`)
+[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (7.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20171121115015)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20171114195736),
+(20171114195934),
+(20171114200052),
+(20171114200524),
+(20171114200852),
+(20171114201311),
+(20171114201349),
+(20171116160134),
+(20171117174232),
+(20171120174332),
+(20171121090554),
+(20171121100736),
+(20171121113841);
+
+[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.6ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-11-21 15:58:48', '2017-11-21 15:58:48')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `customers` CASCADE[0m
+  [1m[35m (22.8ms)[0m  [1m[35mCREATE TABLE `customers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `password_digest` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `street_address` varchar(255), `city` varchar(255), `state` varchar(255), `zip` int, `phone_number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `product_file_name` varchar(255), `product_content_type` varchar(255), `product_file_size` int, `product_updated_at` datetime) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `order_lines` CASCADE[0m
+  [1m[35m (24.8ms)[0m  [1m[35mCREATE TABLE `order_lines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_id` bigint, `order_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_order_lines_on_order_id`  (`order_id`),  INDEX `index_order_lines_on_product_id`  (`product_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `orders` CASCADE[0m
+  [1m[35m (39.6ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `pay_method_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_orders_on_customer_id`  (`customer_id`),  INDEX `index_orders_on_pay_method_id`  (`pay_method_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `pay_methods` CASCADE[0m
+  [1m[35m (22.6ms)[0m  [1m[35mCREATE TABLE `pay_methods` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `payment_type` varchar(255), `account_number` varchar(255), `expiration_date` date, `customer_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `active_record` tinyint(1),  INDEX `index_pay_methods_on_customer_id`  (`customer_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `photos` CASCADE[0m
+  [1m[35m (22.7ms)[0m  [1m[35mCREATE TABLE `photos` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `image_file` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `imageable_type` varchar(255), `imageable_id` bigint, `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int, `image_updated_at` datetime,  INDEX `index_photos_on_imageable_type_and_imageable_id`  (`imageable_type`, `imageable_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `product_types` CASCADE[0m
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE TABLE `product_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_type_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `products` CASCADE[0m
+  [1m[35m (23.6ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `product_type_id` bigint, `image_id` bigint, `product_name` varchar(255), `product_price` float(24), `product_desc` text, `quantity` int, `product_added` datetime, `local_delivery` tinyint(1), `active` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_products_on_customer_id`  (`customer_id`),  INDEX `index_products_on_image_id`  (`image_id`),  INDEX `index_products_on_product_type_id`  (`product_type_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (45.6ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_e6c763ee60`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+[0m
+  [1m[35m (27.8ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_83e960fa54`
+FOREIGN KEY (`product_id`)
+  REFERENCES `products` (`id`)
+[0m
+  [1m[35m (30.3ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_3dad120da9`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (26.8ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_9d6a437740`
+FOREIGN KEY (`pay_method_id`)
+  REFERENCES `pay_methods` (`id`)
+[0m
+  [1m[35m (35.9ms)[0m  [1m[35mALTER TABLE `pay_methods` ADD CONSTRAINT `fk_rails_c8fc227bd8`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (45.3ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_252452a41b`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (38.0ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_0c57d8fc34`
+FOREIGN KEY (`image_id`)
+  REFERENCES `photos` (`id`)
+[0m
+  [1m[35m (57.9ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_8464b8e5d7`
+FOREIGN KEY (`product_type_id`)
+  REFERENCES `product_types` (`id`)
+[0m
+  [1m[35m (53.8ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20171121115015)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20171114195736),
+(20171114195934),
+(20171114200052),
+(20171114200524),
+(20171114200852),
+(20171114201311),
+(20171114201349),
+(20171116160134),
+(20171117174232),
+(20171120174332),
+(20171121090554),
+(20171121100736),
+(20171121113841);
+
+[0m
+  [1m[35m (42.3ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-11-21 15:58:49', '2017-11-21 15:58:49')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (6.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK(1096848878559930510, 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreatePhotos (20171121115624)
+  [1m[35m (18.9ms)[0m  [1m[35mCREATE TABLE `photos` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK(1096848878559930510)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK(1096848878559930510, 0)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreatePhotos (20171121115624)
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE `photos` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK(1096848878559930510)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (48.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS `Bangazon_Site_development`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (36.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS `Bangazon_Site_test`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE DATABASE `Bangazon_Site_development` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (2.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE DATABASE `Bangazon_Site_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (10.1ms)[0m  [1m[35mDROP TABLE IF EXISTS `customers` CASCADE[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE `customers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `password_digest` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `street_address` varchar(255), `city` varchar(255), `state` varchar(255), `zip` int, `phone_number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `product_file_name` varchar(255), `product_content_type` varchar(255), `product_file_size` int, `product_updated_at` datetime) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `order_lines` CASCADE[0m
+  [1m[35m (20.3ms)[0m  [1m[35mCREATE TABLE `order_lines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_id` bigint, `order_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_order_lines_on_order_id`  (`order_id`),  INDEX `index_order_lines_on_product_id`  (`product_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `orders` CASCADE[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `pay_method_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_orders_on_customer_id`  (`customer_id`),  INDEX `index_orders_on_pay_method_id`  (`pay_method_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `pay_methods` CASCADE[0m
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE `pay_methods` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `payment_type` varchar(255), `account_number` varchar(255), `expiration_date` date, `customer_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `active_record` tinyint(1),  INDEX `index_pay_methods_on_customer_id`  (`customer_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `photos` CASCADE[0m
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE `photos` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `image_file` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `imageable_type` varchar(255), `imageable_id` bigint, `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int, `image_updated_at` datetime,  INDEX `index_photos_on_imageable_type_and_imageable_id`  (`imageable_type`, `imageable_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `product_types` CASCADE[0m
+  [1m[35m (20.2ms)[0m  [1m[35mCREATE TABLE `product_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_type_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS `products` CASCADE[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `product_type_id` bigint, `image_id` bigint, `product_name` varchar(255), `product_price` float(24), `product_desc` text, `quantity` int, `product_added` datetime, `local_delivery` tinyint(1), `active` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_products_on_customer_id`  (`customer_id`),  INDEX `index_products_on_image_id`  (`image_id`),  INDEX `index_products_on_product_type_id`  (`product_type_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (34.2ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_e6c763ee60`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+[0m
+  [1m[35m (27.7ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_83e960fa54`
+FOREIGN KEY (`product_id`)
+  REFERENCES `products` (`id`)
+[0m
+  [1m[35m (22.9ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_3dad120da9`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (30.9ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_9d6a437740`
+FOREIGN KEY (`pay_method_id`)
+  REFERENCES `pay_methods` (`id`)
+[0m
+  [1m[35m (23.8ms)[0m  [1m[35mALTER TABLE `pay_methods` ADD CONSTRAINT `fk_rails_c8fc227bd8`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (30.5ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_252452a41b`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (30.3ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_0c57d8fc34`
+FOREIGN KEY (`image_id`)
+  REFERENCES `photos` (`id`)
+[0m
+  [1m[35m (23.6ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_8464b8e5d7`
+FOREIGN KEY (`product_type_id`)
+  REFERENCES `product_types` (`id`)
+[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20171121115015)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20171114195736),
+(20171114195934),
+(20171114200052),
+(20171114200524),
+(20171114200852),
+(20171114201311),
+(20171114201349),
+(20171116160134),
+(20171117174232),
+(20171120174332),
+(20171121090554),
+(20171121100736),
+(20171121113841);
+
+[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-11-21 16:09:07', '2017-11-21 16:09:07')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `customers` CASCADE[0m
+  [1m[35m (24.5ms)[0m  [1m[35mCREATE TABLE `customers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `password_digest` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `street_address` varchar(255), `city` varchar(255), `state` varchar(255), `zip` int, `phone_number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `product_file_name` varchar(255), `product_content_type` varchar(255), `product_file_size` int, `product_updated_at` datetime) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `order_lines` CASCADE[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE `order_lines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_id` bigint, `order_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_order_lines_on_order_id`  (`order_id`),  INDEX `index_order_lines_on_product_id`  (`product_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `orders` CASCADE[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `pay_method_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_orders_on_customer_id`  (`customer_id`),  INDEX `index_orders_on_pay_method_id`  (`pay_method_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `pay_methods` CASCADE[0m
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE `pay_methods` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `payment_type` varchar(255), `account_number` varchar(255), `expiration_date` date, `customer_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `active_record` tinyint(1),  INDEX `index_pay_methods_on_customer_id`  (`customer_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS `photos` CASCADE[0m
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE `photos` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `image_file` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `imageable_type` varchar(255), `imageable_id` bigint, `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int, `image_updated_at` datetime,  INDEX `index_photos_on_imageable_type_and_imageable_id`  (`imageable_type`, `imageable_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `product_types` CASCADE[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE `product_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_type_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `products` CASCADE[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `product_type_id` bigint, `image_id` bigint, `product_name` varchar(255), `product_price` float(24), `product_desc` text, `quantity` int, `product_added` datetime, `local_delivery` tinyint(1), `active` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_products_on_customer_id`  (`customer_id`),  INDEX `index_products_on_image_id`  (`image_id`),  INDEX `index_products_on_product_type_id`  (`product_type_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (22.9ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_e6c763ee60`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+[0m
+  [1m[35m (20.0ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_83e960fa54`
+FOREIGN KEY (`product_id`)
+  REFERENCES `products` (`id`)
+[0m
+  [1m[35m (18.2ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_3dad120da9`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (20.7ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_9d6a437740`
+FOREIGN KEY (`pay_method_id`)
+  REFERENCES `pay_methods` (`id`)
+[0m
+  [1m[35m (32.3ms)[0m  [1m[35mALTER TABLE `pay_methods` ADD CONSTRAINT `fk_rails_c8fc227bd8`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (20.0ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_252452a41b`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (23.3ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_0c57d8fc34`
+FOREIGN KEY (`image_id`)
+  REFERENCES `photos` (`id`)
+[0m
+  [1m[35m (22.5ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_8464b8e5d7`
+FOREIGN KEY (`product_type_id`)
+  REFERENCES `product_types` (`id`)
+[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20171121115015)[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20171114195736),
+(20171114195934),
+(20171114200052),
+(20171114200524),
+(20171114200852),
+(20171114201311),
+(20171114201349),
+(20171116160134),
+(20171117174232),
+(20171120174332),
+(20171121090554),
+(20171121100736),
+(20171121113841);
+
+[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-11-21 16:09:07', '2017-11-21 16:09:07')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK(1096848878559930510, 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreatePhotos (20171121115624)
+  [1m[35m (19.1ms)[0m  [1m[35mCREATE TABLE `photos` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK(1096848878559930510)[0m
