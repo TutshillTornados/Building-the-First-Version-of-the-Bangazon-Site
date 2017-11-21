@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'myproducts', to: 'products#showSellerProduct', as: 'myproducts'
   get 'categories', to: 'products#categories', as: 'categories'
+
+  delete 'photo/:id' => 'photos#destroy', as: 'photo'
+  
   # get 'customerForm', to: 'customers#show', as: 'customerForm'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

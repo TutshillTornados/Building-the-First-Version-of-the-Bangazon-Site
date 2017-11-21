@@ -1,9 +1,8 @@
 class ProductsController < ApplicationController
 
   def new
-    # session[:customer_id] ???
     @product = Product.new
-    @image = Image.new
+    @photo = Photo.new
     @product_type = ProductType.all
 
   end
@@ -14,8 +13,12 @@ class ProductsController < ApplicationController
     @product.customer_id = session[:user_id]
     @product.product_added = DateTime.now()
     @product.active = 1 
-    # @product.product_type_id = @product_type
     if @product.save
+      if params[:images]
+        params[:images].each { |image|
+        @product.photos.create(image: image)
+      }
+      end
       redirect_to product_path(@product)
     else
       @product_type = ProductType.all
@@ -42,49 +45,22 @@ class ProductsController < ApplicationController
       render 'sellerproducts'
   end
 
-  # def index
-  #   @products = Product.where(active: true)
-  # end
 
   def index
-    @products = Product.all
+    @products = if params[:product]
+      Product.where("product_name like ?", "%#{params[:product]}%")
+    else 
+      @products = Product.all
+    end
   end
 
-def categories
+  def categories
     @categories = ProductType.all
     @product_info = Product.all
   end
 
-  
- # THIS WILL BE THE FINAL METHODS
-  # def create
-  #   @image = Image.new(image_params)
-  #   if @image.save
-  #     # :image_id = @image.id
-  #     createProduct(@image.id)
-  #   else
-  #     render :new
-  #   end
-  # end
+      def product_params
+        params.require(:product).permit(:search, :product_name, :product_price, :product_desc, :quantity, :local_delivery, :active, :product_type_id)
+      end
 
-  # def createProduct(imageID)
-  #   @product = Product.new(product_params)
-  #   @product.customer_id = session[:user_id]
-  #   @product.image_id = imageID
-  #   # binding.pry
-  #     if @product.save
-  #       # redirect_to product_path, notice: 'U DID IT KID'
-  #     else
-  #       render :new
-  #     end
-  # end
-  # ^^ FINAL METHODS
-  
-    def product_params
-      params.require(:product).permit(:search, :product_name, :product_price, :product_desc, :quantity, :local_delivery, :active, :product_type_id)
-    end
-    
-    def image_params
-      params.require(:product).permit(:image_file)
-    end
 end

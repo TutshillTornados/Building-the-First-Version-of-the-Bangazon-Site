@@ -1,39 +1,50 @@
 <%= form_with model: @customer, local: true do |form| %>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"><%= link_to 'M.A.D.E Industries', root_path %></a>
+  <a class="navbar-brand navButtonWidth" href="#"><%= link_to 'M.A.D.E Industries', root_path %></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <% if logged_in? %>
+        <li class="nav-item navButtonWidth">
+          <a class="nav-link" href="#"> <%= link_to 'Home', home_index_path %> </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"> <%= link_to 'Sell A Product', new_product_path %> </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            User Options
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#"> <%= link_to 'My Products', myproducts_path %> </a>
+            <a class="dropdown-item" href="#"><%= link_to 'Add Pay Method', new_pay_method_path %></a>
+            <a class="dropdown-item" href="#"><%= link_to 'View Cart', orders_path %></a>
+            <a class="dropdown-item" href="#"><%= link_to 'My Pay Methods', pay_methods_path %></a>
+          </div>
+        </li>
+        <% else %>
+          <li class="nav-item">
+            <a class="nav-link" href="#"> <%= link_to 'Home', home_index_path %> </a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
 
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#"> <%= link_to 'Home', home_index_path %> </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"> <%= link_to 'Sell A Product', new_product_path %> </a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          User Options
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#"> <%= link_to 'My Products', myproducts_path %> </a>
-          <a class="dropdown-item" href="#"><%= link_to 'Add Pay Method', new_pay_method_path %></a>
-          <a class="dropdown-item" href="#"><%= link_to 'View Cart', orders_path %></a>
-          <a class="dropdown-item" href="#"><%= link_to 'My Pay Methods', pay_methods_path %></a>
-        </div>
-      </li>
-    </ul>
-  </div>
+
     
 <% end %>
-      <%= form_tag products_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
+<%= form_tag products_path, method: :get do %>
+<%= text_field_tag :product, :search, placeholder: "Search", class: "form-control" %>
+<%= submit_tag 'Search', name: nil %>
 <% end %>
   
+<% if logged_in? %>
+<%= link_to 'Logout', logout_path %>
+<% else %>
+<%= link_to "Sign Up", signup_path %>
+<%= link_to "Log In", login_path %>
+<% end %>
     
 </nav>
