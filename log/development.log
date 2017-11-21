@@ -2083,23 +2083,6 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 88ms (Views: 84.5ms | ActiveRecord: 1.1ms)
 
 
-<<<<<<< HEAD
->>>>>>> master
-<<<<<<< HEAD
-  [1m[35m (18.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
-  [1m[35m (6.6ms)[0m  [1m[34mSELECT GET_LOCK(1096848878559930510, 0)[0m
-  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
-Migrating to PayMethods (20171120174332)
-  [1m[35m (70.1ms)[0m  [1m[35mALTER TABLE `pay_methods` ADD `active_record` tinyint(1)[0m
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171120174332')[0m
-  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
-  [1m[35m (6.4ms)[0m  [1m[34mSELECT RELEASE_LOCK(1096848878559930510)[0m
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
-=======
 Started GET "/products/new" for 127.0.0.1 at 2017-11-20 17:57:08 -0600
   [1m[35m (69.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
   [1m[35m (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
@@ -2110,7 +2093,7 @@ Processing by ProductsController#new as HTML
   Rendered products/new.html.erb within layouts/application (48.5ms)
   Rendered partials/_navbar.html.erb (22.0ms)
 Completed 500 Internal Server Error in 7141ms (ActiveRecord: 15.3ms)
-=======
+
 Started GET "/products/6/edit" for 127.0.0.1 at 2017-11-21 04:28:49 -0600
 Processing by ProductsController#edit as HTML
   Parameters: {"id"=>"6"}
@@ -2118,7 +2101,7 @@ Processing by ProductsController#edit as HTML
   Rendered products/_form.html.erb (4.4ms)
   Rendered products/edit.html.erb within layouts/application (7.0ms)
 Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
->>>>>>> master
+
 
 
   
@@ -3525,7 +3508,7 @@ Processing by ProductsController#categories as HTML
 Completed 200 OK in 51ms (Views: 44.3ms | ActiveRecord: 1.9ms)
 
 
->>>>>>> 7ac2cea14addb055084cc60450430b8e2d94b2b9
+
   [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
   [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
   [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
@@ -4006,5 +3989,2296 @@ Processing by ProductsController#showSellerProduct as HTML
   [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
   Rendered partials/_navbar.html.erb (2.4ms)
 Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.9ms)
+  [1m[35m (1.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (60.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS `Bangazon_Site_development`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (46.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS `Bangazon_Site_test`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE `Bangazon_Site_development` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE `Bangazon_Site_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `customers` CASCADE[0m
+  [1m[35m (39.9ms)[0m  [1m[35mCREATE TABLE `customers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `password_digest` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `street_address` varchar(255), `city` varchar(255), `state` varchar(255), `zip` int, `phone_number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `product_file_name` varchar(255), `product_content_type` varchar(255), `product_file_size` int, `product_updated_at` datetime) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `order_lines` CASCADE[0m
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE TABLE `order_lines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_id` bigint, `order_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_order_lines_on_order_id`  (`order_id`),  INDEX `index_order_lines_on_product_id`  (`product_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `orders` CASCADE[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `pay_method_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_orders_on_customer_id`  (`customer_id`),  INDEX `index_orders_on_pay_method_id`  (`pay_method_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `pay_methods` CASCADE[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE `pay_methods` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `payment_type` varchar(255), `account_number` varchar(255) NOT NULL, `expiration_date` date, `customer_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `active_record` tinyint(1),  INDEX `index_pay_methods_on_customer_id`  (`customer_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `photos` CASCADE[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE `photos` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `image_file` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `imageable_type` varchar(255), `imageable_id` bigint, `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int, `image_updated_at` datetime,  INDEX `index_photos_on_imageable_type_and_imageable_id`  (`imageable_type`, `imageable_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `product_types` CASCADE[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE `product_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_type_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `products` CASCADE[0m
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `product_type_id` bigint, `image_id` bigint, `product_name` varchar(255), `product_price` float(24), `product_desc` text, `quantity` int, `product_added` datetime, `local_delivery` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `active` tinyint(1),  INDEX `index_products_on_customer_id`  (`customer_id`),  INDEX `index_products_on_image_id`  (`image_id`),  INDEX `index_products_on_product_type_id`  (`product_type_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (21.6ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_e6c763ee60`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+[0m
+  [1m[35m (20.4ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_83e960fa54`
+FOREIGN KEY (`product_id`)
+  REFERENCES `products` (`id`)
+[0m
+  [1m[35m (19.1ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_3dad120da9`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (17.8ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_9d6a437740`
+FOREIGN KEY (`pay_method_id`)
+  REFERENCES `pay_methods` (`id`)
+[0m
+  [1m[35m (24.4ms)[0m  [1m[35mALTER TABLE `pay_methods` ADD CONSTRAINT `fk_rails_c8fc227bd8`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (20.5ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_252452a41b`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (30.4ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_0c57d8fc34`
+FOREIGN KEY (`image_id`)
+  REFERENCES `photos` (`id`)
+[0m
+  [1m[35m (20.9ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_8464b8e5d7`
+FOREIGN KEY (`product_type_id`)
+  REFERENCES `product_types` (`id`)
+[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20171121115015)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20171114195736),
+(20171114195934),
+(20171114200052),
+(20171114200524),
+(20171114200852),
+(20171114201311),
+(20171114201349),
+(20171116160134),
+(20171117174232),
+(20171120174332),
+(20171121090554),
+(20171121100736),
+(20171121113841);
+
+[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-11-21 16:46:27', '2017-11-21 16:46:27')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `customers` CASCADE[0m
+  [1m[35m (46.8ms)[0m  [1m[35mCREATE TABLE `customers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `password_digest` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `street_address` varchar(255), `city` varchar(255), `state` varchar(255), `zip` int, `phone_number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `product_file_name` varchar(255), `product_content_type` varchar(255), `product_file_size` int, `product_updated_at` datetime) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `order_lines` CASCADE[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE `order_lines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_id` bigint, `order_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_order_lines_on_order_id`  (`order_id`),  INDEX `index_order_lines_on_product_id`  (`product_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `orders` CASCADE[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `pay_method_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_orders_on_customer_id`  (`customer_id`),  INDEX `index_orders_on_pay_method_id`  (`pay_method_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `pay_methods` CASCADE[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE `pay_methods` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `payment_type` varchar(255), `account_number` varchar(255) NOT NULL, `expiration_date` date, `customer_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `active_record` tinyint(1),  INDEX `index_pay_methods_on_customer_id`  (`customer_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `photos` CASCADE[0m
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE TABLE `photos` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `image_file` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `imageable_type` varchar(255), `imageable_id` bigint, `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int, `image_updated_at` datetime,  INDEX `index_photos_on_imageable_type_and_imageable_id`  (`imageable_type`, `imageable_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `product_types` CASCADE[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE `product_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_type_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `products` CASCADE[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `product_type_id` bigint, `image_id` bigint, `product_name` varchar(255), `product_price` float(24), `product_desc` text, `quantity` int, `product_added` datetime, `local_delivery` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `active` tinyint(1),  INDEX `index_products_on_customer_id`  (`customer_id`),  INDEX `index_products_on_image_id`  (`image_id`),  INDEX `index_products_on_product_type_id`  (`product_type_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (23.1ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_e6c763ee60`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+[0m
+  [1m[35m (21.0ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_83e960fa54`
+FOREIGN KEY (`product_id`)
+  REFERENCES `products` (`id`)
+[0m
+  [1m[35m (16.3ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_3dad120da9`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (16.7ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_9d6a437740`
+FOREIGN KEY (`pay_method_id`)
+  REFERENCES `pay_methods` (`id`)
+[0m
+  [1m[35m (20.4ms)[0m  [1m[35mALTER TABLE `pay_methods` ADD CONSTRAINT `fk_rails_c8fc227bd8`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (20.1ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_252452a41b`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (21.9ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_0c57d8fc34`
+FOREIGN KEY (`image_id`)
+  REFERENCES `photos` (`id`)
+[0m
+  [1m[35m (67.1ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_8464b8e5d7`
+FOREIGN KEY (`product_type_id`)
+  REFERENCES `product_types` (`id`)
+[0m
+  [1m[35m (27.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20171121115015)[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20171114195736),
+(20171114195934),
+(20171114200052),
+(20171114200524),
+(20171114200852),
+(20171114201311),
+(20171114201349),
+(20171116160134),
+(20171117174232),
+(20171120174332),
+(20171121090554),
+(20171121100736),
+(20171121113841);
+
+[0m
+  [1m[35m (20.4ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-11-21 16:46:27', '2017-11-21 16:46:27')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Electronics', '2017-11-21 16:46:27', '2017-11-21 16:46:27')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Clothing', '2017-11-21 16:46:27', '2017-11-21 16:46:27')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Garden & Outdoors', '2017-11-21 16:46:27', '2017-11-21 16:46:27')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Toys & Games', '2017-11-21 16:46:27', '2017-11-21 16:46:27')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Home & Kitchen', '2017-11-21 16:46:27', '2017-11-21 16:46:27')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK(1096848878559930510, 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK(1096848878559930510)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Electronics', '2017-11-21 16:46:56', '2017-11-21 16:46:56')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Clothing', '2017-11-21 16:46:56', '2017-11-21 16:46:56')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Garden & Outdoors', '2017-11-21 16:46:56', '2017-11-21 16:46:56')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Toys & Games', '2017-11-21 16:46:56', '2017-11-21 16:46:56')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Home & Kitchen', '2017-11-21 16:46:56', '2017-11-21 16:46:56')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (42.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS `Bangazon_Site_development`[0m
+  [1m[35m (2.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (37.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS `Bangazon_Site_test`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE DATABASE `Bangazon_Site_development` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (1.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE `Bangazon_Site_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `customers` CASCADE[0m
+  [1m[35m (31.0ms)[0m  [1m[35mCREATE TABLE `customers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `password_digest` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `street_address` varchar(255), `city` varchar(255), `state` varchar(255), `zip` int, `phone_number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `product_file_name` varchar(255), `product_content_type` varchar(255), `product_file_size` int, `product_updated_at` datetime) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `order_lines` CASCADE[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE `order_lines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_id` bigint, `order_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_order_lines_on_order_id`  (`order_id`),  INDEX `index_order_lines_on_product_id`  (`product_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `orders` CASCADE[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `pay_method_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_orders_on_customer_id`  (`customer_id`),  INDEX `index_orders_on_pay_method_id`  (`pay_method_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `pay_methods` CASCADE[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE `pay_methods` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `payment_type` varchar(255), `account_number` varchar(255) NOT NULL, `expiration_date` date, `customer_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `active_record` tinyint(1),  INDEX `index_pay_methods_on_customer_id`  (`customer_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `photos` CASCADE[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE `photos` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `image_file` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `imageable_type` varchar(255), `imageable_id` bigint, `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int, `image_updated_at` datetime,  INDEX `index_photos_on_imageable_type_and_imageable_id`  (`imageable_type`, `imageable_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `product_types` CASCADE[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE `product_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_type_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `products` CASCADE[0m
+  [1m[35m (17.3ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `product_type_id` bigint, `image_id` bigint, `product_name` varchar(255), `product_price` float(24), `product_desc` text, `quantity` int, `product_added` datetime, `local_delivery` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `active` tinyint(1),  INDEX `index_products_on_customer_id`  (`customer_id`),  INDEX `index_products_on_image_id`  (`image_id`),  INDEX `index_products_on_product_type_id`  (`product_type_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (18.6ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_e6c763ee60`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+[0m
+  [1m[35m (19.1ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_83e960fa54`
+FOREIGN KEY (`product_id`)
+  REFERENCES `products` (`id`)
+[0m
+  [1m[35m (19.0ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_3dad120da9`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (16.7ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_9d6a437740`
+FOREIGN KEY (`pay_method_id`)
+  REFERENCES `pay_methods` (`id`)
+[0m
+  [1m[35m (18.3ms)[0m  [1m[35mALTER TABLE `pay_methods` ADD CONSTRAINT `fk_rails_c8fc227bd8`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (20.3ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_252452a41b`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (23.9ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_0c57d8fc34`
+FOREIGN KEY (`image_id`)
+  REFERENCES `photos` (`id`)
+[0m
+  [1m[35m (23.9ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_8464b8e5d7`
+FOREIGN KEY (`product_type_id`)
+  REFERENCES `product_types` (`id`)
+[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20171121115015)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20171114195736),
+(20171114195934),
+(20171114200052),
+(20171114200524),
+(20171114200852),
+(20171114201311),
+(20171114201349),
+(20171116160134),
+(20171117174232),
+(20171120174332),
+(20171121090554),
+(20171121100736),
+(20171121113841);
+
+[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-11-21 16:48:01', '2017-11-21 16:48:01')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `customers` CASCADE[0m
+  [1m[35m (21.8ms)[0m  [1m[35mCREATE TABLE `customers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `password_digest` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `street_address` varchar(255), `city` varchar(255), `state` varchar(255), `zip` int, `phone_number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `product_file_name` varchar(255), `product_content_type` varchar(255), `product_file_size` int, `product_updated_at` datetime) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `order_lines` CASCADE[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE `order_lines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_id` bigint, `order_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_order_lines_on_order_id`  (`order_id`),  INDEX `index_order_lines_on_product_id`  (`product_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `orders` CASCADE[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `pay_method_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_orders_on_customer_id`  (`customer_id`),  INDEX `index_orders_on_pay_method_id`  (`pay_method_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `pay_methods` CASCADE[0m
+  [1m[35m (14.6ms)[0m  [1m[35mCREATE TABLE `pay_methods` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `payment_type` varchar(255), `account_number` varchar(255) NOT NULL, `expiration_date` date, `customer_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `active_record` tinyint(1),  INDEX `index_pay_methods_on_customer_id`  (`customer_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `photos` CASCADE[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE `photos` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `image_file` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `imageable_type` varchar(255), `imageable_id` bigint, `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int, `image_updated_at` datetime,  INDEX `index_photos_on_imageable_type_and_imageable_id`  (`imageable_type`, `imageable_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `product_types` CASCADE[0m
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE `product_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_type_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `products` CASCADE[0m
+  [1m[35m (20.6ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `product_type_id` bigint, `image_id` bigint, `product_name` varchar(255), `product_price` float(24), `product_desc` text, `quantity` int, `product_added` datetime, `local_delivery` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `active` tinyint(1),  INDEX `index_products_on_customer_id`  (`customer_id`),  INDEX `index_products_on_image_id`  (`image_id`),  INDEX `index_products_on_product_type_id`  (`product_type_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (22.4ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_e6c763ee60`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+[0m
+  [1m[35m (22.7ms)[0m  [1m[35mALTER TABLE `order_lines` ADD CONSTRAINT `fk_rails_83e960fa54`
+FOREIGN KEY (`product_id`)
+  REFERENCES `products` (`id`)
+[0m
+  [1m[35m (21.6ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_3dad120da9`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (19.0ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_9d6a437740`
+FOREIGN KEY (`pay_method_id`)
+  REFERENCES `pay_methods` (`id`)
+[0m
+  [1m[35m (33.7ms)[0m  [1m[35mALTER TABLE `pay_methods` ADD CONSTRAINT `fk_rails_c8fc227bd8`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (30.5ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_252452a41b`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+[0m
+  [1m[35m (22.4ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_0c57d8fc34`
+FOREIGN KEY (`image_id`)
+  REFERENCES `photos` (`id`)
+[0m
+  [1m[35m (24.0ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_8464b8e5d7`
+FOREIGN KEY (`product_type_id`)
+  REFERENCES `product_types` (`id`)
+[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20171121115015)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20171114195736),
+(20171114195934),
+(20171114200052),
+(20171114200524),
+(20171114200852),
+(20171114201311),
+(20171114201349),
+(20171116160134),
+(20171117174232),
+(20171120174332),
+(20171121090554),
+(20171121100736),
+(20171121113841);
+
+[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-11-21 16:48:02', '2017-11-21 16:48:02')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Electronics', '2017-11-21 16:48:02', '2017-11-21 16:48:02')[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Clothing', '2017-11-21 16:48:02', '2017-11-21 16:48:02')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Garden & Outdoors', '2017-11-21 16:48:02', '2017-11-21 16:48:02')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Toys & Games', '2017-11-21 16:48:02', '2017-11-21 16:48:02')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Home & Kitchen', '2017-11-21 16:48:02', '2017-11-21 16:48:02')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (8.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK(1096848878559930510, 0)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK(1096848878559930510)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (2.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Electronics', '2017-11-21 16:49:39', '2017-11-21 16:49:39')[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Clothing', '2017-11-21 16:49:39', '2017-11-21 16:49:39')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Garden & Outdoors', '2017-11-21 16:49:39', '2017-11-21 16:49:39')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (7.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Toys & Games', '2017-11-21 16:49:39', '2017-11-21 16:49:39')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Home & Kitchen', '2017-11-21 16:49:39', '2017-11-21 16:49:39')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2017-11-21 10:49:48 -0600
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+  Rendered partials/_navbar.html.erb (2.7ms)
+Completed 200 OK in 7270ms (Views: 7245.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-11-21 10:50:00 -0600
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (44.0ms)
+  Rendered partials/_navbar.html.erb (3.7ms)
+Completed 200 OK in 275ms (Views: 141.8ms | ActiveRecord: 12.8ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2017-11-21 10:50:06 -0600
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gh62d5JpMBEPUJTNhZjorEYGyCsV0LPdPAdgXNBJlBNwX6Hu4IsP9PQGcanVE6lFVg9vOfKFxLeMb54jU62nCA==", "customer"=>{"email"=>"d.b.greene101@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (23.0ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'd.b.greene101@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (5.4ms)
+  Rendered partials/_navbar.html.erb (3.2ms)
+Completed 200 OK in 250ms (Views: 103.0ms | ActiveRecord: 23.6ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2017-11-21 10:50:14 -0600
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mc9IGc5IPnekYvIocB2840QQ+pnwVELBMwSUu+UVKZ/lnX7oThkyqqZXI5yC1hOwGX+dQXMMZ9eGUTyCmtnPaA==", "customer"=>{"email"=>"d.b.greene101@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'd.b.greene101@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `customers` (`email`, `password_digest`, `created_at`, `updated_at`) VALUES ('d.b.greene101@gmail.com', '$2a$10$GUs8kBG9IJmNwV8pZSjXuOW0HOPqn3UI518ffdQ3/rXSoPJkAefW6', '2017-11-21 16:50:15', '2017-11-21 16:50:15')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/customers/1/edit
+Completed 302 Found in 117ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2017-11-21 10:50:15 -0600
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (8.7ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (5.3ms)
+Completed 200 OK in 109ms (Views: 92.2ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/customers/1" for 127.0.0.1 at 2017-11-21 10:50:24 -0600
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HP3vlyg8hhlhIXoYqUn0LFmKl72GOSnMbDJhIFYubkHIr9lmqG2KxGMUq6xbglt/BOXwZQVhDNrZZ8kZKeKItg==", "customer"=>{"first_name"=>"DANIEL", "last_name"=>"GREENE", "street_address"=>"100 LAKECREST CIRCLE", "city"=>"HENDERSONVOLLE", "state"=>"TN", "zip"=>"37075", "phone_number"=>"7039660947"}, "commit"=>"Update Customer", "id"=>"1"}
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (10.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (28.3ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'd.b.greene101@gmail.com' AND (`customers`.`id` != 1) LIMIT 1[0m
+  [1m[35mSQL (9.2ms)[0m  [1m[33mUPDATE `customers` SET `first_name` = 'DANIEL', `last_name` = 'GREENE', `street_address` = '100 LAKECREST CIRCLE', `city` = 'HENDERSONVOLLE', `state` = 'TN', `zip` = 37075, `phone_number` = '7039660947', `updated_at` = '2017-11-21 16:50:24' WHERE `customers`.`id` = 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products
+Completed 302 Found in 63ms (ActiveRecord: 49.9ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-21 10:50:24 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (7.9ms)
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (6.8ms)
+Completed 200 OK in 112ms (Views: 86.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-21 10:50:31 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (92.5ms)
+  Rendered products/new.html.erb within layouts/application (96.1ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.9ms)
+Completed 200 OK in 250ms (Views: 155.8ms | ActiveRecord: 8.8ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-21 10:50:48 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SjHplBpRt3jC1iMsmyJrrXZI3GixkFtgO6jkGdruiwnkf+qkyZMKDbYc6SfyCuBI8TDHPucVK6fjkBAoGg643A==", "product"=>{"product_name"=>"Test", "product_price"=>"33.00", "product_desc"=>"eefgvsvsdv", "quantity"=>"11", "product_type_id"=>"1", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (1.7ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[36mProductType Load (2.0ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (17.4ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`, `active`) VALUES (1, 1, 'Test', 33.0, 'eefgvsvsdv', 11, '2017-11-21 16:50:48', 1, '2017-11-21 16:50:48', '2017-11-21 16:50:48', 1)[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 77ms (ActiveRecord: 27.2ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-11-21 10:50:48 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mPhoto Load (12.3ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`imageable_id` = 1 AND `photos`.`imageable_type` = 'Product'[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered products/show.html.erb within layouts/application (32.1ms)
+  Rendered partials/_navbar.html.erb (4.2ms)
+Completed 200 OK in 135ms (Views: 115.4ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 10:50:50 -0600
+Processing by ProductsController#categories as HTML
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `product_name' for #<Class:0x00007faa2d871de0>):
+  
+app/controllers/products_controller.rb:60:in `categories'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 10:51:13 -0600
+Processing by ProductsController#categories as HTML
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `product_name' for #<Class:0x00007faa2d871de0>):
+  
+app/controllers/products_controller.rb:60:in `categories'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 10:51:22 -0600
+Processing by ProductsController#categories as HTML
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `product_name' for #<Class:0x00007faa2d871de0>):
+  
+app/controllers/products_controller.rb:60:in `categories'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 10:51:27 -0600
+Processing by ProductsController#categories as HTML
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `product_name' for #<Class:0x00007faa2d871de0>):
+  
+app/controllers/products_controller.rb:60:in `categories'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 10:52:11 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.9ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (59.1ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (38.0ms)
+Completed 200 OK in 193ms (Views: 153.8ms | ActiveRecord: 21.7ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 10:52:25 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  Rendered products/categories.html.erb within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1+)):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.take(4).each do |prod| %>
+    6:         <% if type.id == prod.product_type_id  %>
+    7:             <%= prod.product_name.count %>
+    8:             <%= prod.product_name.size %>
+    9:             <%= prod.product_name.length %> <br>
+   10:             <%= prod.product_name %>
+  
+app/views/products/categories.html.erb:7:in `count'
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184432726440'
+app/views/products/categories.html.erb:5:in `each'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184432726440'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184432726440'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 10:52:36 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (13.4ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.2ms)
+Completed 200 OK in 84ms (Views: 79.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-21 10:52:44 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (13.6ms)
+  Rendered products/new.html.erb within layouts/application (17.2ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (3.6ms)
+Completed 200 OK in 142ms (Views: 82.5ms | ActiveRecord: 22.9ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-21 10:52:55 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uyJ7Novulq0cTA1Y/KY//PhHtNEX5ltpJeuA4LEsEZwVbHgGWCwr2GiGx1OVjrQZfz+vh0FjK67903TRccwiSQ==", "product"=>{"product_name"=>"weeee", "product_price"=>"11.11", "product_desc"=>"ascdc", "quantity"=>"2", "product_type_id"=>"1", "local_delivery"=>"0"}, "commit"=>"Create Product"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`, `active`) VALUES (1, 1, 'weeee', 11.11, 'ascdc', 2, '2017-11-21 16:52:55', 0, '2017-11-21 16:52:55', '2017-11-21 16:52:55', 1)[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/2
+Completed 302 Found in 35ms (ActiveRecord: 15.1ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2017-11-21 10:52:55 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mPhoto Load (1.6ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`imageable_id` = 2 AND `photos`.`imageable_type` = 'Product'[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered products/show.html.erb within layouts/application (11.8ms)
+  Rendered partials/_navbar.html.erb (4.7ms)
+Completed 200 OK in 86ms (Views: 76.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-21 10:52:56 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (17.6ms)
+  Rendered products/new.html.erb within layouts/application (26.6ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (3.2ms)
+Completed 200 OK in 107ms (Views: 99.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-21 10:53:06 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BSgVzzSmyT18xyDnpZmOtdHbizmfnte/A4R7x0kLVuqrZhb/52R0SAgN6uzMsQVQVqOQb8kbp3jbvI/2ietlPw==", "product"=>{"product_name"=>"lalalala", "product_price"=>"99.00", "product_desc"=>"sdd", "quantity"=>"7", "product_type_id"=>"1", "local_delivery"=>"0"}, "commit"=>"Create Product"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`, `active`) VALUES (1, 1, 'lalalala', 99.0, 'sdd', 7, '2017-11-21 16:53:06', 0, '2017-11-21 16:53:06', '2017-11-21 16:53:06', 1)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/3
+Completed 302 Found in 18ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/products/3" for 127.0.0.1 at 2017-11-21 10:53:06 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mPhoto Load (3.3ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`imageable_id` = 3 AND `photos`.`imageable_type` = 'Product'[0m
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered products/show.html.erb within layouts/application (10.7ms)
+  Rendered partials/_navbar.html.erb (4.0ms)
+Completed 200 OK in 96ms (Views: 85.0ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-21 10:53:09 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (1.1ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (22.7ms)
+  Rendered products/new.html.erb within layouts/application (25.9ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (5.9ms)
+Completed 200 OK in 107ms (Views: 100.4ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-21 10:53:25 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UL7cg865ePwokrGwZZcc+CYao5XW8ZNoupJfyfm2tfP+8N+zHXvFiVxYe7sMv5cdoWK4w4B0469iqqv4OVaGJg==", "product"=>{"product_name"=>"qwwwww", "product_price"=>"9009.99", "product_desc"=>"djdjd", "quantity"=>"9", "product_type_id"=>"1", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`, `active`) VALUES (1, 1, 'qwwwww', 9009.99, 'djdjd', 9, '2017-11-21 16:53:25', 1, '2017-11-21 16:53:25', '2017-11-21 16:53:25', 1)[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/4
+Completed 302 Found in 28ms (ActiveRecord: 15.1ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-11-21 10:53:25 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (3.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`imageable_id` = 4 AND `photos`.`imageable_type` = 'Product'[0m
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered products/show.html.erb within layouts/application (6.4ms)
+  Rendered partials/_navbar.html.erb (2.5ms)
+Completed 200 OK in 89ms (Views: 77.4ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 10:53:26 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (41.7ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (9.5ms)
+Completed 200 OK in 133ms (Views: 124.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 10:54:13 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 11[0m
+  Rendered products/categories.html.erb within layouts/application (16.1ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `product_name' for #<Product::ActiveRecord_Relation:0x00007faa25464ea8>):
+    2: <% @categories.each do |type| %>
+    3:     <p>
+    4:         <%= type.product_type_name %>
+    5:         <%= @product_info.product_name.size %>
+    6:         <%= @product_info.product_name.length %>
+    7:         <% @product_info.take(4).each do |prod| %>
+    8:         <% if type.id == prod.product_type_id  %> <br>
+  
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184373255720'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184373255720'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 10:54:54 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Integer):
+    2: <% @categories.each do |type| %>
+    3:     <p>
+    4:         <%= type.product_type_name %>
+    5:         <%= @product_info[:product_name].size %>
+    6:         <%= @product_info[:product_name].length %>
+    7:         <% @product_info.take(4).each do |prod| %>
+    8:         <% if type.id == prod.product_type_id  %> <br>
+  
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184422164160'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184422164160'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 10:55:33 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Integer):
+    2: <% @categories.each do |type| %>
+    3:     <p>
+    4:         <%= type.product_type_name %>
+    5:         <%= @product_info[:product_name].to_int.size %>
+    6:         <%= @product_info[:product_name].to_int.length %>
+    7:         <% @product_info.take(4).each do |prod| %>
+    8:         <% if type.id == prod.product_type_id  %> <br>
+  
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184443101500'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184443101500'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 10:57:08 -0600
+Processing by ProductsController#categories as HTML
+  [1m[36mProductType Load (0.9ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` LIMIT 11[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 11[0m
+  [1m[36mCACHE ProductType Load (0.0ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` LIMIT 11[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 11[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 487ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE ProductType Load (0.0ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` LIMIT 11[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 11[0m  [["LIMIT", 11]]
+NameError (undefined local variable or method `product_name' for #<ProductsController:0x00007faa2c5f3330>
+Did you mean?  product_path):
+  
+app/controllers/products_controller.rb:60:in `categories'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 10:57:17 -0600
+Processing by ProductsController#categories as HTML
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for #<Class:0x00007faa2a711638>):
+  
+app/controllers/products_controller.rb:60:in `categories'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:07:08 -0600
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:61: syntax error, unexpected keyword_end, expecting ']'
+  end
+     ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:67: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/products_controller.rb:61: syntax error, unexpected keyword_end, expecting ']'
+app/controllers/products_controller.rb:67: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:07:37 -0600
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:61: syntax error, unexpected keyword_end, expecting ']'
+  end
+     ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:68: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/products_controller.rb:61: syntax error, unexpected keyword_end, expecting ']'
+app/controllers/products_controller.rb:68: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:08:05 -0600
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:61: syntax error, unexpected keyword_end, expecting ']'
+  end
+     ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:67: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/products_controller.rb:61: syntax error, unexpected keyword_end, expecting ']'
+app/controllers/products_controller.rb:67: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:10:15 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 15.7ms)
+
+
+  
+NoMethodError (undefined method `id' for #<Class:0x00007faa2b350fe8>
+Did you mean?  ids):
+  
+app/controllers/products_controller.rb:60:in `categories'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:11:45 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.2ms)
+
+
+  
+NoMethodError (undefined method `id' for :product:Symbol):
+  
+app/controllers/products_controller.rb:60:in `categories'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:11:54 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` LIMIT 11[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 11[0m
+  [1m[36mCACHE ProductType Load (0.0ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` LIMIT 11[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 11[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 432ms (ActiveRecord: 1.3ms)
+
+
+  
+  [1m[36mCACHE ProductType Load (0.0ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` LIMIT 11[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 11[0m  [["LIMIT", 11]]
+NameError (undefined local variable or method `id' for #<ProductsController:0x00007faa2d102780>):
+  
+app/controllers/products_controller.rb:60:in `categories'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:12:16 -0600
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:60: syntax error, unexpected ':', expecting ']'
+type_id = ?", params[:product:id])
+                              ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:67: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/products_controller.rb:60: syntax error, unexpected ':', expecting ']'
+app/controllers/products_controller.rb:67: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:12:33 -0600
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:60: syntax error, unexpected ':', expecting ']'
+ype_id = ?", params[:product :id])
+                              ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:67: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/products_controller.rb:60: syntax error, unexpected ':', expecting ']'
+app/controllers/products_controller.rb:67: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:13:21 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.5ms)
+
+
+  
+NoMethodError (undefined method `where' for 4:Integer):
+  
+app/controllers/products_controller.rb:60:in `categories'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:13:46 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `products` WHERE (product_type_id = '%%')[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (57.8ms)
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (39.7ms)
+Completed 200 OK in 208ms (Views: 165.0ms | ActiveRecord: 24.5ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:14:16 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `products` WHERE (product_type_id = '%%')[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.8ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (12.4ms)
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (8.0ms)
+Completed 200 OK in 111ms (Views: 105.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:16:50 -0600
+Processing by ProductsController#categories as HTML
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for #<Class:0x00007faa254ff9a8>
+Did you mean?  ids):
+  
+app/controllers/products_controller.rb:60:in `categories'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:17:12 -0600
+Processing by ProductsController#categories as HTML
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` LIMIT 11[0m
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE ProductType Load (0.0ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` LIMIT 11[0m  [["LIMIT", 11]]
+NoMethodError (undefined method `id' for #<ProductType::ActiveRecord_Relation:0x00007faa2d6cad48>
+Did you mean?  ids):
+  
+app/controllers/products_controller.rb:60:in `categories'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:18:28 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `products` WHERE (product_type_id = '%%')[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (53.1ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (51.3ms)
+Completed 200 OK in 213ms (Views: 172.5ms | ActiveRecord: 20.6ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:19:20 -0600
+Processing by ProductsController#categories as HTML
+  [1m[36mProductType Load (0.8ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` LIMIT 11[0m
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE ProductType Load (0.0ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` LIMIT 11[0m  [["LIMIT", 11]]
+NoMethodError (undefined method `id' for #<ProductType::ActiveRecord_Relation:0x00007faa2b5b1a80>
+Did you mean?  ids):
+  
+app/controllers/products_controller.rb:60:in `categories'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:19:44 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `product_types`.`id` FROM `product_types`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `products` WHERE (product_type_id = '%[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]%')[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (36.9ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (48.4ms)
+Completed 200 OK in 194ms (Views: 166.9ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:20:00 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `products` WHERE (product_type_id = '%#<ProductType::ActiveRecord_Relation:0x00007faa2d4725a0>%')[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (38.7ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (32.4ms)
+Completed 200 OK in 158ms (Views: 131.8ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:28:35 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  Rendered products/categories.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/categories.html.erb:18: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^):
+  
+app/views/products/categories.html.erb:18: syntax error, unexpected keyword_ensure, expecting keyword_end
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:28:59 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (65.6ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 20.7ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1+)):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id %>
+    7:         <%= prod.product_name.count %>
+    8:         <%end%>
+    9:         <%end%>
+   10: 
+  
+app/views/products/categories.html.erb:7:in `count'
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184415415480'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184415415480'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184415415480'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:29:28 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (443.6ms)
+Completed 500 Internal Server Error in 454ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `product_name' for #<#<Class:0x00007faa2b5a2b20>:0x00007faa2d340cb8>
+Did you mean?  product_path):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id %>
+    7:         <%= prod.count(product_name) %>
+    8:         <%end%>
+    9:         <%end%>
+   10: 
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184439778560'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184439778560'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184439778560'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:29:38 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (15.2ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `count' for #<Product:0x00007faa255c0d60>):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id %>
+    7:         <%= prod.count(:product_name) %>
+    8:         <%end%>
+    9:         <%end%>
+   10: 
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184433517800'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184433517800'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184433517800'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:29:55 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (12.7ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `total' for "Test":String):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id %>
+    7:         <%= prod.product_name.total %>
+    8:         <%end%>
+    9:         <%end%>
+   10: 
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184430871900'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184430871900'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184430871900'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:30:54 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (5.1ms)
+  [1m[36mCustomer Load (1.7ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (97.8ms)
+Completed 200 OK in 193ms (Views: 184.5ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:31:09 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (5.0ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (5.0ms)
+Completed 200 OK in 84ms (Views: 79.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:31:12 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.0ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (8.3ms)
+  [1m[36mCustomer Load (0.9ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (5.9ms)
+Completed 200 OK in 61ms (Views: 55.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:34:02 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  Rendered products/categories.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/categories.html.erb:8: syntax error, unexpected ')', expecting '('
+.append=( prod.product_name. );@output_buffer.safe_append='
+                              ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/categories.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;        end
+                    ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/categories.html.erb:18: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/categories.html.erb:20: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/categories.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/products/categories.html.erb:8: syntax error, unexpected ')', expecting '('
+app/views/products/categories.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+app/views/products/categories.html.erb:18: syntax error, unexpected keyword_end, expecting ')'
+app/views/products/categories.html.erb:20: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/products/categories.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:34:14 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.7ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (9.5ms)
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (8.0ms)
+Completed 200 OK in 109ms (Views: 102.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:34:33 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (2.0ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (19.6ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (5.0ms)
+Completed 200 OK in 107ms (Views: 101.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:34:37 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (15.0ms)
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.6ms)
+Completed 200 OK in 77ms (Views: 72.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:34:48 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (2.0ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (14.4ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.9ms)
+Completed 200 OK in 67ms (Views: 61.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:34:50 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (16.8ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.1ms)
+Completed 200 OK in 95ms (Views: 89.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:35:13 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (13.2ms)
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (5.7ms)
+Completed 200 OK in 95ms (Views: 90.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:35:31 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (12.9ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (5.1ms)
+Completed 200 OK in 91ms (Views: 86.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:35:50 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (11.5ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (3.6ms)
+Completed 200 OK in 79ms (Views: 74.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:36:07 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (14.3ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (5.8ms)
+Completed 200 OK in 98ms (Views: 93.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:36:09 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (12.2ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.5ms)
+Completed 200 OK in 76ms (Views: 71.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:36:22 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.7ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (29.5ms)
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (8.1ms)
+Completed 200 OK in 154ms (Views: 141.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:36:24 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.7ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (18.4ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (7.4ms)
+Completed 200 OK in 103ms (Views: 96.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:36:50 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.1ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 4[0m  [["LIMIT", 4]]
+  Rendered products/categories.html.erb within layouts/application (14.8ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (5.4ms)
+Completed 200 OK in 111ms (Views: 105.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:37:12 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (6.2ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (6.0ms)
+Completed 200 OK in 84ms (Views: 78.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:37:29 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (5.3ms)
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (6.8ms)
+Completed 200 OK in 81ms (Views: 76.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:37:38 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (12.2ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `count' for 4:Integer):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id %>
+    7:         <%= prod.product_name.size.count %>
+    8:         <%end%>
+    9:         <%end%>
+   10: 
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184438550240'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184438550240'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184438550240'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:37:45 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.3ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (11.8ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `length' for 4:Integer):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id %>
+    7:         <%= prod.product_name.size.length %>
+    8:         <%end%>
+    9:         <%end%>
+   10: 
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184431153240'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184431153240'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184431153240'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:37:52 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (8.3ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (5.2ms)
+Completed 200 OK in 146ms (Views: 141.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:39:38 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.8ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (43.8ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 2.9ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1+)):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id %>
+    7:         <%= prod.product_name.count %>
+    8:         <%end%>
+    9:         <%end%>
+   10: 
+  
+app/views/products/categories.html.erb:7:in `count'
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184442746080'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184442746080'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184442746080'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:40:20 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (16.6ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `impressions' for "Test":String):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id %>
+    7:         <%= prod.product_name.impressions.count %>
+    8:         <%end%>
+    9:         <%end%>
+   10: 
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184433175860'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184433175860'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184433175860'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:40:57 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.1ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (14.5ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `impressions_count' for "Test":String):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id %>
+    7:         <%= prod.product_name.impressions_count %>
+    8:         <%end%>
+    9:         <%end%>
+   10: 
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184430155640'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184430155640'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184430155640'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:41:13 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (9.2ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1+)):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id %>
+    7:         <%= prod.product_name.count %>
+    8:         <%end%>
+    9:         <%end%>
+   10: 
+  
+app/views/products/categories.html.erb:7:in `count'
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184385874760'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184385874760'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184385874760'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:41:51 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (15.5ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `count' for #<Product:0x00007faa26c0b9f8>):
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id %>
+    7:         <%= prod.count %>
+    8:         <%end%>
+    9:         <%end%>
+   10: 
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184417007060'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184417007060'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184417007060'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:42:40 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.7ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (8.1ms)
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (8.7ms)
+Completed 200 OK in 92ms (Views: 86.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:43:13 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (6.0ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.8ms)
+Completed 200 OK in 93ms (Views: 88.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:43:35 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (13.1ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (7.0ms)
+Completed 200 OK in 100ms (Views: 95.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:47:31 -0600
+Processing by ProductsController#categories as HTML
+  [1m[36mProduct Load (3.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` GROUP BY `products`.`product_type_id`[0m
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 10.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'bangazon_site_development.products.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by: SELECT `products`.* FROM `products` GROUP BY `products`.`product_type_id`):
+  
+app/controllers/products_controller.rb:60:in `puts'
+app/controllers/products_controller.rb:60:in `puts'
+app/controllers/products_controller.rb:60:in `categories'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:48:38 -0600
+Processing by ProductsController#categories as HTML
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT `products`.* FROM `products` GROUP BY `products`.`product_type_id`[0m
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'bangazon_site_development.products.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by: SELECT `products`.* FROM `products` GROUP BY `products`.`product_type_id`):
+  
+app/controllers/products_controller.rb:60:in `puts'
+app/controllers/products_controller.rb:60:in `puts'
+app/controllers/products_controller.rb:60:in `categories'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:49:02 -0600
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:60: unterminated string meets end of file
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:60: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/products_controller.rb:60: unterminated string meets end of file
+app/controllers/products_controller.rb:60: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:49:41 -0600
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:60: unterminated string meets end of file
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:60: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/products_controller.rb:60: unterminated string meets end of file
+app/controllers/products_controller.rb:60: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:50:04 -0600
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:60: unterminated string meets end of file
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:60: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/products_controller.rb:60: unterminated string meets end of file
+app/controllers/products_controller.rb:60: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:50:16 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT `products`.`product_name` FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendered products/categories.html.erb within layouts/application (34.9ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 20.5ms)
+
+
+  
+ActionView::Template::Error (Mysql2::Error: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'bangazon_site_development.products.product_name' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by: SELECT `products`.`product_name` FROM `products` GROUP BY `products`.`product_type_id`):
+    2: <% @categories.each do |type| %>
+    3:     <p>
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id %>
+    7:         <%= @product_info.count %>
+    8:         <%end%>
+  
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184442790540'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184442790540'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:50:49 -0600
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:60: syntax error, unexpected tSTRING_DEND, expecting keyword_end
+    puts @product_info}
+                       ^
+/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/controllers/products_controller.rb:67: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/products_controller.rb:60: syntax error, unexpected tSTRING_DEND, expecting keyword_end
+app/controllers/products_controller.rb:67: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:50:58 -0600
+Processing by ProductsController#categories as HTML
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT `products`.`product_name` FROM `products` GROUP BY `products`.`product_type_id`[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.2ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'bangazon_site_development.products.product_name' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by: SELECT `products`.`product_name` FROM `products` GROUP BY `products`.`product_type_id`):
+  
+app/controllers/products_controller.rb:60:in `puts'
+app/controllers/products_controller.rb:60:in `puts'
+app/controllers/products_controller.rb:60:in `categories'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:51:30 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT `products`.`product_name` FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendered products/categories.html.erb within layouts/application (32.3ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 18.8ms)
+
+
+  
+ActionView::Template::Error (Mysql2::Error: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'bangazon_site_development.products.product_name' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by: SELECT `products`.`product_name` FROM `products` GROUP BY `products`.`product_type_id`):
+    2: <% @categories.each do |type| %>
+    3:     <p>
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id %>
+    7:         <%= @product_info.count %>
+    8:         <%end%>
+  
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184385615580'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184385615580'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:51:53 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT `products`.`product_name` FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendered products/categories.html.erb within layouts/application (7.9ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (Mysql2::Error: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'bangazon_site_development.products.product_name' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by: SELECT `products`.`product_name` FROM `products` GROUP BY `products`.`product_type_id`):
+    2: <% @categories.each do |type| %>
+    3:     <p>
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id %>
+    7:         <%= @product_info.count %>
+    8:         <%end%>
+  
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184415085640'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184415085640'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:52:39 -0600
+Processing by ProductsController#categories as HTML
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT `products`.`product_name` FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendered products/categories.html.erb within layouts/application (24.9ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 11.5ms)
+
+
+  
+ActionView::Template::Error (Mysql2::Error: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'bangazon_site_development.products.product_name' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by: SELECT `products`.`product_name` FROM `products` GROUP BY `products`.`product_type_id`):
+    2: <% @categories.each do |type| %>
+    3:     <p>
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id %>
+    7:         <%= @product_info.count %>
+    8:         <%end%>
+  
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184432546060'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184432546060'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:53:14 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (13.5ms)[0m  [1m[34mSELECT COUNT(`products`.`product_name`) AS count_product_name, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/categories.html.erb within layouts/application (30.7ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 30.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `product_type_id' for [1, 4]:Array):
+    3:     <p>
+    4:         <%= type.product_type_name %>
+    5:         <% @product_info.each do |prod| %>
+    6:         <% if type.id == prod.product_type_id %>
+    7:         <%= @product_info.count %>
+    8:         <%end%>
+    9:         <%end%>
+  
+app/views/products/categories.html.erb:6:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184385699600'
+app/views/products/categories.html.erb:5:in `each'
+app/views/products/categories.html.erb:5:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184385699600'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184385699600'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:53:36 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(`products`.`product_name`) AS count_product_name, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  Rendered products/categories.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/categories.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/products/categories.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:53:45 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(`products`.`product_name`) AS count_product_name, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.7ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/categories.html.erb within layouts/application (12.3ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `product_type_id' for [1, 4]:Array):
+     8: 
+     9: 
+    10:         <% @product_info.take(4).each do |prod| %>
+    11:         <% if type.id == prod.product_type_id  %> <br>
+    12:             <%= prod.product_name %>
+    13:         <% end %>
+    14:         <%end%>
+  
+app/views/products/categories.html.erb:11:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184422346540'
+app/views/products/categories.html.erb:10:in `each'
+app/views/products/categories.html.erb:10:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184422346540'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184422346540'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:54:03 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(`products`.`product_name`) AS count_product_name, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/categories.html.erb within layouts/application (34.5ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 16.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `product_type_id' for [1, 4]:Array):
+     8: 
+     9: 
+    10:         <% @product_info.take(4).each do |prod| %>
+    11:         <% if type.id == prod.product_type_id  %> <br>
+    12:             <%= prod.product_name %>
+    13:         <% end %>
+    14:         <%end%>
+  
+app/views/products/categories.html.erb:11:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184374410880'
+app/views/products/categories.html.erb:10:in `each'
+app/views/products/categories.html.erb:10:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184374410880'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184374410880'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:55:00 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(`products`.`product_name`) AS count_product_name, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  Rendered products/categories.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/categories.html.erb:17: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/products/categories.html.erb:17: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:55:07 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(`products`.`product_name`) AS count_product_name, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/categories.html.erb within layouts/application (14.0ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `product_name' for [1, 4]:Array
+Did you mean?  product):
+     8: 
+     9: 
+    10:         <% @product_info.take(4).each do |prod| %>
+    11:             <%= prod.product_name %>
+    12:         <% end %>
+    13:     </p>
+    14: <% end %>
+  
+app/views/products/categories.html.erb:11:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184443649380'
+app/views/products/categories.html.erb:10:in `each'
+app/views/products/categories.html.erb:10:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184443649380'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184443649380'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:55:31 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(`products`.`product_name`) AS count_product_name, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/categories.html.erb within layouts/application (3.4ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (34.5ms)
+Completed 200 OK in 121ms (Views: 113.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:58:07 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/categories.html.erb within layouts/application (18.6ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (45.2ms)
+Completed 200 OK in 179ms (Views: 132.7ms | ActiveRecord: 21.5ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-21 11:58:18 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (16.2ms)
+  Rendered products/new.html.erb within layouts/application (20.0ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (5.5ms)
+Completed 200 OK in 161ms (Views: 83.9ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-21 11:58:32 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vUtL4ub90t1AQ42eoyI6BXbEhBYhIBxUUcriBtQjL8cTBUjSNT9vqDSJR5XKCrHg8byfQHelbJOJ8hY3FMMcEg==", "product"=>{"product_name"=>"sdsd", "product_price"=>"33.44", "product_desc"=>"shiefvboldfv", "quantity"=>"4", "product_type_id"=>"2", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (12.6ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`, `active`) VALUES (1, 2, 'sdsd', 33.44, 'shiefvboldfv', 4, '2017-11-21 17:58:32', 1, '2017-11-21 17:58:32', '2017-11-21 17:58:32', 1)[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/5
+Completed 302 Found in 46ms (ActiveRecord: 25.4ms)
+
+
+Started GET "/products/5" for 127.0.0.1 at 2017-11-21 11:58:32 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 5 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mPhoto Load (0.8ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`imageable_id` = 5 AND `photos`.`imageable_type` = 'Product'[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered products/show.html.erb within layouts/application (8.4ms)
+  Rendered partials/_navbar.html.erb (4.0ms)
+Completed 200 OK in 88ms (Views: 80.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:58:35 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (21.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/categories.html.erb within layouts/application (24.4ms)
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (9.7ms)
+Completed 200 OK in 109ms (Views: 77.5ms | ActiveRecord: 22.6ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 11:59:47 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.7ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/categories.html.erb within layouts/application (25.9ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 10.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `product_name' for nil:NilClass):
+    3:     <p>
+    4:         <%= type.product_type_name %>
+    5:         <%= @product_info[type.id]%><br>
+    6:         <%= @product_name.product_name%>
+    7: 
+    8: <% end %>
+  
+app/views/products/categories.html.erb:6:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184384879400'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184384879400'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 12:00:31 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/categories.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    3:     <p>
+    4:         <%= type.product_type_name %>
+    5:         <%= @product_info[type.id]%><br>
+    6:         <%= @product_name[:product_name]%>
+    7: 
+    8: <% end %>
+  
+app/views/products/categories.html.erb:6:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184374686020'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184374686020'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 12:01:21 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  Rendered products/categories.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/categories.html.erb:11: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^):
+  
+app/views/products/categories.html.erb:11: syntax error, unexpected keyword_ensure, expecting keyword_end
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 12:01:33 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/categories.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3:     <p>
+    4:         <%= type.product_type_name %>
+    5:         <%= @product_info[type.id]%><br>
+    6:         <% @product_name.each do |name| %>
+    7:         <%= name.product_name%>
+    8:         <%end%>
+    9: 
+  
+app/views/products/categories.html.erb:6:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184384681760'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184384681760'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 12:02:03 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.8ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (29.1ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (41.5ms)
+Completed 200 OK in 170ms (Views: 157.2ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 12:03:01 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  Rendered products/categories.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/Users/danielgreene/workspace/Building-the-First-Version-of-the-Bangazon-Site/app/views/products/categories.html.erb:13: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^):
+  
+app/views/products/categories.html.erb:13: syntax error, unexpected keyword_ensure, expecting keyword_end
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 12:03:11 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.8ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ProductType::ActiveRecord_Relation:0x00007faa2dacb7f8>
+Did you mean?  ids):
+    4:         <%= type.product_type_name %>
+    5:         <%= @product_info[type.id]%><br>
+    6:         <% @product_names.each do |name| %>
+    7:         <% if @product_names.product_type_id = @categories.id%>
+    8:         <%= name.product_name%>
+    9:         <%end%>
+   10:         <%end%>
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184443710620'
+app/views/products/categories.html.erb:6:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184443710620'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184443710620'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 12:03:27 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.8ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (21.1ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `product_type_id=' for #<Product::ActiveRecord_Relation:0x00007faa2c728890>):
+    4:         <%= type.product_type_name %>
+    5:         <%= @product_info[type.id]%><br>
+    6:         <% @product_names.each do |name| %>
+    7:         <% if @product_names.product_type_id = type.id%>
+    8:         <%= name.product_name%>
+    9:         <%end%>
+   10:         <%end%>
+  
+app/views/products/categories.html.erb:7:in `block (2 levels) in _app_views_products_categories_html_erb__4402186959231660128_70184433408920'
+app/views/products/categories.html.erb:6:in `block in _app_views_products_categories_html_erb__4402186959231660128_70184433408920'
+app/views/products/categories.html.erb:2:in `_app_views_products_categories_html_erb__4402186959231660128_70184433408920'
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 12:03:39 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (1.2ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (7.7ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (19.7ms)
+Completed 200 OK in 108ms (Views: 101.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 12:04:53 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (6.0ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (6.1ms)
+Completed 200 OK in 96ms (Views: 89.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-21 12:04:58 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (11.2ms)
+  Rendered partials/_navbar.html.erb (3.2ms)
+Completed 200 OK in 90ms (Views: 83.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 12:04:58 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (16.6ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (12.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (33.6ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.6ms)
+Completed 200 OK in 132ms (Views: 88.9ms | ActiveRecord: 36.4ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-21 12:04:59 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (14.5ms)
+  Rendered products/new.html.erb within layouts/application (17.4ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (5.9ms)
+Completed 200 OK in 150ms (Views: 83.8ms | ActiveRecord: 33.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-21 12:05:21 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (12.6ms)
+  Rendered products/new.html.erb within layouts/application (16.2ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.5ms)
+Completed 200 OK in 113ms (Views: 109.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 12:05:23 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (16.0ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (23.8ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (6.3ms)
+Completed 200 OK in 111ms (Views: 89.6ms | ActiveRecord: 18.1ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 12:05:30 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.7ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (5.1ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.5ms)
+Completed 200 OK in 71ms (Views: 64.3ms | ActiveRecord: 2.2ms)
 
 
