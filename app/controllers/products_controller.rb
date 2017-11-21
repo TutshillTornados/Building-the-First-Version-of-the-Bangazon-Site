@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+
   #Creates new instance of class Product
   def new
     @product = Product.new
@@ -6,10 +7,7 @@ class ProductsController < ApplicationController
     @product_type = ProductType.all
   end
 
-<<<<<<< HEAD
   #Creates a product to save to database based on params in private, adding the user_id, time it was added, and an active status, it adds an image then redirects user to product view.
-=======
->>>>>>> master
   def create
     @product = Product.new(product_params)
     @product.customer_id = session[:user_id]
