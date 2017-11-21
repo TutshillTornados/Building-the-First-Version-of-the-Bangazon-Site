@@ -3526,3 +3526,485 @@ Completed 200 OK in 51ms (Views: 44.3ms | ActiveRecord: 1.9ms)
 
 
 >>>>>>> 7ac2cea14addb055084cc60450430b8e2d94b2b9
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK(1096848878559930510, 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateCustomers (20171114195736)
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE `customers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `password_digest` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `street_address` varchar(255), `city` varchar(255), `state` varchar(255), `zip` int, `phone_number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114195736')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateImages (20171114195934)
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE `images` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `image_file` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114195934')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProductTypes (20171114200052)
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE `product_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_type_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114200052')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePayMethods (20171114200524)
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE `pay_methods` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `payment_type` varchar(255), `account_number` bigint NOT NULL, `expiration_date` date, `customer_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_pay_methods_on_customer_id`  (`customer_id`), CONSTRAINT `fk_rails_c8fc227bd8`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114200524')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProducts (20171114200852)
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `product_type_id` bigint, `image_id` bigint, `product_name` varchar(255), `product_price` float, `product_desc` text, `quantity` int, `product_added` datetime, `local_delivery` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_products_on_customer_id`  (`customer_id`),  INDEX `index_products_on_product_type_id`  (`product_type_id`),  INDEX `index_products_on_image_id`  (`image_id`), CONSTRAINT `fk_rails_252452a41b`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+, CONSTRAINT `fk_rails_8464b8e5d7`
+FOREIGN KEY (`product_type_id`)
+  REFERENCES `product_types` (`id`)
+, CONSTRAINT `fk_rails_0c57d8fc34`
+FOREIGN KEY (`image_id`)
+  REFERENCES `images` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114200852')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrders (20171114201311)
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_id` bigint, `pay_method_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_orders_on_customer_id`  (`customer_id`),  INDEX `index_orders_on_pay_method_id`  (`pay_method_id`), CONSTRAINT `fk_rails_3dad120da9`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `customers` (`id`)
+, CONSTRAINT `fk_rails_9d6a437740`
+FOREIGN KEY (`pay_method_id`)
+  REFERENCES `pay_methods` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114201311')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrderLines (20171114201349)
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE `order_lines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product_id` bigint, `order_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_order_lines_on_product_id`  (`product_id`),  INDEX `index_order_lines_on_order_id`  (`order_id`), CONSTRAINT `fk_rails_83e960fa54`
+FOREIGN KEY (`product_id`)
+  REFERENCES `products` (`id`)
+, CONSTRAINT `fk_rails_e6c763ee60`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171114201349')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttachmentProductToCustomers (20171116160134)
+  [1m[35m (15.3ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_file_name` varchar(255)[0m
+  [1m[35m (12.5ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_content_type` varchar(255)[0m
+  [1m[35m (16.7ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_file_size` int[0m
+  [1m[35m (12.8ms)[0m  [1m[35mALTER TABLE `customers` ADD `product_updated_at` datetime[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171116160134')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeAccountNumber (20171117174232)
+  [1m[35m (19.9ms)[0m  [1m[35mALTER TABLE `pay_methods` CHANGE `account_number` `account_number` varchar(255) NOT NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171117174232')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to PayMethods (20171120174332)
+  [1m[35m (14.6ms)[0m  [1m[35mALTER TABLE `pay_methods` ADD `active_record` tinyint(1)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171120174332')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddActiveToProductsTable (20171121090554)
+  [1m[35m (16.5ms)[0m  [1m[35mALTER TABLE `products` ADD `active` tinyint(1)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171121090554')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddToImageTable (20171121100736)
+  [1m[35m (13.4ms)[0m  [1m[35mALTER TABLE `images` ADD `imageable_type` varchar(255)[0m
+  [1m[35m (13.9ms)[0m  [1m[35mALTER TABLE `images` ADD `imageable_id` bigint[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE  INDEX `index_images_on_imageable_type_and_imageable_id`  ON `images` (`imageable_type`, `imageable_id`) [0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171121100736')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToImage (20171121113841)
+  [1m[35m (14.5ms)[0m  [1m[35mALTER TABLE `images` ADD `image_file_name` varchar(255)[0m
+  [1m[35m (16.3ms)[0m  [1m[35mALTER TABLE `images` ADD `image_content_type` varchar(255)[0m
+  [1m[35m (14.4ms)[0m  [1m[35mALTER TABLE `images` ADD `image_file_size` int[0m
+  [1m[35m (12.8ms)[0m  [1m[35mALTER TABLE `images` ADD `image_updated_at` datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171121113841')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameImagesTableToPhotos (20171121115015)
+  [1m[35m (2.5ms)[0m  [1m[35mRENAME TABLE `images` TO `photos`[0m
+  [1m[35m (9.6ms)[0m  [1m[35mALTER TABLE `photos` RENAME INDEX `index_images_on_imageable_type_and_imageable_id` TO `index_photos_on_imageable_type_and_imageable_id`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171121115015')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-11-21 16:28:30', '2017-11-21 16:28:30')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK(1096848878559930510)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-11-21 10:28:44 -0600
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 29 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (15.8ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Customer with 'id'=29):
+  
+app/helpers/application_helper.rb:4:in `logged_in?'
+app/views/home/index.html.erb:4:in `_app_views_home_index_html_erb__3893777199506205488_70220425434160'
+Started GET "/home/index" for 127.0.0.1 at 2017-11-21 10:31:25 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 29 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Customer with 'id'=29):
+  
+app/helpers/application_helper.rb:4:in `logged_in?'
+app/views/home/index.html.erb:4:in `_app_views_home_index_html_erb__3893777199506205488_70220370016680'
+Started GET "/" for 127.0.0.1 at 2017-11-21 10:31:29 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 29 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Customer with 'id'=29):
+  
+app/helpers/application_helper.rb:4:in `logged_in?'
+app/views/home/index.html.erb:4:in `_app_views_home_index_html_erb__3893777199506205488_70220372981140'
+Started GET "/index" for 127.0.0.1 at 2017-11-21 10:31:36 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/home/index" for 127.0.0.1 at 2017-11-21 10:31:47 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 29 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Customer with 'id'=29):
+  
+app/helpers/application_helper.rb:4:in `logged_in?'
+app/views/home/index.html.erb:4:in `_app_views_home_index_html_erb__3893777199506205488_70220367604320'
+Started GET "/products" for 127.0.0.1 at 2017-11-21 10:33:37 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (2.9ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 29 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (3.6ms)
+Completed 500 Internal Server Error in 4286ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Customer with 'id'=29):
+  
+app/helpers/application_helper.rb:4:in `logged_in?'
+app/views/partials/_navbar.html.erb:9:in `block in _app_views_partials__navbar_html_erb__2317991864218420848_70220436469780'
+app/views/partials/_navbar.html.erb:1:in `_app_views_partials__navbar_html_erb__2317991864218420848_70220436469780'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__3608523089639633187_70220380942420'
+Started GET "/signup" for 127.0.0.1 at 2017-11-21 10:34:08 -0600
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (13.9ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 29 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (3.2ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Customer with 'id'=29):
+  
+app/helpers/application_helper.rb:4:in `logged_in?'
+app/views/partials/_navbar.html.erb:9:in `block in _app_views_partials__navbar_html_erb__2317991864218420848_70220459514100'
+app/views/partials/_navbar.html.erb:1:in `_app_views_partials__navbar_html_erb__2317991864218420848_70220459514100'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__3608523089639633187_70220455693500'
+Started GET "/" for 127.0.0.1 at 2017-11-21 10:34:39 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+  Rendered partials/_navbar.html.erb (2.2ms)
+Completed 200 OK in 54ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-11-21 10:34:45 -0600
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (3.3ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 58ms (Views: 49.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2017-11-21 10:34:54 -0600
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b+VdaDzDDHymayyj0HMQKq1Mbbzy0rhRzmdb5rU0pMqCm0VvYiko/PmQebKiF10NDhnxeKq9E+/NOQUZJSFjjA==", "customer"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'test1@test.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `customers` (`email`, `password_digest`, `created_at`, `updated_at`) VALUES ('test1@test.com', '$2a$10$B4bs7Yo9Ifzsl1veySHltOO3gMzMK6IMJlTSm.z5PCYBIqm3i4Duq', '2017-11-21 16:34:54', '2017-11-21 16:34:54')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/customers/1/edit
+Completed 302 Found in 69ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2017-11-21 10:34:54 -0600
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (3.6ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.6ms)
+Completed 200 OK in 44ms (Views: 38.8ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/customers/1" for 127.0.0.1 at 2017-11-21 10:35:12 -0600
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W3XnxPbelirMuD+eNYYXtjZtLiPk9Hz36TiiX2U/OtgkoxST0ooezTmqRKC8NLj9fQs61Oo+ZZrLU+1BkWvUQg==", "customer"=>{"first_name"=>"Test 1", "last_name"=>"test 1", "street_address"=>"1234 test", "city"=>"test", "state"=>"test", "zip"=>"12345", "phone_number"=>"1234567890"}, "commit"=>"Update Customer", "id"=>"1"}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'test1@test.com' AND (`customers`.`id` != 1) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `customers` SET `first_name` = 'Test 1', `last_name` = 'test 1', `street_address` = '1234 test', `city` = 'test', `state` = 'test', `zip` = 12345, `phone_number` = '1234567890', `updated_at` = '2017-11-21 16:35:12' WHERE `customers`.`id` = 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products
+Completed 302 Found in 10ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-21 10:35:12 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/index.html.erb within layouts/application (1.7ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.7ms)
+Completed 200 OK in 49ms (Views: 45.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-21 10:35:16 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (59.8ms)
+  Rendered products/new.html.erb within layouts/application (62.2ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.4ms)
+Completed 200 OK in 128ms (Views: 91.4ms | ActiveRecord: 2.8ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Electronics', '2017-11-21 16:35:59', '2017-11-21 16:35:59')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Clothing', '2017-11-21 16:35:59', '2017-11-21 16:35:59')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Garden & Outdoors', '2017-11-21 16:35:59', '2017-11-21 16:35:59')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Toys & Games', '2017-11-21 16:35:59', '2017-11-21 16:35:59')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Home & Kitchen', '2017-11-21 16:35:59', '2017-11-21 16:35:59')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Electronics', '2017-11-21 16:36:14', '2017-11-21 16:36:14')[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Clothing', '2017-11-21 16:36:14', '2017-11-21 16:36:14')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Garden & Outdoors', '2017-11-21 16:36:14', '2017-11-21 16:36:14')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Toys & Games', '2017-11-21 16:36:14', '2017-11-21 16:36:14')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Home & Kitchen', '2017-11-21 16:36:14', '2017-11-21 16:36:14')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Electronics', '2017-11-21 16:38:42', '2017-11-21 16:38:42')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Clothing', '2017-11-21 16:38:42', '2017-11-21 16:38:42')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Garden & Outdoors', '2017-11-21 16:38:42', '2017-11-21 16:38:42')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Toys & Games', '2017-11-21 16:38:42', '2017-11-21 16:38:42')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Home & Kitchen', '2017-11-21 16:38:42', '2017-11-21 16:38:42')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/products/new" for 127.0.0.1 at 2017-11-21 10:40:13 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (12.5ms)
+  Rendered products/new.html.erb within layouts/application (15.2ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.4ms)
+Completed 200 OK in 69ms (Views: 64.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-21 10:40:29 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vJgMPUswCrbip5oxwDJooia+6x6fVAVs/SvMzErLrgPDTv9qb2SCURe14Q9JgMfpbdj/6ZGeHAHfQIPSvp9AmQ==", "images"=>[#<ActionDispatch::Http::UploadedFile:0x007fbaf31da640 @tempfile=#<Tempfile:/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/RackMultipart20171121-20902-15obj6n.jpg>, @original_filename="maxresdefault.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"maxresdefault.jpg\"\r\nContent-Type: image/jpeg\r\n">], "product"=>{"product_name"=>"Test", "product_price"=>"234", "product_desc"=>"tet", "quantity"=>"23", "product_type_id"=>"7", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 7 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`, `active`) VALUES (1, 7, 'Test', 234.0, 'tet', 23, '2017-11-21 16:40:29', 1, '2017-11-21 16:40:29', '2017-11-21 16:40:29', 1)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/a43683d33b40f413228d54e3c6ed4a2f20171121-20902-n2b9zs.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/a43683d33b40f413228d54e3c6ed4a2f20171121-20902-1mm79br.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/a43683d33b40f413228d54e3c6ed4a2f20171121-20902-1mm79br.jpg[0]'
+Command :: convert '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/a43683d33b40f413228d54e3c6ed4a2f20171121-20902-1mm79br.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/87ce53304d32cfb587b6d0d1598e74b320171121-20902-zywzz1'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/a43683d33b40f413228d54e3c6ed4a2f20171121-20902-1mm79br.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/a43683d33b40f413228d54e3c6ed4a2f20171121-20902-1mm79br.jpg[0]'
+Command :: convert '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/a43683d33b40f413228d54e3c6ed4a2f20171121-20902-1mm79br.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/87ce53304d32cfb587b6d0d1598e74b320171121-20902-17tmccv'
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+Command :: file -b --mime '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/a43683d33b40f413228d54e3c6ed4a2f20171121-20902-10d728w.jpg'
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `photos` (`created_at`, `updated_at`, `imageable_type`, `imageable_id`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`) VALUES ('2017-11-21 16:40:29', '2017-11-21 16:40:29', 'Product', 1, 'maxresdefault.jpg', 'image/jpeg', 115449, '2017-11-21 16:40:29')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 343ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-11-21 10:40:29 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`imageable_id` = 1 AND `photos`.`imageable_type` = 'Product'[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered products/show.html.erb within layouts/application (6.0ms)
+  Rendered partials/_navbar.html.erb (2.8ms)
+Completed 200 OK in 54ms (Views: 48.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products?utf8=%E2%9C%93&product=test" for 127.0.0.1 at 2017-11-21 10:40:37 -0600
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "product"=>"test"}
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE (product_name like '%test%')[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered products/index.html.erb within layouts/application (3.7ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 49ms (Views: 44.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/myproducts" for 127.0.0.1 at 2017-11-21 10:40:40 -0600
+Processing by ProductsController#showSellerProduct as HTML
+  Rendering products/sellerproducts.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`customer_id` = 1 AND `products`.`active` = 1[0m
+  Rendered products/sellerproducts.html.erb within layouts/application (3.7ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.5ms)
+Completed 200 OK in 57ms (Views: 54.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pay_methods/new" for 127.0.0.1 at 2017-11-21 10:40:43 -0600
+Processing by PayMethodsController#new as HTML
+  Rendering pay_methods/new.html.erb within layouts/application
+  Rendered pay_methods/new.html.erb within layouts/application (7.8ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.6ms)
+Completed 200 OK in 62ms (Views: 45.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/pay_methods" for 127.0.0.1 at 2017-11-21 10:40:55 -0600
+Processing by PayMethodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TKiAEYOVtp6VxMle/e+e1OCGTHtDFKuatjGkpPIrFcOMMhf8Hv+O7tIVYmX6+QK0hfFTMA/38RxiMfo5uLHu/Q==", "pay_method"=>{"payment_type"=>"MasterCard", "account_number"=>"1234567890123456", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"12", "expiration_date(3i)"=>"1"}, "commit"=>"Add Payment"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `pay_methods` (`payment_type`, `account_number`, `expiration_date`, `customer_id`, `created_at`, `updated_at`, `active_record`) VALUES ('MasterCard', '1234567890123456', '2017-12-01', 1, '2017-11-21 16:40:55', '2017-11-21 16:40:55', 1)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pay_methods
+Completed 302 Found in 10ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 10:40:55 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.3ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 1 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (2.2ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.5ms)
+Completed 200 OK in 43ms (Views: 39.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 10:40:59 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.5ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 1 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (2.8ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.6ms)
+Completed 200 OK in 48ms (Views: 44.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2017-11-21 10:41:03 -0600
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (0.7ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.8ms)
+Completed 200 OK in 42ms (Views: 39.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/myproducts" for 127.0.0.1 at 2017-11-21 10:41:04 -0600
+Processing by ProductsController#showSellerProduct as HTML
+  Rendering products/sellerproducts.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`customer_id` = 1 AND `products`.`active` = 1[0m
+  Rendered products/sellerproducts.html.erb within layouts/application (3.3ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 1 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.4ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.9ms)
+
+
