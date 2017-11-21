@@ -26,6 +26,7 @@ config/application.yml
 config/database.yml
 .powenv
 .powrc
+/public/system/photos
 
 #----------------------------------------------------------------------------
 # MISC
