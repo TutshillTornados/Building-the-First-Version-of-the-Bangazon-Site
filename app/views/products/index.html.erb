@@ -16,8 +16,10 @@
       <td><%= product.product_price %></td>
       <td><%= product.quantity %></td>
       <td><%= product.local_delivery %></td>
-      <td><%= link_to 'Deets', product_path(product) %> | </td>
-      <td><%= link_to 'Buy', product_path(product) %></td>
+      <td><%= link_to 'Details', product_path(product) %></td>
+      <% if logged_in? %>
+      <td><%= link_to 'Buy', product_path(product) %> </td>
+      <% end %>
     </tr>
   <% end %>
 </table>
