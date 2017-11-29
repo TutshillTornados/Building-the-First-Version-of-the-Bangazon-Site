@@ -64,8 +64,9 @@ class ProductsController < ApplicationController
   def index 
     if params[:product]
     @products = Product.where("product_name like ? AND active = true", "%#{params[:product]}%")
-  else 
-    @products = Product.all
+    else 
+      @products = Product.all
+    end
   end
 
   def add_to_cart
