@@ -9741,3 +9741,795 @@ Migrating to RenameImagesTableToPhotos (20171121115015)
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `product_types` (`product_type_name`, `created_at`, `updated_at`) VALUES ('Home & Kitchen', '2017-11-21 16:46:16', '2017-11-21 16:46:16')[0m
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2017-11-21 13:10:17 -0600
+  [1m[35m (1.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+  Rendered partials/_navbar.html.erb (2.4ms)
+Completed 200 OK in 409ms (Views: 371.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-11-21 13:10:22 -0600
+Processing by CustomersController#new as HTML
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (24.1ms)
+  Rendered partials/_navbar.html.erb (2.6ms)
+Completed 200 OK in 138ms (Views: 94.7ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2017-11-21 13:10:39 -0600
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jyRZOPaBmRlTayBvXywujXBZTdkLY+KvtDUb7/D03oRXHCaSKy+N0UlVUp7X2JKi4XzEBL6AQNLo4LShOhEWww==", "customer"=>{"email"=>"test3@test.com2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'test3@test.com2' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `customers` (`email`, `password_digest`, `created_at`, `updated_at`) VALUES ('test3@test.com2', '$2a$10$khhVgo7MgMjLmTo.50SU6uKXm/Rbrv22wy/dJg0mRqPfmEBzm54Em', '2017-11-21 19:10:39', '2017-11-21 19:10:39')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/customers/2/edit
+Completed 302 Found in 75ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/customers/2/edit" for 127.0.0.1 at 2017-11-21 13:10:39 -0600
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (7.2ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.9ms)
+Completed 200 OK in 72ms (Views: 63.2ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/customers/2" for 127.0.0.1 at 2017-11-21 13:10:58 -0600
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XewgnpwHpRBKA7QPdzlCPPioVnmcLXGPbmSdEW7O3TYLuinsCZENK0BrqkLoAsm07JMWulJuR0viIVvUljVkTQ==", "customer"=>{"first_name"=>"asdf", "last_name"=>"asdf", "street_address"=>"1234 qwdf", "city"=>"asdf", "state"=>"Tennessee", "zip"=>"37214", "phone_number"=>"9548176934"}, "commit"=>"Update Customer", "id"=>"2"}
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'test3@test.com2' AND (`customers`.`id` != 2) LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE `customers` SET `first_name` = 'asdf', `last_name` = 'asdf', `street_address` = '1234 qwdf', `city` = 'asdf', `state` = 'Tennessee', `zip` = 37214, `phone_number` = '9548176934', `updated_at` = '2017-11-21 19:10:58' WHERE `customers`.`id` = 2[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products
+Completed 302 Found in 12ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-21 13:10:58 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered products/index.html.erb within layouts/application (15.3ms)
+  Rendered partials/_navbar.html.erb (3.1ms)
+Completed 200 OK in 65ms (Views: 60.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-11-21 13:11:43 -0600
+Processing by ProductsController#categories as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `products`.`product_type_id` AS products_product_type_id FROM `products` GROUP BY `products`.`product_type_id`[0m
+  Rendering products/categories.html.erb within layouts/application
+  [1m[36mProductType Load (0.5ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered products/categories.html.erb within layouts/application (10.8ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.8ms)
+Completed 200 OK in 65ms (Views: 47.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-21 13:12:11 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (53.5ms)
+  Rendered products/new.html.erb within layouts/application (56.0ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.5ms)
+Completed 200 OK in 125ms (Views: 101.0ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-21 13:12:42 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G17+HW9OZA2qwfmZ+hNzpGzjD9scUUgxSNX9ZFk+tzlVrv+m0/a+msW1r4FElrxIXOQXv4hx4NjmtMUVPEnzWA==", "images"=>[#<ActionDispatch::Http::UploadedFile:0x007fd9a04b9070 @tempfile=#<Tempfile:/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/RackMultipart20171121-25465-1fhiwqk.jpg>, @original_filename="IMG_6491.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"IMG_6491.jpg\"\r\nContent-Type: image/jpeg\r\n">], "product"=>{"product_name"=>"test", "product_price"=>"9.99", "product_desc"=>"test desc", "quantity"=>"54", "product_type_id"=>"8", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 8 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`, `active`) VALUES (2, 8, 'test', 9.99, 'test desc', 54, '2017-11-21 19:12:42', 1, '2017-11-21 19:12:42', '2017-11-21 19:12:42', 1)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/46b5c418594a868023c58ed924cce72f20171121-25465-1dubydq.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/46b5c418594a868023c58ed924cce72f20171121-25465-17nuskm.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/46b5c418594a868023c58ed924cce72f20171121-25465-17nuskm.jpg[0]'
+Command :: convert '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/46b5c418594a868023c58ed924cce72f20171121-25465-17nuskm.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/b354ae01935ae8d748e7c4cb5d43dde520171121-25465-1gxsaih'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/46b5c418594a868023c58ed924cce72f20171121-25465-17nuskm.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/46b5c418594a868023c58ed924cce72f20171121-25465-17nuskm.jpg[0]'
+Command :: convert '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/46b5c418594a868023c58ed924cce72f20171121-25465-17nuskm.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/b354ae01935ae8d748e7c4cb5d43dde520171121-25465-16mpwv2'
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 14 LIMIT 1[0m
+Command :: file -b --mime '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/46b5c418594a868023c58ed924cce72f20171121-25465-90fq3p.jpg'
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `photos` (`created_at`, `updated_at`, `imageable_type`, `imageable_id`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`) VALUES ('2017-11-21 19:12:43', '2017-11-21 19:12:43', 'Product', 14, 'IMG_6491.jpg', 'image/jpeg', 536814, '2017-11-21 19:12:42')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/14
+Completed 302 Found in 382ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/products/14" for 127.0.0.1 at 2017-11-21 13:12:43 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 14 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`imageable_id` = 14 AND `photos`.`imageable_type` = 'Product'[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered products/show.html.erb within layouts/application (5.7ms)
+  Rendered partials/_navbar.html.erb (2.8ms)
+Completed 200 OK in 66ms (Views: 60.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-21 13:13:03 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered products/index.html.erb within layouts/application (6.9ms)
+  Rendered partials/_navbar.html.erb (12.0ms)
+Completed 200 OK in 62ms (Views: 59.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-11-21 13:13:09 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`imageable_id` = 1 AND `photos`.`imageable_type` = 'Product'[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered products/show.html.erb within layouts/application (5.2ms)
+  Rendered partials/_navbar.html.erb (2.0ms)
+Completed 200 OK in 53ms (Views: 48.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-21 13:13:15 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered products/index.html.erb within layouts/application (13.2ms)
+  Rendered partials/_navbar.html.erb (2.8ms)
+Completed 200 OK in 75ms (Views: 70.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/products/add_to_cart" for 127.0.0.1 at 2017-11-21 13:13:17 -0600
+Processing by ProductsController#add_to_cart as HTML
+  Parameters: {"authenticity_token"=>"zPNrwNQzr3yAvADI+2ixLC5Snzbo0ZBwUPe85r+jb2AU0m0KwZ5J3+sqXy66e4v78ejkQn0LaU4PmE+Vr3bbuA==", "product_id"=>"1"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`customer_id` = 2 AND `orders`.`pay_method_id` IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `orders` (`customer_id`, `created_at`, `updated_at`) VALUES (2, '2017-11-21 19:13:17', '2017-11-21 19:13:17')[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Unpermitted parameter: :authenticity_token
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 1 LIMIT 1[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `order_lines` (`product_id`, `order_id`, `created_at`, `updated_at`) VALUES (1, 1, '2017-11-21 19:13:17', '2017-11-21 19:13:17')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+No template found for ProductsController#add_to_cart, rendering head :no_content
+Completed 204 No Content in 136ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2017-11-21 13:13:23 -0600
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (0.6ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.5ms)
+Completed 200 OK in 53ms (Views: 47.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2017-11-21 13:13:27 -0600
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (0.4ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.2ms)
+Completed 200 OK in 50ms (Views: 47.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2017-11-21 13:13:33 -0600
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (0.8ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (3.7ms)
+Completed 200 OK in 52ms (Views: 48.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/myproducts" for 127.0.0.1 at 2017-11-21 13:13:42 -0600
+Processing by ProductsController#showSellerProduct as HTML
+  Rendering products/sellerproducts.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`customer_id` = 2 AND `products`.`active` = 1[0m
+  Rendered products/sellerproducts.html.erb within layouts/application (2.9ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (8.4ms)
+Completed 200 OK in 61ms (Views: 59.6ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/products/14" for 127.0.0.1 at 2017-11-21 13:14:33 -0600
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RX9C8tRo1oLF1JZcDKBgIDYJdSXW3S5NX7HT7nVo1oQTKUuAQf5+uc+8iBGTm+uoIjI15hieGInT9BUrjZNv/w==", "id"=>"14"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 14 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 8 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `products` SET `active` = 0, `updated_at` = '2017-11-21 19:14:33' WHERE `products`.`id` = 14[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/myproducts
+Completed 302 Found in 15ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/myproducts" for 127.0.0.1 at 2017-11-21 13:14:33 -0600
+Processing by ProductsController#showSellerProduct as HTML
+  Rendering products/sellerproducts.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`customer_id` = 2 AND `products`.`active` = 1[0m
+  Rendered products/sellerproducts.html.erb within layouts/application (2.4ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.7ms)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pay_methods/new" for 127.0.0.1 at 2017-11-21 13:14:43 -0600
+Processing by PayMethodsController#new as HTML
+  Rendering pay_methods/new.html.erb within layouts/application
+  Rendered pay_methods/new.html.erb within layouts/application (7.2ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (3.7ms)
+Completed 200 OK in 69ms (Views: 48.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/pay_methods" for 127.0.0.1 at 2017-11-21 13:14:55 -0600
+Processing by PayMethodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EdAh7RyU+z72aBu/m6+ASt7BDgEcVM57fLeYTVfkKWerUqLue2pgUMFEa1LH1q5lUHXA0Jc8H7ZmoFd6pAaNsw==", "pay_method"=>{"payment_type"=>"MasterCard", "account_number"=>"12345678901333456", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"11", "expiration_date(3i)"=>"1"}, "commit"=>"Add Payment"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  Rendering pay_methods/new.html.erb within layouts/application
+  Rendered pay_methods/new.html.erb within layouts/application (4.2ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.9ms)
+Completed 200 OK in 70ms (Views: 55.9ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/pay_methods" for 127.0.0.1 at 2017-11-21 13:15:02 -0600
+Processing by PayMethodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CNZ73GNKFvFYepGUFU6jeWYXcNtUIM1Uhln6B2HGmyJegHKu9ty+ylISj9mKdSjxciwwGJpj+5AKHDzCmT0iWQ==", "pay_method"=>{"payment_type"=>"", "account_number"=>"12345678901333456", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"12", "expiration_date(3i)"=>"1"}, "commit"=>"Add Payment"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  Rendering pay_methods/new.html.erb within layouts/application
+  Rendered pay_methods/new.html.erb within layouts/application (6.2ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.1ms)
+Completed 200 OK in 69ms (Views: 61.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/pay_methods" for 127.0.0.1 at 2017-11-21 13:15:08 -0600
+Processing by PayMethodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qnQjWux/qK2uK6ahF2vN2vYzs9skh0HKu/q+2Vy4+QP8IiooeekAlqRDuOyIUEZS4gjzGOrEdw43v3gcpENAeA==", "pay_method"=>{"payment_type"=>"MasterCard", "account_number"=>"12345678901333456", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"12", "expiration_date(3i)"=>"1"}, "commit"=>"Add Payment"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `pay_methods` (`payment_type`, `account_number`, `expiration_date`, `customer_id`, `created_at`, `updated_at`, `active_record`) VALUES ('MasterCard', '12345678901333456', '2017-12-01', 2, '2017-11-21 19:15:08', '2017-11-21 19:15:08', 1)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pay_methods
+Completed 302 Found in 15ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 13:15:08 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.4ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 2 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (2.1ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.6ms)
+Completed 200 OK in 52ms (Views: 45.8ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/pay_methods/2" for 127.0.0.1 at 2017-11-21 13:15:12 -0600
+Processing by PayMethodsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3dArTQnQjZKUdKvPiEA9PoaAU4MlrYRZiEFmr7Vw1CWLhiI/nEYlqZ4ctYIXe7a2krsTQOvusp0EBKBqTYttXg==", "id"=>"2"}
+  [1m[36mPayMethod Load (0.9ms)[0m  [1m[34mSELECT  `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `pay_methods` SET `active_record` = 0, `updated_at` = '2017-11-21 19:15:12' WHERE `pay_methods`.`id` = 2[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pay_methods
+Completed 302 Found in 12ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-21 13:15:12 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.4ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 2 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (1.8ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (6.6ms)
+Completed 200 OK in 67ms (Views: 63.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products?utf8=%E2%9C%93&product=test" for 127.0.0.1 at 2017-11-21 13:15:24 -0600
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "product"=>"test"}
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE (product_name like '%test%' AND active = true)[0m
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered products/index.html.erb within layouts/application (5.6ms)
+  Rendered partials/_navbar.html.erb (3.5ms)
+Completed 200 OK in 65ms (Views: 59.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products?utf8=%E2%9C%93&product=stuff" for 127.0.0.1 at 2017-11-21 13:15:37 -0600
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "product"=>"stuff"}
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE (product_name like '%stuff%' AND active = true)[0m
+  Rendered products/index.html.erb within layouts/application (1.9ms)
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.8ms)
+Completed 200 OK in 57ms (Views: 51.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products?utf8=%E2%9C%93&product=test" for 127.0.0.1 at 2017-11-21 13:15:44 -0600
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "product"=>"test"}
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE (product_name like '%test%' AND active = true)[0m
+  [1m[36mCustomer Load (1.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 2 LIMIT 1[0m
+  Rendered products/index.html.erb within layouts/application (8.7ms)
+  Rendered partials/_navbar.html.erb (3.2ms)
+Completed 200 OK in 110ms (Views: 102.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 09:09:27 -0600
+  
+Mysql2::Error (Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)):
+  
+mysql2 (0.4.9) lib/mysql2/client.rb:89:in `connect'
+mysql2 (0.4.9) lib/mysql2/client.rb:89:in `initialize'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql2_adapter.rb:21:in `new'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql2_adapter.rb:21:in `mysql2_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.4) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.4) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.4) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/home" for 127.0.0.1 at 2017-11-29 09:09:44 -0600
+  
+Mysql2::Error (Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)):
+  
+mysql2 (0.4.9) lib/mysql2/client.rb:89:in `connect'
+mysql2 (0.4.9) lib/mysql2/client.rb:89:in `initialize'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql2_adapter.rb:21:in `new'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql2_adapter.rb:21:in `mysql2_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.4) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.4) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.4) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-29 09:11:45 -0600
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+  Rendered partials/_navbar.html.erb (4.0ms)
+Completed 200 OK in 341ms (Views: 308.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-29 10:10:27 -0600
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered partials/_navbar.html.erb (2.2ms)
+Completed 200 OK in 67ms (Views: 48.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2017-11-29 10:10:31 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hvq31Nr917HfFF5EQjFuxLdx9zL6CBkhxV1WcoRgGIW2HhIWnLE+JAJOnOOA5l8OJiiGnofsfqxHDdGd8+JEbw==", "email"=>"asdfxcv@sd.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mCustomer Load (1.6ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`email` = 'asdfxcv@sd.com' LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 41ms (Views: 29.0ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2017-11-29 10:10:38 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5yuBhen39dw/05N46xFZvZvkHsAkPqvD+m7yHqsdWhe7wI0vISzixksBwsa3qaOsR40Fh16bKvNecr7cHl0alA==", "email"=>"asdfxcv@sd.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`email` = 'asdfxcv@sd.com' LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered partials/_navbar.html.erb (2.2ms)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2017-11-29 10:10:47 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+F+okqfnf3PnMgAE8GKKeXesN1zusaQ0Fjl+rqAVh1yktKQ4bzxoaZPgUbqs2nBoq8UsG5QUJQSyJTJsFVXH3w==", "email"=>"test@test.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`email` = 'test@test.com' LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2017-11-29 10:15:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/sessions" for 127.0.0.1 at 2017-11-29 10:15:29 -0600
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for SessionsController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-29 10:15:34 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+  Rendered partials/_navbar.html.erb (1.7ms)
+Completed 200 OK in 51ms (Views: 48.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2017-11-29 10:15:36 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+Completed 200 OK in 43ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 10:15:38 -0600
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 43ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-11-29 10:15:41 -0600
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (17.3ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 63ms (Views: 45.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2017-11-29 10:15:51 -0600
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bcUKKrR5CBsLJTYGlzQyQqOtPxRCkSSsRAZIyHicN7AssviwZNrFWnDtJ3qvGoO0LxWfz+3Te+0Ql0EZRChJPw==", "customer"=>{"email"=>"test1@test.com3", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'test1@test.com3' LIMIT 1[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO `customers` (`email`, `password_digest`, `created_at`, `updated_at`) VALUES ('test1@test.com3', '$2a$10$SnQ8br8A9ATFJxo0QiNqZeuz0u9OhvGGVmKYBYbcLZtjxnrCmJ3li', '2017-11-29 16:15:51', '2017-11-29 16:15:51')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/customers/3/edit
+Completed 302 Found in 80ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/customers/3/edit" for 127.0.0.1 at 2017-11-29 10:15:51 -0600
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (3.1ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (3.0ms)
+Completed 200 OK in 38ms (Views: 32.9ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/customers/3" for 127.0.0.1 at 2017-11-29 10:16:43 -0600
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IEuQSw1JCvpRi2GARB2pIKzQRTiSNm1LIf04JFL34IJ8oJzhxZId4CVZMD4YpVMxcLlef+iT7HuF4XTm57egAQ==", "customer"=>{"first_name"=>"Test", "last_name"=>"test", "street_address"=>"234nm,", "city"=>"Nashville", "state"=>"Tennessee", "zip"=>"37214", "phone_number"=>"098786754343"}, "commit"=>"Update Customer", "id"=>"3"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists (8.3ms)[0m  [1m[34mSELECT  1 AS one FROM `customers` WHERE `customers`.`email` = BINARY 'test1@test.com3' AND (`customers`.`id` != 3) LIMIT 1[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[33mUPDATE `customers` SET `first_name` = 'Test', `last_name` = 'test', `street_address` = '234nm,', `city` = 'Nashville', `state` = 'Tennessee', `zip` = 37214, `phone_number` = '098786754343', `updated_at` = '2017-11-29 16:16:43' WHERE `customers`.`id` = 3[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products
+Completed 302 Found in 18ms (ActiveRecord: 11.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-11-29 10:16:43 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  Rendered products/index.html.erb within layouts/application (6.5ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 46ms (Views: 43.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-11-29 10:16:53 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mPhoto Load (1.7ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`imageable_id` = 1 AND `photos`.`imageable_type` = 'Product'[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  Rendered products/show.html.erb within layouts/application (33.3ms)
+  Rendered partials/_navbar.html.erb (1.7ms)
+Completed 200 OK in 71ms (Views: 62.8ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/products/5" for 127.0.0.1 at 2017-11-29 10:16:56 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 5 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`imageable_id` = 5 AND `photos`.`imageable_type` = 'Product'[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  Rendered products/show.html.erb within layouts/application (3.3ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 45ms (Views: 40.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products/14" for 127.0.0.1 at 2017-11-29 10:17:01 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 14 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`imageable_id` = 14 AND `photos`.`imageable_type` = 'Product'[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  Rendered products/show.html.erb within layouts/application (4.4ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 39ms (Views: 34.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-11-29 10:17:07 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mProductType Load (1.3ms)[0m  [1m[34mSELECT `product_types`.* FROM `product_types`[0m
+  Rendered products/_form.html.erb (45.7ms)
+  Rendered products/new.html.erb within layouts/application (47.8ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.2ms)
+Completed 200 OK in 83ms (Views: 75.5ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-11-29 10:18:38 -0600
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3BW5atgCwM4Qn/XUIqKRvSDNp0VuR5GTdq6FbDjcYxttUJ3KSc+OTu1YDZtbf59UCRVT5ItLAZWRMuN0AC0ekQ==", "images"=>[#<ActionDispatch::Http::UploadedFile:0x007ff17a6a7570 @tempfile=#<Tempfile:/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/RackMultipart20171129-4248-10t7s2.jpg>, @original_filename="olive-sinclair.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"olive-sinclair.jpg\"\r\nContent-Type: image/jpeg\r\n">], "product"=>{"product_name"=>"Chocolate", "product_price"=>"10.00", "product_desc"=>"Bars of Chocolate", "quantity"=>"43", "product_type_id"=>"14", "local_delivery"=>"1"}, "commit"=>"Create Product"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 14 LIMIT 1[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `products` (`customer_id`, `product_type_id`, `product_name`, `product_price`, `product_desc`, `quantity`, `product_added`, `local_delivery`, `created_at`, `updated_at`, `active`) VALUES (3, 14, 'Chocolate', 10.0, 'Bars of Chocolate', 43, '2017-11-29 16:18:38', 1, '2017-11-29 16:18:38', '2017-11-29 16:18:38', 1)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/a5bbc68e8fe780cf0366b3c4d3e9aada20171129-4248-14vu7lv.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/a5bbc68e8fe780cf0366b3c4d3e9aada20171129-4248-379gz5.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/a5bbc68e8fe780cf0366b3c4d3e9aada20171129-4248-379gz5.jpg[0]'
+Command :: convert '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/a5bbc68e8fe780cf0366b3c4d3e9aada20171129-4248-379gz5.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/f56d939af5beef333f9841df2bfa630520171129-4248-1y7ufw5'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/a5bbc68e8fe780cf0366b3c4d3e9aada20171129-4248-379gz5.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/a5bbc68e8fe780cf0366b3c4d3e9aada20171129-4248-379gz5.jpg[0]'
+Command :: convert '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/a5bbc68e8fe780cf0366b3c4d3e9aada20171129-4248-379gz5.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/f56d939af5beef333f9841df2bfa630520171129-4248-143ff7s'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 15 LIMIT 1[0m
+Command :: file -b --mime '/var/folders/qr/3_0bd3x97ls6bfs7fjrwzrzh0000gn/T/a5bbc68e8fe780cf0366b3c4d3e9aada20171129-4248-k42gox.jpg'
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `photos` (`created_at`, `updated_at`, `imageable_type`, `imageable_id`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`) VALUES ('2017-11-29 16:18:38', '2017-11-29 16:18:38', 'Product', 15, 'olive-sinclair.jpg', 'image/jpeg', 286020, '2017-11-29 16:18:38')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/15
+Completed 302 Found in 340ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/products/15" for 127.0.0.1 at 2017-11-29 10:18:38 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 15 LIMIT 1[0m
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT `photos`.* FROM `photos` WHERE `photos`.`imageable_id` = 15 AND `photos`.`imageable_type` = 'Product'[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  Rendered products/show.html.erb within layouts/application (4.7ms)
+  Rendered partials/_navbar.html.erb (2.5ms)
+Completed 200 OK in 49ms (Views: 44.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/myproducts" for 127.0.0.1 at 2017-11-29 10:20:12 -0600
+Processing by ProductsController#showSellerProduct as HTML
+  Rendering products/sellerproducts.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`customer_id` = 3 AND `products`.`active` = 1[0m
+  Rendered products/sellerproducts.html.erb within layouts/application (2.4ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (3.5ms)
+Completed 200 OK in 56ms (Views: 54.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pay_methods/new" for 127.0.0.1 at 2017-11-29 10:20:16 -0600
+Processing by PayMethodsController#new as HTML
+  Rendering pay_methods/new.html.erb within layouts/application
+  Rendered pay_methods/new.html.erb within layouts/application (6.8ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.9ms)
+Completed 200 OK in 63ms (Views: 46.2ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/pay_methods" for 127.0.0.1 at 2017-11-29 10:20:23 -0600
+Processing by PayMethodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1HIxvegPMLHuJuWcZ+rnmHhPrSQD/aroJRr1PjulADTK5Dp87FfrHxrzLeRfRhSFRGyonNDEKlWrwySdUaS7g==", "pay_method"=>{"payment_type"=>"MasterCard", "account_number"=>"1233534564356746578", "expiration_date(1i)"=>"2018", "expiration_date(2i)"=>"11", "expiration_date(3i)"=>"1"}, "commit"=>"Add Payment"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `pay_methods` (`payment_type`, `account_number`, `expiration_date`, `customer_id`, `created_at`, `updated_at`, `active_record`) VALUES ('MasterCard', '1233534564356746578', '2018-11-01', 3, '2017-11-29 16:20:23', '2017-11-29 16:20:23', 1)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pay_methods
+Completed 302 Found in 11ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-29 10:20:23 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.4ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 3 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (2.7ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.7ms)
+Completed 200 OK in 42ms (Views: 38.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2017-11-29 10:20:27 -0600
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (0.4ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.7ms)
+Completed 200 OK in 40ms (Views: 36.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pay_methods" for 127.0.0.1 at 2017-11-29 10:20:29 -0600
+Processing by PayMethodsController#index as HTML
+  Rendering pay_methods/index.html.erb within layouts/application
+  [1m[36mPayMethod Load (0.4ms)[0m  [1m[34mSELECT `pay_methods`.* FROM `pay_methods` WHERE `pay_methods`.`customer_id` = 3 AND `pay_methods`.`active_record` = 1[0m
+  Rendered pay_methods/index.html.erb within layouts/application (2.2ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`id` = 3 LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.6ms)
+Completed 200 OK in 47ms (Views: 43.0ms | ActiveRecord: 0.7ms)
+
+
