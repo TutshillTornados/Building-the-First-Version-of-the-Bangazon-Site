@@ -107,6 +107,7 @@ Visit localhost:3000 in web browser for Rails page
 
 ## Meet the Dev Team
 - [Austin Kurtis](https://github.com/austinKurtis)
+- [Teresa Vasquez] (https://github.com/drteresavasquez)
 - [Daniel Greene](https://github.com/danielgreene101)
 - [Matt Minner](https://github.com/Mminner4248)
 - [Eric Palmieri](https://github.com/palmierie)
